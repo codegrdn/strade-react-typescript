@@ -1,0 +1,56 @@
+{
+    "menu": {
+        "Home": "Главная",
+        "Swap": "Обмен",
+        "Markets": "Магазин"
+    },
+    "markets": {
+        "title-header": "Магазин",
+        "columns": {
+            "name": "Название",
+            "last-price": "Последняя цена",
+            "24h-сhange": "24ч Изменения",
+            "24h-high": "24ч Высокое",
+            "24h-low": "24ч Низкое",
+            "market-cap": "Market Cap",
+            "24h-volume": "24h Volume"
+        },
+        "filters": {
+            "price": {
+                "Select Last Price": "Выберете изменение цены",
+                "Last Price Down": "Цена уменьшилась",
+                "Last Price Up": "Цена возрасла"
+            },
+            "favourites": "Выбранные",
+            "select-platform": "Выбрать платформу",
+            "select-category": "Выбрать категорию",
+            "select-with-item": "Выбрать {{item}}",
+            "category": "категорию",
+            "search": "Поиск..."
+        }
+    },
+    "landing": {
+        "hero": {
+            "subTitle": "BUILT ON STELLAR DEX",
+            "title": "",
+            "features": {
+                "multicurrency-wallet": {
+                    "title": "<span class='highlight-text'>Multicurrency</span> Wallet",
+                    "decription": "Keep your coins, tokens, fiat all in one wallet"
+                },
+                "instant-swap": {
+                    "title": "Instant <span class='highlight-text'>Swap</span>",
+                    "decription": "Exchange any currency instantly at the best price"
+                },
+                "built-on-dex": {
+                    "title": "Built on <span class='highlight-text'>DEX</span>",
+                    "decription": "Take full advantage of the Stellar Blockchain"
+                },
+                "eu-license": {
+                    "title": "<span class='highlight-text'>EU</span> License",
+                    "decription": "Regulated under EU jurisdiction"
+                }
+            }
+        }
+    }
+}

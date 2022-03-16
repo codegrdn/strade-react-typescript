@@ -1,0 +1,161 @@
+{
+    "menu": {
+        "Home": "Home",
+        "Swap": "Swap",
+        "Markets": "Markets"
+    },
+    "markets": {
+        "title-header": "Markets",
+        "columns": {
+            "name": "Name",
+            "last-price": "Last Price",
+            "24h-сhange": "24h Change",
+            "24h-high": "24h High",
+            "24h-low": "24h Low",
+            "market-cap": "Market Cap",
+            "24h-volume": "24h Volume"
+        },
+        "filters": {
+            "price": {
+                "Select Last Price": "Select Last Price",
+                "Last Price Down": "Last Price Down",
+                "Last Price Up": "Last Price Up"
+            },
+            "favourites": "Favourites",
+            "select-platform": "Select platform",
+            "select-category": "Select category",
+            "select-with-item": "Select {{item}}",
+            "category": "category",
+            "search": "Search..."
+        }
+    },
+    "landing": {
+        "hero": {
+            "content": {
+                "subTitle": "BUILT ON STELLAR DEX",
+                "title": "Crypto Exchange Revolution!",
+                "description": "We’re utilizing Stellar Blockchain and its DEX technology to provide highly secure, reliable and fast cryptocurrency exchange platform for traders.",
+                "free-account": "Get a free account"
+            },
+            "features": {
+                "wallet": {
+                    "title": "<span class='highlight-text'>Multicurrency</span> Wallet",
+                    "description": "Keep your coins, tokens, fiat all in one wallet"
+                },
+                "swap": {
+                    "title": "Instant <span class='highlight-text'>Swap</span>",
+                    "description": "Exchange any currency instantly at the best price"
+                },
+                "dex": {
+                    "title": "Built on <span class='highlight-text'>DEX</span>",
+                    "description": "Take full advantage of the Stellar Blockchain"
+                },
+                "license": {
+                    "title": "<span class='highlight-text'>EU</span> License",
+                    "description": "Regulated under EU jurisdiction"
+                }
+            },
+            "purchase": {
+                "title": "Buy crypto",
+                "buy": "Buy",
+                "for": "For",
+                "buy-item": "Buy {{item}}"
+            }
+        },
+        "trade-info": {
+            "subtitle": "TXT",
+            "title": "Trade. Anywhere",
+            "descriptor": "Compatible with multiple devices, start trading with <br /> safety and convenience"
+        },
+        "privileges": {
+            "subtitle": "WHY CHOOSE US",
+            "title": "Trade with Privileges",
+            "list": {
+                "security": {
+                    "title": "Comprehensive protection with security and law funds",
+                    "subtitle": "MAXIMUM SECURITY",
+                    "description": "Strade.io protects your funds with both centralized and decentralized methods. It is also the first exchange to invest millions in security and law funds to add extra protection for your assets."
+                },
+                "deposit": {
+                    "title": "Efficient trading and instant deposit / withdrawal",
+                    "subtitle": "EASY DEPOSIT",
+                    "description": "As an established exchange with cutting-edge technology, Strade.io offers an efficient and convenient trading system as well as an instant deposit and withdrawal service."
+                },
+                "liquid": {
+                    "title": "Take maximum profit of trading more than 30 assets",
+                    "subtitle": "HIGH LIQUIDITs",
+                    "description": "With a built in Artificial Intelligence market maker that meets the high standards set by Wall Street, our model analysis based on over 250 market parameters, providing 24/7 Customer Support and high liquidity."
+                },
+                "support": {
+                    "title": "Full assistance anytime You need",
+                    "subtitle": "24/7 SUPPORT",
+                    "description": "We provide 24/7 online customer support to ensure quick and readily available support when needed."
+                }
+            }
+        },
+        "news": {
+            "subtitle": "News",
+            "title": "Latest news and Events",
+            "atricales": {
+                "read-more": "Read more",
+                "augur": {
+                    "title": "Augur (REP) Version 2 Upgrade",
+                    "description": "Augur upgraded to the second version of its prediction market software on July 28th"
+                },
+                "filecoin": {
+                    "title": "Filecoin [IOU] is now available for trading",
+                    "description": "We’re excited to announce support for trading Filecoin [IOU] (XFIL) on Strade!"
+                },
+                "matic": {
+                    "title": "Matic (MATIC) is now available on Strade",
+                    "description": "We’re excited to welcome Matic (MATIC) to Strade! You can now deposit MATIC and trade"
+                }
+            }
+        },
+        "market-info": {
+            "subtitle": "MARKETS",
+            "title": "Top pairs by Liquidity",
+            "favourites": "Favourites",
+            "view-all": "View all Markets"
+        },
+        "footer": {
+            "info": {
+                "title": "Info",
+                "list": {
+                    "about-us": "About Us",
+                    "fees": "Fees",
+                    "token-listing": "Token Listing",
+                    "strade-blog": "Strade Blog"
+                }
+            },
+            "legal": {
+                "title": "Legal",
+                "list": {
+                    "terms-of-use": "Terms of Use",
+                    "privacy-policy": "Privacy Policy",
+                    "trading-rules": "Trading Rules",
+                    "aml-policy": "AML Policy"
+                }
+            },
+            "service": {
+                "title": "Service",
+                "list": {
+                    "exchange": "Exchange",
+                    "wallet": "Wallet",
+                    "but-crypto": "But Crypto",
+                    "swap": "Swap"
+                }
+            },
+            "support": {
+                "title": "Support",
+                "list": {
+                    "faq": "FAQ",
+                    "help-center": "Help Center",
+                    "verification": "verification",
+                    "api-documentation": "API Documentation"
+                }
+            },
+            "copyright": "© {{year}} Strade.io. All Rights Reserved"
+        }
+    }
+}
