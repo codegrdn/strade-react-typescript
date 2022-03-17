@@ -41,6 +41,14 @@ const HeroPurchase: FC<PurchaseProps> = () => {
             coinIds.forEach(item => {
                 prices[item] = response?.data[item][fromCurrency.value]
             })
+
+            if (!to) {
+                setFrom('');
+                setTo('');
+            } else {
+                setTo(to);
+                setFrom(String(roundingValue(Number(to) * prices[toCurrency.value])));
+            }
         }
 
         return prices;
@@ -52,6 +60,14 @@ const HeroPurchase: FC<PurchaseProps> = () => {
 
     function handleChangeСurrencyForTo(e: any) {
         setToCurrency(e);
+
+        if (!to) {
+            setFrom('');
+            setTo('');
+        } else {
+            setTo(to);
+            setFrom(String(roundingValue(Number(to) * prices[e.value])));
+        }
     }
 
     function handleChangePaymentMethod(e: any) {
