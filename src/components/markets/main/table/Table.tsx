@@ -20,9 +20,9 @@ interface TableProps {
 const Table: FC<TableProps> = () => {
     const { t } = useTranslation();
     const filters = useTypedSelector(state => state.filters);
-    const currence = useTypedSelector(state => state.currence.currence);
+    const currency = useTypedSelector(state => state.currency.currency);
     const platforms = useTypedSelector(state => state.platforms);
-    const defaultParams = { vs_currency: currence };
+    const defaultParams = { vs_currency: currency };
 
     const config = getCoinsMarkets(defaultParams);
     const { response, sendData }  = useRequest(config);
@@ -67,7 +67,7 @@ const Table: FC<TableProps> = () => {
         } else {
             sendData(getCoinsMarkets(defaultParams));
         }
-    }, [currence, filters]);
+    }, [currency, filters]);
 
     const columns:  TableColumn<RowTable>[]  = [
         {
@@ -76,7 +76,7 @@ const Table: FC<TableProps> = () => {
             selector: row => row.name,
             cell: (row) => (
                 <div className="col-favourites">
-                    <ThStar coin={row} />
+                        <ThStar coin={row} />
                         <img src={row.image} style={{marginRight: '10px', width: '40px'}} />
                     <p className="col-info">{row.name}</p>
                 </div>

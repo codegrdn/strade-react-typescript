@@ -1,10 +1,10 @@
 import { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from "react-i18next";
-import { getLanguageByWord, selectLanguage, defaultSelectLanguage } from '../../../../helpers/language';
+import { getLanguageByWord, selectLanguage, getDefaultSelectLanguage } from '../../../../helpers/language';
 import SelectCore from '../core/SelectCore';
 import { changeLanguageAction } from "../../../../store/reducers/Language";
-import { changeCurrenceAction } from "../../../../store/reducers/Currence";
+import { useTypedSelector } from '../../../../hooks/useTypedSelector';
 
 interface SelectLanguageProps {
 
@@ -13,22 +13,19 @@ interface SelectLanguageProps {
 const SelectLanguage: FC<SelectLanguageProps> = () => {
     const dispatch = useDispatch();
     const { i18n } = useTranslation();
-    const [selectedLanguage, setSelectedLanguage] = useState(defaultSelectLanguage);
+    const { language } = useTypedSelector(state => state.language)
+    const [selectedLanguage, setSelectedLanguage] = useState(getDefaultSelectLanguage(language));
 
-    function handlerFilterMarket(e: any): void {
-        let label = e.label.split('/');
-
-        if (i18n.language !== label[0].toLowerCase().trim()) {
-            i18n.changeLanguage(getLanguageByWord(label[0].toLowerCase().trim()));
+    function handlerChangeLanguage(e: any): void {
+        if (i18n.language !== e.label.toLowerCase().trim()) {
+            i18n.changeLanguage(getLanguageByWord(e.label.toLowerCase().trim()));
         }
 
-        dispatch(changeLanguageAction({language: getLanguageByWord(label[0].toLowerCase().trim()) }))
-        dispatch(changeCurrenceAction({currence: label[1].toLowerCase().trim()}))
-
+        dispatch(changeLanguageAction({language: getLanguageByWord(e.label.toLowerCase().trim()) }))
         setSelectedLanguage(e);
     }
 
-    return <SelectCore values={selectLanguage} selected={selectedLanguage} onChange={handlerFilterMarket} />;
+    return <SelectCore values={selectLanguage} selected={selectedLanguage} onChange={handlerChangeLanguage} />;
 }
 
 export default SelectLanguage;

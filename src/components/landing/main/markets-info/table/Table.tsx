@@ -1,6 +1,5 @@
-import { FC, useState, useEffect, useMemo } from 'react'
+import { FC, useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next';
-import { useTypedSelector } from '../../../../../hooks/useTypedSelector';
 import { getCoinsMarkets } from '../../../../../api/rest/CoinService';
 import useRequest from '../../../../../hooks/useRequest';
 import DataTable, { TableColumn } from 'react-data-table-component';
@@ -14,15 +13,14 @@ interface TableProps {
 
 const Table: FC<TableProps> = () => {
     const { t } = useTranslation();
-    const currence = useTypedSelector(state => state.currence.currence);
     const defaultParams = { 
-        vs_currency: currence,
+        vs_currency: 'usd',
         per_page: 5,
         page: 1,
     };
     
     const config = getCoinsMarkets(defaultParams);
-    const { response, sendData }  = useRequest(config);
+    const { response }  = useRequest(config);
     const [isLoading, setIsLoading] = useState(true);
 
     const values = useMemo(() => {
@@ -33,10 +31,6 @@ const Table: FC<TableProps> = () => {
         setIsLoading(false);
         return data;
     }, [response]);
-
-    useEffect(() => {
-        sendData(getCoinsMarkets(defaultParams));
-    }, [currence]);
 
     const columns:  TableColumn<RowTable>[]  = [
         {

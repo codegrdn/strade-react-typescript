@@ -22,17 +22,19 @@ export const getLanguageByWord = (value: string) => {
 
 export const selectLanguage: ISelect[] = [
     {
-        'value': 'usd',
-        'label': 'English / USD',
+        value: 'en',
+        label: 'English',
     },
     {
-        'value': 'gbp',
-        'label': 'English / GBP',
-    },
-    {
-        'value': 'rub',
-        'label': 'Russian / RUB',
+        value: 'ru',
+        label: 'Russian',
     },
 ];
 
-export const defaultSelectLanguage: ISelect = selectLanguage[0];
+interface GetDefaultSelectLanguageParams {
+    language: string
+}
+
+export const getDefaultSelectLanguage: any = (language: string) => {
+    return selectLanguage.filter((item) => (item.value === language))[0];
+}

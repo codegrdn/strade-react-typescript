@@ -1,13 +1,13 @@
 import { combineReducers } from "redux";
 import { languageReducer } from "./Language";
-import { currenceReducer } from "./Currence";
+import { currencyReducer } from "./Currency";
 import { coinsReducer } from "./Coins";
 import { plaformsReducer } from "./CoinPlatforms";
 import { marketTableFiltersReducer } from "./MarketTableFilters";
 
 export const rootReducer = combineReducers({
     language: languageReducer,
-    currence: currenceReducer,
+    currency: currencyReducer,
     coins: coinsReducer,
     platforms: plaformsReducer,
     filters: marketTableFiltersReducer

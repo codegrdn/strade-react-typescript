@@ -1,3 +1,5 @@
+import { defaultLanguage } from '../../helpers/language';
+
 enum LanguageActionTypes {
     CHANGE_LANGUAGE = 'CHANGE_LANGUAGE',
 }
@@ -12,7 +14,7 @@ interface LanguageAction {
 }
 
 const defaultState: LanguageState = {
-    language: 'usa',
+    language: defaultLanguage,
 };
 
 const CHANGE_LANGUAGE = "CHANGE_LANGUAGE";

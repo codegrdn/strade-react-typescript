@@ -18,13 +18,13 @@ interface DataChart {
 }
 
 const CoinChart: FC<CoinChartProps> = ({coinId, color, width = 140, height = 70}) => {
-    const currence = useTypedSelector(state => state.currence.currence);
+    const currency = useTypedSelector(state => state.currency.currency);
     const config = useMemo(() => {
         return getChart(coinId, {
-            vs_currency: currence,
+            vs_currency: currency,
             days: '1'
         });
-    }, [currence])
+    }, [currency])
 
     const { response } = useRequestChart(config);
 
