@@ -65,7 +65,7 @@
         "trade-info": {
             "subtitle": "TXT",
             "title": "Trade. Anywhere",
-            "descriptor": "Compatible with multiple devices, start trading with <br /> safety and convenience"
+            "description": "Compatible with multiple devices, start trading with <br /> safety and convenience"
         },
         "privileges": {
             "subtitle": "WHY CHOOSE US",
@@ -142,7 +142,7 @@
                 "list": {
                     "exchange": "Exchange",
                     "wallet": "Wallet",
-                    "but-crypto": "But Crypto",
+                    "buy-crypto": "Buy Crypto",
                     "swap": "Swap"
                 }
             },
@@ -151,11 +151,24 @@
                 "list": {
                     "faq": "FAQ",
                     "help-center": "Help Center",
-                    "verification": "verification",
+                    "verification": "Verification",
                     "api-documentation": "API Documentation"
                 }
             },
             "copyright": "© {{year}} Strade.io. All Rights Reserved"
+        },
+        "modals": {
+            "create": {
+                "title": "CREATE AN ACCOUNT",
+                "description": "By creating an account, you agree to Strade's",
+                "terms-of-service": "Terms of Service",
+                "privacy-policy": "Privacy Policy",
+                "sign-up": "Sign Up",
+                "form": {
+                    "email": "Email address",
+                    "password": "Password"
+                }
+            }
         }
     },
     "swap": {

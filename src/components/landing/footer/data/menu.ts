@@ -68,8 +68,8 @@ export const menu: IItemFooter[] = [
                 title: 'landing.footer.service.list.wallet'
             },
             {
-                id: 'but-crypto',
-                title: 'landing.footer.service.list.but-crypto'
+                id: 'buy-crypto',
+                title: 'landing.footer.service.list.buy-crypto'
             },
             {
                 id: 'swap',

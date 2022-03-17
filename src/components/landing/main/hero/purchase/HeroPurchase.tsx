@@ -1,4 +1,4 @@
-import { FC, useEffect, useMemo, useState } from 'react';
+import { FC, useContext, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getPrice } from '../../../../../api/rest/SimpleService';
 import useRequest from '../../../../../hooks/useRequest';
@@ -7,6 +7,7 @@ import { paymentMethods } from './data/payment-method';
 import { coins, coinIds } from './data/coins';
 import { currency } from './data/currency';
 import { roundingValue } from '../../../../../helpers/math';
+import { LandingContext } from '../../../context/LandingContext';
 
 interface PurchaseProps {
 
@@ -14,6 +15,8 @@ interface PurchaseProps {
 
 const HeroPurchase: FC<PurchaseProps> = () => {
     const { t } = useTranslation();
+    const {createModal} = useContext(LandingContext);
+
     const [paymentMethod, setPaymentMethod] = useState('visa');
     const [to, setTo] = useState('');
     const [from, setFrom] = useState('');
@@ -162,7 +165,7 @@ const HeroPurchase: FC<PurchaseProps> = () => {
                         ))
                     }
                 </div>
-                <button className="purchase__btn btn btn--blue" type="submit">
+                <button className="purchase__btn btn btn--blue" onClick={createModal.togleModals}>
                     { t('landing.hero.purchase.buy-item', { item: toCurrency.label }) }
                 </button>
             </div>

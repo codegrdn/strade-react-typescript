@@ -1,5 +1,6 @@
-import { FC } from 'react';
+import { FC, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+import { LandingContext } from '../../../context/LandingContext';
 
 interface HeroContentProps {
 
@@ -7,6 +8,7 @@ interface HeroContentProps {
 
 const HeroContent: FC<HeroContentProps> = () => {
     const { t } = useTranslation();
+    const {createModal} = useContext(LandingContext);
 
     return (
         <div className="hero__content">
@@ -16,7 +18,7 @@ const HeroContent: FC<HeroContentProps> = () => {
                 <p>{ t('landing.hero.content.description') }</p>
             </div>
             
-            <button className="hero__btn btn btn--green" data-modal="modal-2">{ t('landing.hero.content.free-account') }</button>
+            <button className="hero__btn btn btn--green" onClick={createModal.togleModals}>{ t('landing.hero.content.free-account') }</button>
         </div>
     )
 }

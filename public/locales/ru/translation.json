@@ -2,55 +2,160 @@
     "menu": {
         "Home": "Главная",
         "Swap": "Обмен",
-        "Markets": "Магазин"
+        "Markets": "Рынки"
     },
     "markets": {
-        "title-header": "Магазин",
+        "title-header": "Рынки",
         "columns": {
-            "name": "Название",
+            "name": "Имя",
             "last-price": "Последняя цена",
-            "24h-сhange": "24ч Изменения",
-            "24h-high": "24ч Высокое",
-            "24h-low": "24ч Низкое",
-            "market-cap": "Market Cap",
-            "24h-volume": "24h Volume"
+            "24h-сhange": "24ч",
+            "24h-high": "Максимум за 24ч",
+            "24h-low": "Минимум за 24ч",
+            "market-cap": "Рыночная капитализация",
+            "24h-volume": "Объем торгов за 24ч"
         },
         "filters": {
             "price": {
-                "Select Last Price": "Выберете изменение цены",
-                "Last Price Down": "Цена уменьшилась",
-                "Last Price Up": "Цена возрасла"
+                "Select Last Price": "Выберите последнюю цену",
+                "Last Price Down": "Последнее снижение цены",
+                "Last Price Up": "Последнее повышение цены"
             },
-            "favourites": "Выбранные",
-            "select-platform": "Выбрать платформу",
-            "select-category": "Выбрать категорию",
-            "select-with-item": "Выбрать {{item}}",
-            "category": "категорию",
-            "search": "Поиск..."
+            "favourites": "Избранные",
+            "select-platform": "Выберите платформу",
+            "select-category": "Выберите категорию",
+            "select-with-item": "Выберите {{item}}",
+            "category": "category",
+            "search": "Найти..."
         }
     },
     "landing": {
         "hero": {
-            "subTitle": "BUILT ON STELLAR DEX",
-            "title": "",
+            "content": {
+                "subTitle": "ОСНОВАНО НА ДАННЫХ STELLAR DEX",
+                "title": "Криптореволюция!",
+                "description": "Мы используем Stellar Blockchain и технологию DEX чтобы предоставить трейдерам безопасную, надежную и быструю платформу обмена криптовалютой.",
+                "free-account": "Зарегистрируйтесь бесплатно"
+            },
             "features": {
-                "multicurrency-wallet": {
-                    "title": "<span class='highlight-text'>Multicurrency</span> Wallet",
-                    "decription": "Keep your coins, tokens, fiat all in one wallet"
+                "wallet": {
+                    "title": "<span class='highlight-text'>Мультивалютный</span> Wallet",
+                    "description": "Монеты, токены и фиатные валюты в одном кошельке"
                 },
-                "instant-swap": {
-                    "title": "Instant <span class='highlight-text'>Swap</span>",
-                    "decription": "Exchange any currency instantly at the best price"
+                "swap": {
+                    "title": "Мгновенный <span class='highlight-text'>обмен</span>",
+                    "description": "Мгновенный обмен любой валюты по лучшей цене"
                 },
-                "built-on-dex": {
-                    "title": "Built on <span class='highlight-text'>DEX</span>",
-                    "decription": "Take full advantage of the Stellar Blockchain"
+                "dex": {
+                    "title": "Основано на <span class='highlight-text'>DEX</span>",
+                    "description": "Воспользуйтесь всеми преимуществами Stellar Blockchain"
                 },
-                "eu-license": {
-                    "title": "<span class='highlight-text'>EU</span> License",
-                    "decription": "Regulated under EU jurisdiction"
+                "license": {
+                    "title": "<span class='highlight-text'>Европейская</span> лицензия",
+                    "description": "Регулируется юрисдикцией Евросоюза"
+                }
+            },
+            "purchase": {
+                "title": "Купить криптовалюту",
+                "buy": "Получаете",
+                "for": "Отдаете",
+                "buy-item": "Купить {{item}}"
+            }
+        },
+        "trade-info": {
+            "subtitle": "TXT",
+            "title": "Трейдинг. Где угодно",
+            "description": "Кроссплатформенная поддержка нескольких устройств, начните торговать <br /> безопасно и удобно"
+        },
+        "privileges": {
+            "subtitle": "ПОЧЕМУ ИМЕННО МЫ",
+            "title": "Трейдинг с привилегиями",
+            "list": {
+                "security": {
+                    "title": "Комплексная защита с соблюдением безопасности и закона",
+                    "subtitle": "МАКСИМАЛЬНАЯ БЕЗОПАСНОСТЬ",
+                    "description": "Strade.io защищает ваши средства как централизованными, так и децентрализованными методами. Первая биржа, вложившая миллионы в фонды безопасности и права, чтобы обеспечить дополнительную защиту ваших активов."
+                },
+                "deposit": {
+                    "title": "Эффективный трейдинг и мгновенный ввод / вывод средств",
+                    "subtitle": "ЛЕГКИЙ ДЕПОЗИТ",
+                    "description": "Как признанная биржа, использующая передовые технологии, Strade.io предлагает эффективную и удобную торговую систему, а также возможность мгновенного ввода и вывода средств."
+                },
+                "liquid": {
+                    "title": "Получите максимальную прибыль от трейдинга",
+                    "subtitle": "ВЫСОКАЯ ЛИКВИДНОСТЬ",
+                    "description": "Благодаря технологиям искусственного интеллекта наша модель анализирует более чем 250 возможных рыночных параметров, обеспечивая высокую ликвидность."
+                },
+                "support": {
+                    "title": "Помощь в любое время",
+                    "subtitle": "ПОДДЕРЖКА 24/7",
+                    "description": "Мы обеспечиваем круглосуточную онлайн-поддержку клиентов, чтобы вы могли связаться с нами в случае необходимости."
                 }
             }
+        },
+        "news": {
+            "subtitle": "Новости",
+            "title": "Последние новости и события",
+            "atricales": {
+                "read-more": "Подробнее",
+                "augur": {
+                    "title": "Augur (REP) версия 2.0",
+                    "description": "28 июля Augur обновил свое программное обеспечение до версии 2.0"
+                },
+                "filecoin": {
+                    "title": "Filecoin [IOU] теперь доступен для трейдинга",
+                    "description": "Мы рады объявить о поддержке Filecoin [IOU] (XFIL) на Strade!"
+                },
+                "matic": {
+                    "title": "Matic (MATIC) теперь доступен на Strade",
+                    "description": "Мы рады приветствовать Matic (MATIC) на Strade! Теперь вы можете использовать MATIC в трейдинге"
+                }
+            }
+        },
+        "market-info": {
+            "subtitle": "Рынки",
+            "title": "Лучшие пары по ликвидности",
+            "favourites": "Избранные",
+            "view-all": "Смотреть все рынки"
+        },
+        "footer": {
+            "info": {
+                "title": "Информация",
+                "list": {
+                    "about-us": "О нас",
+                    "fees": "Комиссии",
+                    "token-listing": "Список токенов",
+                    "strade-blog": "Strade Блог"
+                }
+            },
+            "legal": {
+                "title": "Безопасность",
+                "list": {
+                    "terms-of-use": "Условия использования",
+                    "privacy-policy": "Политика конфиденциальности",
+                    "trading-rules": "Правила торговли",
+                    "aml-policy": "Политика AML"
+                }
+            },
+            "service": {
+                "title": "Услуги",
+                "list": {
+                    "exchange": "Биржа",
+                    "wallet": "Кошелек",
+                    "buy-crypto": "Приобрести криптовалюту",
+                    "swap": "Обмен"
+                }
+            },
+            "support": {
+                "title": "Помощь",
+                "list": {
+                    "faq": "FAQ",
+                    "help-center": "Центр поддержки",
+                    "verification": "Верификация",
+                    "api-documentation": "API Документация"
+                }
+            },
+            "copyright": "© {{year}} Strade.io. Все права защищены"
         }
     }
 }
