@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useTypedSelector } from '../../../../hooks/useTypedSelector';
-import { addCoinAction, removeCoinAction } from '../../../../store/reducers/Coins';
-import ICoin from '../../../../types/ICoin';
+import { useDispatch } from 'react-redux';
+import { useTypedSelector } from '../../../../../hooks/useTypedSelector';
+import { addCoinAction, removeCoinAction } from '../../../../../store/reducers/Coins';
+import ICoin from '../../../../../types/ICoin';
 
 interface ThStarProps {
     coin: ICoin

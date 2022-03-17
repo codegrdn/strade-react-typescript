@@ -16,7 +16,7 @@ const MainLanding: FC<MainLandingProps> = () => {
             <MarketsInfo />
             <TradeInfo />
             <Privileges />
-            <News />
+            {/* <News /> */}
         </main>
     )
 }

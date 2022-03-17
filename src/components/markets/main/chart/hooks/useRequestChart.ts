@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
-import IUseRequest from '../../../../types/IUseRequest';
+import IUseRequest from '../../../../../types/IUseRequest';
 
 const useRequestChart = ( axiosParams: AxiosRequestConfig ) : IUseRequest  => {
     const [response, setResponse] = useState<AxiosResponse>();

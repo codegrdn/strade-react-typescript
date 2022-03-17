@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from "react-i18next";
-import { addFilterMarketTableAction } from '../../../../store/reducers/MarketTableFilters';
+import { addFilterMarketTableAction } from '../../../../../store/reducers/MarketTableFilters';
 
 interface SearchProps {
 

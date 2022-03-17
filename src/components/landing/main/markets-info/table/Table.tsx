@@ -5,8 +5,7 @@ import { getCoinsMarkets } from '../../../../../api/rest/CoinService';
 import useRequest from '../../../../../hooks/useRequest';
 import DataTable, { TableColumn } from 'react-data-table-component';
 import { getColor, getColorClass } from '../../../../../helpers/colors';
-import ICoin from '../../../../../types/ICoin';
-import CoinChart from '../../../../markets/chart/CoinChart';
+import CoinChart from '../../../../markets/main/chart/CoinChart';
 import RowTable from '../../../../../types/RowTableMarket';
 
 interface TableProps {

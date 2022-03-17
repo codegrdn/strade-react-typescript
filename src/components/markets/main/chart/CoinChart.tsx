@@ -1,8 +1,8 @@
 import { FC, useMemo } from 'react';
 import { useState } from 'react';
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import { useTypedSelector } from '../../../../hooks/useTypedSelector';
 import { AreaChart, Area, YAxis } from 'recharts';
-import { getChart } from '../../../api/rest/CoinService';
+import { getChart } from '../../../../api/rest/CoinService';
 import useRequestChart from './hooks/useRequestChart';
 
 interface CoinChartProps {

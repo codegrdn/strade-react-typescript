@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { getColorClass, getColor } from '../../../../helpers/colors';
-import ICoin from '../../../../types/ICoin';
+import { getColorClass, getColor } from '../../../../../helpers/colors';
+import ICoin from '../../../../../types/ICoin';
 import CoinChart from '../../chart/CoinChart';
 
 interface CardMarketItemProps {

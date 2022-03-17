@@ -1,13 +1,13 @@
 import { FC, useEffect, useMemo, useState } from 'react';
 import DataTable, { TableColumn } from 'react-data-table-component';
 import { useTranslation } from "react-i18next";
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
-import { getColor, getColorClass } from '../../../helpers/colors';
-import useRequest from '../../../hooks/useRequest';
-import ICoin from '../../../types/ICoin';
+import { useTypedSelector } from '../../../../hooks/useTypedSelector';
+import { getColor, getColorClass } from '../../../../helpers/colors';
+import useRequest from '../../../../hooks/useRequest';
+import ICoin from '../../../../types/ICoin';
 import CoinChart from '../chart/CoinChart';
 import ThStar from './th-star/ThStar';
-import { getCoinsMarkets } from '../../../api/rest/CoinService';
+import { getCoinsMarkets } from '../../../../api/rest/CoinService';
 
 interface RowTable extends ICoin {
     chart?: string,

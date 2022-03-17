@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useTypedSelector } from '../../../../hooks/useTypedSelector';
-import { addFilterMarketTableAction, clearFilterMarketTableAction, MarketTableFiltersKeyTypes  } from '../../../../store/reducers/MarketTableFilters';
+import { useTypedSelector } from '../../../../../hooks/useTypedSelector';
+import { addFilterMarketTableAction, clearFilterMarketTableAction, MarketTableFiltersKeyTypes  } from '../../../../../store/reducers/MarketTableFilters';
 import { useTranslation } from "react-i18next";
 
 enum Classes {

@@ -1,17 +1,17 @@
 import {useState, useMemo, FC } from 'react';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from "react-i18next";
-import SelectCore from '../../../shared/select/core/SelectCore';
-import ISelect from '../../../../types/ISelect';
-import { addFilterMarketTableAction } from '../../../../store/reducers/MarketTableFilters';
-import { useTypedSelector } from '../../../../hooks/useTypedSelector';
+import SelectCore from '../../../../shared/select/core/SelectCore';
+import ISelect from '../../../../../types/ISelect';
+import { addFilterMarketTableAction } from '../../../../../store/reducers/MarketTableFilters';
+import { useTypedSelector } from '../../../../../hooks/useTypedSelector';
 
 interface PlatformProps {
 
 }
 
 const Platform: FC<PlatformProps> = () => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const dispatch = useDispatch();
     const platforms = useTypedSelector(state => state.platforms);
     const defaultOption: ISelect = {

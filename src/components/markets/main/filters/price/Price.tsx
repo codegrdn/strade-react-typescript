@@ -1,8 +1,8 @@
-import { t } from 'i18next';
-import React, { FC, useState } from 'react'
+import { FC, useState } from 'react'
+import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { addFilterMarketTableAction } from '../../../../store/reducers/MarketTableFilters';
-import SelectCore from '../../../shared/select/core/SelectCore';
+import { addFilterMarketTableAction } from '../../../../../store/reducers/MarketTableFilters';
+import SelectCore from '../../../../shared/select/core/SelectCore';
 
 interface PriceProps {
 
@@ -10,6 +10,8 @@ interface PriceProps {
 
 const Price: FC<PriceProps> = () => {
     const dispatch = useDispatch();
+    const { t } = useTranslation();
+
     const values = [
         {
             value: '',

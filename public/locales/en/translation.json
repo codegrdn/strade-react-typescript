@@ -157,5 +157,9 @@
             },
             "copyright": "© {{year}} Strade.io. All Rights Reserved"
         }
+    },
+    "swap": {
+        "title": "Swap",
+        "currency-conversion": "Currency conversion"
     }
 }

@@ -1,9 +1,9 @@
 import { FC, useEffect } from 'react';
-import BarMarket from '../bar/BarMarket';
+import BarMarket from './bar/BarMarket';
 import { useTranslation } from "react-i18next";
-import CardMarketList from '../card/list/CardMarketList';
-import Table from '../table/Table';
-import FiltersPageMarket from '../filters/FiltersPageMarket';
+import CardMarketList from './card/list/CardMarketList';
+import Table from './table/Table';
+import FiltersPageMarket from './filters/FiltersPageMarket';
 import { getCoinsList } from '../../../api/rest/CoinService';
 import useRequest from '../../../hooks/useRequest';
 import ISelect from '../../../types/ISelect';
