@@ -1,4 +1,4 @@
-import { FC, useContext } from 'react'
+import { FC, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import { LandingContext } from '../../context/LandingContext';
 
@@ -9,6 +9,13 @@ interface CreateModalProps {
 const CreateModal: FC<CreateModalProps> = () => {
     const {createModal} = useContext(LandingContext);
     const { t } = useTranslation();
+    const [typePasswordIntput, setTypePasswordIntput] = useState('password');
+    const [classesEye, setClassesEye] = useState('show-icon show-icon--line')
+
+    function hadlerChangeTypePasswordInput (e: any) {
+        setClassesEye(typePasswordIntput === 'password' ? "show-icon show-icon--line visually-hidden" : "show-icon show-icon--line");
+        setTypePasswordIntput(typePasswordIntput === 'password' ? "text" : "password");
+    }
 
     return (
         <div className={"modal" + (createModal.show ? " modal--active" : " ")}>
@@ -33,16 +40,16 @@ const CreateModal: FC<CreateModalProps> = () => {
                             <div className="form__input-wrap modal__form-input-wrap">
                                 <input
                                     className="form__input modal__form-input"
-                                    type="password"
+                                    type={typePasswordIntput}
                                     id="password"
                                     placeholder={ t('landing.modals.create.form.password') }
                                     autoComplete="current-password"
                                 />
-                                    <div className="show-icon-wrap js-show-icon">
+                                    <div className="show-icon-wrap js-show-icon" onClick={hadlerChangeTypePasswordInput}>
                                         <svg className="show-icon" width="20" height="20">
                                             <use xlinkHref="#eye-icon"></use>
                                         </svg>
-                                        <svg className="show-icon show-icon--line" width="20" height="20">
+                                        <svg className={classesEye} width="20" height="20">
                                             <use xlinkHref="#line-icon"></use>
                                         </svg>
                                     </div>
