@@ -73,7 +73,8 @@ const Table: FC<TableProps> = () => {
         {
             id: 'name',
             name: t('markets.columns.name'),
-            selector: row => row.name,
+            selector: row => row.name.toLowerCase(),
+            format: (row, index) => (row.name),
             cell: (row) => (
                 <div className="col-favourites">
                         <ThStar coin={row} />
