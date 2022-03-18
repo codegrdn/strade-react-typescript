@@ -173,6 +173,11 @@
     },
     "swap": {
         "title": "Swap",
-        "currency-conversion": "Currency conversion"
+        "currency-conversion": "Currency conversion",
+        "convert": "Convert",
+        "swap": "Swap",
+        "to": "To",
+        "available": "Available",
+        "enter-amount": "Enter amount"
     }
 }
