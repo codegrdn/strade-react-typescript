@@ -1,9 +1,10 @@
-import { FC, useState } from 'react'
+import { FC, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import Topbar from './topbar/Topbar';
 import imageSvg from './image/swap.svg';
-import { coins, selectedCoin } from './data/coins';
+import { coins } from './data/coins';
 import SelectCore from '../../shared/select/core/SelectCore';
+import { SwapContext } from '../context/SwapContext';
 
 interface MainProps {
 
@@ -11,6 +12,8 @@ interface MainProps {
 
 const Main: FC<MainProps> = () => {
     const { t } = useTranslation();
+    const {createModal} = useContext(SwapContext);
+
     const [coin, setCoin] = useState('BTC');
     const [value, setValue] = useState('');
 
@@ -61,7 +64,13 @@ const Main: FC<MainProps> = () => {
                                 <div className="swap__form-text">{ t('swap.to') }</div>
 
                                 <SelectCore values={coins} selected={toCoin} onChange={handlerSelectTo} />
-                                <button className="swap__form-submit-btn btn btn-green" type="button">{ t('swap.swap') }</button>
+                                <button 
+                                    className="swap__form-submit-btn btn btn-green" 
+                                    type="button" 
+                                    onClick={() => {createModal.togleModals()}}
+                                >
+                                    { t('swap.swap') }
+                                </button>
                             </div>
                         </form>
                     </div>

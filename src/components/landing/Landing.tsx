@@ -3,7 +3,7 @@ import FooterLanding from './footer/FooterLanding';
 import HeaderLanding from './header/HeaderLanding';
 import MainLanding from './main/MainLanding';
 import '../../assets/css/index-style.min.css';
-import { LandingContext, landingState } from './context/LandingContext';
+import { LandingContext } from './context/LandingContext';
 import CreateModal from './modals/create/CreateModal';
 
 interface LandingProps {
@@ -15,7 +15,6 @@ const Landing: FC<LandingProps> = () => {
     const toggleCreateModal = () => {
         setCreateModal(!createModal);
     }
-
 
     return (
         <LandingContext.Provider value={{

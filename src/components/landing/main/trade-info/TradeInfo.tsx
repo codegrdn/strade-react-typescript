@@ -26,7 +26,6 @@ const TradeInfo: FC<TradeInfoProps> = () => {
     return (
         <section className="trade-info">
             <div className="box">
-                <div className="trade-info__subtitle subtitle">{ t('landing.trade-info.subtitle') }</div>
                 <h2 className="trade-info__title title">{ t('landing.trade-info.title') }</h2>
                 <div className="trade-info__descr">
                     <p>{ parse(t('landing.trade-info.description')) }</p>

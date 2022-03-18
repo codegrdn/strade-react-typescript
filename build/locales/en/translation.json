@@ -178,6 +178,19 @@
         "swap": "Swap",
         "to": "To",
         "available": "Available",
-        "enter-amount": "Enter amount"
+        "enter-amount": "Enter amount",
+        "modals": {
+            "create": {
+                "title": "CREATE AN ACCOUNT",
+                "description": "By creating an account, you agree to Strade's",
+                "terms-of-service": "Terms of Service",
+                "privacy-policy": "Privacy Policy",
+                "sign-up": "Sign Up",
+                "form": {
+                    "email": "Email address",
+                    "password": "Password"
+                }
+            }
+        }
     }
 }

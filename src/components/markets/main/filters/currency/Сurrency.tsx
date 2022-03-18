@@ -1,15 +1,15 @@
 import { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { selectCurrency, getSelectedDefaultCurrency } from '../../../../helpers/currencies';
-import SelectCore from '../core/SelectCore';
-import { changeCurrencyAction } from "../../../../store/reducers/Currency";
-import { useTypedSelector } from '../../../../hooks/useTypedSelector';
+import { selectCurrency, getSelectedDefaultCurrency } from '../../../../../helpers/currencies';
+import SelectCore from '../../../../shared/select/core/SelectCore';
+import { changeCurrencyAction } from "../../../../../store/reducers/Currency";
+import { useTypedSelector } from '../../../../../hooks/useTypedSelector';
 
-interface SelectLanguageProps {
+interface CurrencyProps {
 
 }
 
-const SelectCurrency: FC<SelectLanguageProps> = () => {
+const Currency: FC<CurrencyProps> = () => {
     const dispatch = useDispatch();
     const { currency } = useTypedSelector(state => state.currency)
     const [selectedCurrency, setSelectedCurrency] = useState(getSelectedDefaultCurrency(currency));
@@ -24,4 +24,4 @@ const SelectCurrency: FC<SelectLanguageProps> = () => {
     );
 }
 
-export default SelectCurrency;
+export default Currency;
