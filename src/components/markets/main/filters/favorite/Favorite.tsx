@@ -1,9 +1,7 @@
-import React, { FC } from 'react';
+import { FC, useContext } from 'react';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useTypedSelector } from '../../../../../hooks/useTypedSelector';
-import { addFilterMarketTableAction, clearFilterMarketTableAction, MarketTableFiltersKeyTypes  } from '../../../../../store/reducers/MarketTableFilters';
 import { useTranslation } from "react-i18next";
+import { MarketMainContext } from '../../context/MarketMainContext';
 
 enum Classes {
     DEFAULT_CLASS = 'markets__coin-item',
@@ -16,17 +14,16 @@ interface FavoriteProps {
 
 const Favorite: FC<FavoriteProps>  = () => {
     const {t} = useTranslation();
-    const dispatch = useDispatch();
+    const { filters, coins } = useContext(MarketMainContext);
     const [classes, setClasses] = useState<string>(Classes.DEFAULT_CLASS);
-    const coins = useTypedSelector(state => state.coins);
 
     const handlerClick = () => {
         if (Classes.DEFAULT_CLASS === classes) {
             setClasses(Classes.DEFAULT_CLASS + " " +  Classes.ACTIVE_CLASS);
-            dispatch(addFilterMarketTableAction({coins: coins}));
+            filters.addFilter({coins: coins.list});
         } else {
             setClasses(Classes.DEFAULT_CLASS);
-            dispatch(clearFilterMarketTableAction({ key: MarketTableFiltersKeyTypes.coins }));
+            filters.addFilter({coins: []});
         }
     }
 

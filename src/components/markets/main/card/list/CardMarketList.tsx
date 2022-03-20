@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import { useTypedSelector } from '../../../../../hooks/useTypedSelector';
+import { FC, useContext } from 'react';
+import { MarketMainContext } from '../../context/MarketMainContext';
 import CardMarketItem from '../item/CardMarketItem';
 
 interface CardMarketListProps {
@@ -7,12 +7,12 @@ interface CardMarketListProps {
 }
 
 const CardMarketList: FC<CardMarketListProps> = () => {
-    const coins = useTypedSelector(state => state.coins);
+    const { coins } = useContext(MarketMainContext);
 
     return (
         <div className="markets__card-list custom-scroll">
             {
-                coins.map((coin) => (
+                coins.list.map((coin) => (
                     <CardMarketItem key={coin.id} coin={coin} />
                 ))
             }

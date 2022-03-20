@@ -1,14 +1,14 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import BarMarket from './bar/BarMarket';
 import { useTranslation } from "react-i18next";
 import CardMarketList from './card/list/CardMarketList';
 import Table from './table/Table';
 import FiltersPageMarket from './filters/FiltersPageMarket';
-import { getCoinsList } from '../../../api/rest/CoinService';
-import useRequest from '../../../hooks/useRequest';
-import ISelect from '../../../types/ISelect';
-import { addPlatformsAction } from '../../../store/reducers/CoinPlatforms';
-import { useDispatch } from 'react-redux';
+import { MarketMainContext } from './context/MarketMainContext';
+import useCoins from './hooks/useCoins';
+import useFilters from './hooks/useFilters';
+import usePlatforms from './hooks/usePlatforms';
+import useCurrency from './hooks/useCurrency';
 
 interface MarketMainProps {
 
@@ -16,67 +16,49 @@ interface MarketMainProps {
 
 const MarketMain: FC<MarketMainProps> = () => {
     const { t } = useTranslation();
-    const dispatch = useDispatch();
-    const params = getCoinsList(
-        {
-            include_platform: true,
-        }
-    );
-    const { response } = useRequest(params);
-
-    useEffect(() => {
-        let platformsResponse = response?.data;
-        if (platformsResponse) {
-            let platforms: ISelect[] = [];
-            let platformKeys: any[] = [];
-            let platformValues: any = {};
-
-            platformsResponse.forEach((item: any) => {
-                const keys = Object.keys(item?.platforms);
-
-                if (!keys.length) {
-                    return;
-                }
-
-                keys.forEach((key:string, i) => {
-                    const formatKey:string = key.toLowerCase();
-
-                    if (platformKeys.includes(formatKey)) {
-                        platformValues[formatKey].push(item.symbol.toLowerCase());
-                    } else {
-                        platformKeys.push(formatKey);
-                        platformValues[formatKey] = [item.symbol.toLowerCase()];
-                    }
-                });
-            });
-
-            platformKeys.forEach((key) => {
-                platforms.push({ label: key, value: key.toLowerCase() })
-                platformValues[key.toLowerCase()] = platformValues[key.toLowerCase()].join(', ');
-            })
-
-            dispatch(addPlatformsAction(platformValues));
-        }
-    }, [response]);
-
+    const { coinsList, removeCoin, addCoin } = useCoins();
+    const  { filtersMarkets, addFiltersMarkets } = useFilters();
+    const { platforms, addPlatform } = usePlatforms();
+    const { currency, changeCurrency } = useCurrency();
+    
     return (
         <main className='page-main'>
-            <section className="markets">
-                <BarMarket title={ t('markets.title-header') } />
-                
-                <CardMarketList />
+            <MarketMainContext.Provider value={{
+                platforms: {
+                    list: platforms,
+                    addPlatform: addPlatform
+                },
+                filters: {
+                    list: filtersMarkets,
+                    addFilter: addFiltersMarkets
+                },
+                coins: {
+                    list: coinsList,
+                    removeCoin: removeCoin,
+                    addCoin: addCoin
+                },
+                currency: {
+                    currency: currency,
+                    changeCurrency: changeCurrency,
+                }
+            }} >
+                <section className="markets">
+                    <BarMarket title={ t('markets.title-header') } />
+                    
+                    <CardMarketList />
 
-                <div className="markets__content custom-scroll">
-                    <div className="markets__table-head">
-                        <FiltersPageMarket />
-                    </div>
+                    <div className="markets__content custom-scroll">
+                        <div className="markets__table-head">
+                            <FiltersPageMarket />
+                        </div>
 
-                    <div className="markets__table-wrap custom-scroll">
-                        <Table />
+                        <div className="markets__table-wrap custom-scroll">
+                            <Table />
+                        </div>
                     </div>
-                </div>
-                
-            </section>
+                    
+                </section>
+            </MarketMainContext.Provider>
         </main>
     )
 }

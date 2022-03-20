@@ -17,7 +17,6 @@ const Category: FC<CategoryProps> = () => {
     }
 
     const { response, sendData }  = useRequest(getList());
-    const [isLoading, setIsLoading] = useState(true);
     const [selected, setSelected] = useState(defaultSelecte);
 
     const valuesSelect = useMemo(() => {

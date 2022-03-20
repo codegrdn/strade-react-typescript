@@ -1,9 +1,7 @@
-import { FC } from 'react';
+import { FC, useContext } from 'react';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useTypedSelector } from '../../../../../hooks/useTypedSelector';
-import { addCoinAction, removeCoinAction } from '../../../../../store/reducers/Coins';
 import ICoin from '../../../../../types/ICoin';
+import { MarketMainContext } from '../../context/MarketMainContext';
 
 interface ThStarProps {
     coin: ICoin
@@ -13,17 +11,16 @@ const DEFAULT_CLASS: string = 'col-favourites-icon';
 const ACTIVE_CLASS: string = 'col-favourites-icon--active';
 
 const ThStar: FC<ThStarProps> = ({ coin }) => {
-    const dispatch = useDispatch();
-    const coins = useTypedSelector(state => state.coins);
-    const [classes, setClasses] = useState(coins.filter((item) => (item.id === coin.id)).length ? DEFAULT_CLASS + " " +  ACTIVE_CLASS : DEFAULT_CLASS);
+    const { coins } = useContext(MarketMainContext);
+    const [classes, setClasses] = useState(coins.list.filter((item) => (item.id === coin.id)).length ? DEFAULT_CLASS + " " +  ACTIVE_CLASS : DEFAULT_CLASS);
 
     const handleClasses = () => {
         if (DEFAULT_CLASS === classes) {
             setClasses(DEFAULT_CLASS + " " +  ACTIVE_CLASS);
-            dispatch(addCoinAction(coin));
+            coins.addCoin(coin);
         } else {
             setClasses(DEFAULT_CLASS);
-            dispatch(removeCoinAction(coin));
+            coins.removeCoin(coin);
         }
     }
     

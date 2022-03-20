@@ -1,15 +1,14 @@
-import { FC, useState } from 'react'
+import { FC, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
-import { addFilterMarketTableAction } from '../../../../../store/reducers/MarketTableFilters';
 import SelectCore from '../../../../shared/select/core/SelectCore';
+import { MarketMainContext } from '../../context/MarketMainContext';
 
 interface PriceProps {
 
 }
 
 const Price: FC<PriceProps> = () => {
-    const dispatch = useDispatch();
+    const { filters } = useContext(MarketMainContext);
     const { t } = useTranslation();
 
     const values = [
@@ -30,7 +29,7 @@ const Price: FC<PriceProps> = () => {
     
     function handlerFilterMarket(e: any): void {
         setValue(e);
-        dispatch(addFilterMarketTableAction({lastPrice: e.value}))
+        filters.addFilter( { lastPrice: e.value } );
     }
 
     return (

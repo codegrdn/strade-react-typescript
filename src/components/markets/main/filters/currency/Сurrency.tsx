@@ -1,21 +1,18 @@
-import { FC, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { FC, useState, useContext } from 'react';
 import { selectCurrency, getSelectedDefaultCurrency } from '../../../../../helpers/currencies';
 import SelectCore from '../../../../shared/select/core/SelectCore';
-import { changeCurrencyAction } from "../../../../../store/reducers/Currency";
-import { useTypedSelector } from '../../../../../hooks/useTypedSelector';
+import { MarketMainContext } from '../../context/MarketMainContext';
 
 interface CurrencyProps {
 
 }
 
 const Currency: FC<CurrencyProps> = () => {
-    const dispatch = useDispatch();
-    const { currency } = useTypedSelector(state => state.currency)
-    const [selectedCurrency, setSelectedCurrency] = useState(getSelectedDefaultCurrency(currency));
+    const { currency } = useContext(MarketMainContext);
+    const [selectedCurrency, setSelectedCurrency] = useState(getSelectedDefaultCurrency(currency.currency));
 
     function handlerChangeCurrency(e: any): void {
-        dispatch(changeCurrencyAction({currency: e.value}));
+        currency.changeCurrency(e.value);
         setSelectedCurrency(e);
     }
 

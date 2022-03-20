@@ -1,26 +1,24 @@
-import { FC, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { FC, useContext, useState } from 'react';
 import { useTranslation } from "react-i18next";
-import { addFilterMarketTableAction } from '../../../../../store/reducers/MarketTableFilters';
+import { MarketMainContext } from '../../context/MarketMainContext';
 
 interface SearchProps {
 
 }
 
-const Search: FC<SearchProps> = ({}) => {
-    const dispatch = useDispatch();
-    const {t, i18n} = useTranslation();
+const Search: FC<SearchProps> = () => {
+    const { filters } = useContext(MarketMainContext);
+    const { t } = useTranslation();
     const [search, setSearch] = useState('');
 
     function handleSearchButtonClick (e: any) {
         e.preventDefault();
-        
-        dispatch(addFilterMarketTableAction({search: search}))
+        filters.addFilter( { search: search } );
     }
 
     function handleSearchButtonKeyPass (e: any) {
         if (e.charCode == 13) {
-            dispatch(addFilterMarketTableAction({search: search}))
+            filters.addFilter( { search: search } );
         }
     }
 

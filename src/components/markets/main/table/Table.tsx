@@ -1,13 +1,13 @@
-import { FC, useEffect, useMemo, useState } from 'react';
+import { FC, useContext, useEffect, useMemo, useState } from 'react';
 import DataTable, { TableColumn } from 'react-data-table-component';
 import { useTranslation } from "react-i18next";
-import { useTypedSelector } from '../../../../hooks/useTypedSelector';
 import { getColor, getColorClass } from '../../../../helpers/colors';
 import useRequest from '../../../../hooks/useRequest';
 import ICoin from '../../../../types/ICoin';
 import CoinChart from '../chart/CoinChart';
 import ThStar from './th-star/ThStar';
 import { getCoinsMarkets } from '../../../../api/rest/CoinService';
+import { MarketMainContext } from '../context/MarketMainContext';
 
 interface RowTable extends ICoin {
     chart?: string,
@@ -19,10 +19,8 @@ interface TableProps {
 
 const Table: FC<TableProps> = () => {
     const { t } = useTranslation();
-    const filters = useTypedSelector(state => state.filters);
-    const currency = useTypedSelector(state => state.currency.currency);
-    const platforms = useTypedSelector(state => state.platforms);
-    const defaultParams = { vs_currency: currency };
+    const { currency, filters, platforms } = useContext(MarketMainContext);
+    const defaultParams = { vs_currency: currency.currency };
 
     const config = getCoinsMarkets(defaultParams);
     const { response, sendData }  = useRequest(config);
@@ -33,25 +31,24 @@ const Table: FC<TableProps> = () => {
         setIsLoading(true);
 
         let data = response?.data ? [...response.data] : [];
-        if (Object.keys(filters).length) {
-            if (filters.hasOwnProperty('search')) {
-                data = data.filter(coin => (coin.name.toLowerCase().includes(filters?.search?.toLowerCase())));
+        if (Object.keys(filters.list).length) {
+            if (filters.list.hasOwnProperty('search') && filters.list.search) {
+                data = data.filter(coin => (coin.name.toLowerCase().includes(filters.list?.search?.toLowerCase())));
             }
 
-            if (filters.hasOwnProperty('platform') && filters.platform) {
-                const keyPlatform: string = platforms.hasOwnProperty(filters.platform) ? filters.platform : '';
-
-                data = data.filter(coin => (platforms[keyPlatform]?.includes(coin.symbol.toLowerCase() + ',')));
-            }  
-
-            if (filters?.hasOwnProperty('coins')) {
-                data = data.filter((coin) => (filters?.coins?.filter((coinFilter) => (coin.name.toLowerCase() === coinFilter.name.toLowerCase())).length));
+            if (filters.list.hasOwnProperty('platform') && filters.list.platform) {
+                const keyPlatform: string = platforms.hasOwnProperty(filters.list.platform) ? filters.list.platform : '';
+                data = data.filter(coin => (platforms.list[keyPlatform]?.includes(coin.symbol.toLowerCase() + ',')));
             }
 
-            if (filters.hasOwnProperty('lastPrice') && filters?.lastPrice) {
-                if (filters.lastPrice.includes('Up')) {
+            if (filters.list?.hasOwnProperty('coins') && filters.list.coins?.length) {
+                data = data.filter((coin) => (filters.list?.coins?.filter((coinFilter) => (coin.name.toLowerCase() === coinFilter.name.toLowerCase())).length));
+            }
+
+            if (filters.list.hasOwnProperty('lastPrice') && filters.list?.lastPrice) {
+                if (filters.list.lastPrice.includes('Up')) {
                     data = data.filter((coin) => (coin.price_change_24h > 0));
-                } else if (filters.lastPrice.includes('Down')) {
+                } else if (filters.list.lastPrice.includes('Down')) {
                     data = data.filter((coin) => (coin.price_change_24h < 0));
                 }
             }
@@ -59,15 +56,18 @@ const Table: FC<TableProps> = () => {
 
         setIsLoading(false);
         return data;
-    }, [response, filters]);
+    }, [response, filters.list]);
 
     useEffect(() => {
-        if (filters.hasOwnProperty('category') && filters.category) {
-            sendData(getCoinsMarkets({ ...defaultParams, category: filters.category }));
+        console.log(filters.list);
+        
+
+        if (filters.list.hasOwnProperty('category') && filters.list.category) {
+            sendData(getCoinsMarkets({ ...defaultParams, category: filters.list.category }));
         } else {
             sendData(getCoinsMarkets(defaultParams));
         }
-    }, [currency, filters]);
+    }, [currency, filters.list]);
 
     const columns:  TableColumn<RowTable>[]  = [
         {

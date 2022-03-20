@@ -1,9 +1,9 @@
-import { FC, useMemo } from 'react';
+import { FC, useContext, useMemo } from 'react';
 import { useState } from 'react';
-import { useTypedSelector } from '../../../../hooks/useTypedSelector';
 import { AreaChart, Area, YAxis } from 'recharts';
 import { getChart } from '../../../../api/rest/CoinService';
 import useRequestChart from './hooks/useRequestChart';
+import { MarketMainContext } from '../context/MarketMainContext';
 
 interface CoinChartProps {
     coinId: string,
@@ -18,10 +18,10 @@ interface DataChart {
 }
 
 const CoinChart: FC<CoinChartProps> = ({coinId, color, width = 140, height = 70}) => {
-    const currency = useTypedSelector(state => state.currency.currency);
+    const { currency } = useContext(MarketMainContext);
     const config = useMemo(() => {
         return getChart(coinId, {
-            vs_currency: currency,
+            vs_currency: currency.currency,
             days: '1'
         });
     }, [currency])
