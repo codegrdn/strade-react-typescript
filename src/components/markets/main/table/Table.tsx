@@ -8,6 +8,8 @@ import CoinChart from '../chart/CoinChart';
 import ThStar from './th-star/ThStar';
 import { getCoinsMarkets } from '../../../../api/rest/CoinService';
 import { MarketMainContext } from '../context/MarketMainContext';
+import { formatingPrice } from '../../../../helpers/formating';
+import { signCurrency } from '../../../../helpers/currencies';
 
 interface RowTable extends ICoin {
     chart?: string,
@@ -82,6 +84,8 @@ const Table: FC<TableProps> = () => {
                 </div>
             ),
             sortable: true,
+            minWidth: '250px',
+            maxWidth: '400px'
         },
         {
             id: 'current_price',
@@ -89,7 +93,7 @@ const Table: FC<TableProps> = () => {
             selector: row => row.current_price,
             cell: (row) => (
                 <p className="col-info">
-                    <span className={getColorClass(row.price_change_24h)}>{row.current_price}</span>
+                    <span className={getColorClass(row.price_change_24h)}>{formatingPrice(row.current_price, signCurrency[currency.currency])}</span>
                 </p>
             ),
             sortable: true,
@@ -111,7 +115,7 @@ const Table: FC<TableProps> = () => {
             selector: row => row.high_24h,
             cell: (row) => (
                 <p className="col-info">
-                    <span className={getColorClass(row.high_24h)}>{row.high_24h}</span>
+                    <span className={getColorClass(row.high_24h)}>{formatingPrice(row.high_24h, signCurrency[currency.currency])}</span>
                 </p>
             ),
             sortable: true,
@@ -122,7 +126,7 @@ const Table: FC<TableProps> = () => {
             selector: row => row.low_24h,
             cell: (row) => (
                 <p className="col-info">
-                    <span className={getColorClass(row.low_24h)}>{row.low_24h}</span>
+                    <span className={getColorClass(row.low_24h)}>{formatingPrice(row.low_24h, signCurrency[currency.currency])}</span>
                 </p>
             ),
             sortable: true,
@@ -131,12 +135,14 @@ const Table: FC<TableProps> = () => {
             id: 'market_cap',
             name: t('markets.columns.market-cap'),
             selector: row => row.market_cap,
+            cell: (row) => formatingPrice(row.market_cap, signCurrency[currency.currency]),
             sortable: true,
         },
         {
             id: 'total_volume',
             name: t('markets.columns.24h-volume'),
             selector: row => row.total_volume,
+            cell: (row) => formatingPrice(row.total_volume, signCurrency[currency.currency]),
             sortable: true,
         },
         {
