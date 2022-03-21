@@ -33,7 +33,7 @@
         "hero": {
             "content": {
                 "subTitle": "ОСНОВАНО НА ДАННЫХ STELLAR DEX",
-                "title": "Криптореволюция!",
+                "title": "Революция в обмене криптовалюты!",
                 "description": "Мы используем Stellar Blockchain и технологию DEX чтобы предоставить трейдерам безопасную, надежную и быструю платформу обмена криптовалютой.",
                 "free-account": "Зарегистрируйтесь бесплатно"
             },
@@ -63,7 +63,6 @@
             }
         },
         "trade-info": {
-            "subtitle": "TXT",
             "title": "Трейдинг. Где угодно",
             "description": "Кроссплатформенная поддержка нескольких устройств, начните торговать <br /> безопасно и удобно"
         },
@@ -159,25 +158,38 @@
         },
         "modals": {
             "create": {
-                "title": "CREATE AN ACCOUNT",
-                "description": "By creating an account, you agree to Strade's",
-                "terms-of-service": "Terms of Service",
-                "privacy-policy": "Privacy Policy",
-                "sign-up": "Sign Up",
+                "title": "СОЗДАЙТЕ АККАУНТ",
+                "description": "Создавая аккаунт, Вы соглашаетесь с настоящими",
+                "terms-of-service": "Условиями использования",
+                "privacy-policy": "Политикой конфиденциальности",
+                "sign-up": "Зарегистрироваться",
                 "form": {
-                    "email": "Email address",
-                    "password": "Password"
+                    "email": "Адрес электронной почты",
+                    "password": "Пароль"
                 }
             }
         }
     },
     "swap": {
-        "title": "Swap",
-        "currency-conversion": "Currency conversion",
-        "convert": "Convert",
-        "swap": "Swap",
-        "to": "To",
-        "available": "Available",
-        "enter-amount": "Enter amount"
+        "title": "Обмен",
+        "currency-conversion": "Конвертация валюты",
+        "convert": "Конвертировать",
+        "swap": "Преобразовать",
+        "to": "В",
+        "available": "Доступно",
+        "enter-amount": "Введите сумму",
+        "modals": {
+            "create": {
+                "title": "СОЗДАЙТЕ АККАУНТ",
+                "description": "Создавая аккаунт, Вы соглашаетесь с настоящими",
+                "terms-of-service": "Условиями использования",
+                "privacy-policy": "Политикой конфиденциальности",
+                "sign-up": "Зарегистрироваться",
+                "form": {
+                    "email": "Адрес электронной почты",
+                    "password": "Пароль"
+                }
+            }
+        }
     }
 }
