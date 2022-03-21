@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import routes from '../../../../route/routes';
+import { notShowMenu, routes } from '../../../../route/routes';
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ interface NavItemProps {
 
 const NavItem: FC<NavItemProps> = () => {
     const { t } = useTranslation();
-    const routesShowing = routes.filter((item) => item.title !== 'Home');
+    const routesShowing = routes.filter((item) => !notShowMenu.includes(item.title));
 
     return (
         <div className="dashboard-header__menu-item-wrap">

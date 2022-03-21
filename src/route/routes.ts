@@ -2,6 +2,7 @@ import Landing from "../components/landing/Landing";
 import Markets from "../components/markets/Markets";
 import Swap from "../components/swap/Swap";
 import { FC } from "react";
+import NotFound from "../components/not-found/NotFound";
 
 interface CustomRoute {
     path: string,
@@ -9,7 +10,7 @@ interface CustomRoute {
     component: FC
 }
 
-let routes: CustomRoute[] = [
+export const routes: CustomRoute[] = [
     {
         path: "/",
         title: "Home",
@@ -24,7 +25,15 @@ let routes: CustomRoute[] = [
         path: "/markets",
         title: "Markets",
         component: Markets,
+    },
+    {
+        path: "*",
+        title: "NotFound",
+        component: NotFound,
     }
 ];
 
-export default routes;
+export const notShowMenu = [
+    "Home",
+    "NotFound",
+];
