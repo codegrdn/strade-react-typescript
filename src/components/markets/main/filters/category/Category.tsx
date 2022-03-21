@@ -1,9 +1,10 @@
-import { FC, useMemo, useState } from 'react'
+import { FC, useContext, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import { getList } from '../../../../../api/rest/CategoryService';
 import useRequest from '../../../../../hooks/useRequest';
 import ISelect from '../../../../../types/ISelect';
 import SelectCore from '../../../../shared/select/core/SelectCore';
+import { MarketMainContext } from '../../context/MarketMainContext';
 
 interface CategoryProps {
 
@@ -11,12 +12,13 @@ interface CategoryProps {
 
 const Category: FC<CategoryProps> = () => {
     const { t } = useTranslation();
+    const { filters } = useContext(MarketMainContext);
     const defaultSelecte: ISelect = {
         label: t('markets.filters.select-category'),
         value: 0
     }
 
-    const { response, sendData }  = useRequest(getList());
+    const { response }  = useRequest(getList());
     const [selected, setSelected] = useState(defaultSelecte);
 
     const valuesSelect = useMemo(() => {
@@ -36,6 +38,7 @@ const Category: FC<CategoryProps> = () => {
 
     function handlerChangeSelect(e: any) {
         setSelected(e);
+        filters.addFilter({ category: e.value });
     }
 
     return (

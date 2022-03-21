@@ -23,7 +23,7 @@ const Table: FC<TableProps> = () => {
     const defaultParams = { vs_currency: currency.currency };
 
     const config = getCoinsMarkets(defaultParams);
-    const { response, sendData }  = useRequest(config);
+    const { response, sendData, loading }  = useRequest(config);
 
     const [isLoading, setIsLoading] = useState(true);
     
@@ -37,8 +37,8 @@ const Table: FC<TableProps> = () => {
             }
 
             if (filters.list.hasOwnProperty('platform') && filters.list.platform) {
-                const keyPlatform: string = platforms.hasOwnProperty(filters.list.platform) ? filters.list.platform : '';
-                data = data.filter(coin => (platforms.list[keyPlatform]?.includes(coin.symbol.toLowerCase() + ',')));
+                const keyPlatform: string = platforms.list.hasOwnProperty(filters.list.platform) ? filters.list.platform : '';
+                data = data.filter(coin => (platforms.list[keyPlatform]?.includes(' ' + coin.symbol.toLowerCase() + ',')));
             }
 
             if (filters.list?.hasOwnProperty('coins') && filters.list.coins?.length) {
@@ -59,15 +59,14 @@ const Table: FC<TableProps> = () => {
     }, [response, filters.list]);
 
     useEffect(() => {
-        console.log(filters.list);
-        
-
-        if (filters.list.hasOwnProperty('category') && filters.list.category) {
-            sendData(getCoinsMarkets({ ...defaultParams, category: filters.list.category }));
-        } else {
-            sendData(getCoinsMarkets(defaultParams));
+        if (!loading) {
+            if (filters.list.hasOwnProperty('category') && filters.list.category) {
+                sendData(getCoinsMarkets({ ...defaultParams, category: filters.list.category }));
+            } else {
+                sendData(getCoinsMarkets(defaultParams));
+            }
         }
-    }, [currency, filters.list]);
+    }, [currency.currency, filters.list]);
 
     const columns:  TableColumn<RowTable>[]  = [
         {
