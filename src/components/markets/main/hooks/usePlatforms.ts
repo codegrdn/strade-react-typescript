@@ -35,10 +35,10 @@ const usePlatforms = () => {
                     const formatKey:string = key.toLowerCase();
 
                     if (platformKeys.includes(formatKey)) {
-                        platformValues[formatKey].push(item.symbol.toLowerCase());
+                        platformValues[formatKey].push(item.id.toLowerCase());
                     } else {
                         platformKeys.push(formatKey);
-                        platformValues[formatKey] = [item.symbol.toLowerCase()];
+                        platformValues[formatKey] = [item.id.toLowerCase()];
                     }
                 });
             });

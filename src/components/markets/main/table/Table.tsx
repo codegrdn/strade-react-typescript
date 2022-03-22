@@ -40,7 +40,7 @@ const Table: FC<TableProps> = () => {
 
             if (filters.list.hasOwnProperty('platform') && filters.list.platform) {
                 const keyPlatform: string = platforms.list.hasOwnProperty(filters.list.platform) ? filters.list.platform : '';
-                data = data.filter(coin => (platforms.list[keyPlatform]?.includes(' ' + coin.symbol.toLowerCase() + ',')));
+                data = data.filter(coin => (platforms.list[keyPlatform]?.includes(' ' + coin.id.toLowerCase() + ',')));
             }
 
             if (filters.list?.hasOwnProperty('coins') && filters.list.coins?.length) {
@@ -79,7 +79,7 @@ const Table: FC<TableProps> = () => {
             cell: (row) => (
                 <div className="col-favourites">
                         <ThStar coin={row} />
-                        <img src={row.image} style={{marginRight: '10px', width: '40px'}} alt={row.name} />
+                        <img src={row.image} style={{marginRight: '10px', width: '40px'}} alt={row.id} />
                     <p className="col-info">{row.name}</p>
                 </div>
             ),
