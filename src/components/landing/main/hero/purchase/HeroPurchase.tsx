@@ -74,7 +74,7 @@ const HeroPurchase: FC<PurchaseProps> = () => {
     }
 
     function handleChangePaymentMethod(e: any) {
-        setPaymentMethod(e.target.alt);
+        setPaymentMethod(e.target.getAttribute('data-key'));
     }
 
     function handleChangeFrom(e: any) {
@@ -152,14 +152,16 @@ const HeroPurchase: FC<PurchaseProps> = () => {
                         paymentMethods.map((item) => (
                             <div 
                                 className={"payment-method__item" + (item.key === paymentMethod ? ' payment-method__item--active' : '')} 
+                                onClick={handleChangePaymentMethod}
+                                data-key={item.key}
                                 key={item.key}
                             >
-                                <img 
-                                    onClick={handleChangePaymentMethod}
+                                <img
                                     className="filter--gray" 
                                     src={item.image} 
                                     width="66" 
-                                    height="25" 
+                                    height="25"
+                                    data-key={item.key}
                                     alt={item.key} />
                             </div>
                         ))

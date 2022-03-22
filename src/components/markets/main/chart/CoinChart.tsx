@@ -24,7 +24,7 @@ const CoinChart: FC<CoinChartProps> = ({coinId, color, width = 140, height = 70}
             vs_currency: currency.currency,
             days: '1'
         });
-    }, [currency])
+    }, [currency.currency])
 
     const { response } = useRequestChart(config);
 

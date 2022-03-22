@@ -79,13 +79,13 @@ const Table: FC<TableProps> = () => {
             cell: (row) => (
                 <div className="col-favourites">
                         <ThStar coin={row} />
-                        <img src={row.image} style={{marginRight: '10px', width: '40px'}} />
+                        <img src={row.image} style={{marginRight: '10px', width: '40px'}} alt={row.name} />
                     <p className="col-info">{row.name}</p>
                 </div>
             ),
             sortable: true,
-            minWidth: '250px',
-            maxWidth: '400px'
+            minWidth: '25%',
+            maxWidth: '40%'
         },
         {
             id: 'current_price',

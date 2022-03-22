@@ -154,7 +154,8 @@
                     "api-documentation": "API Documentation"
                 }
             },
-            "copyright": "© {{year}} Strade.io. All Rights Reserved"
+            "copyright": "© {{year}} Strade.io. All Rights Reserved",
+            "footer-text-atfter-logo": "Legal cryptocurrency exchange<br />market and safe wallet"
         },
         "modals": {
             "create": {

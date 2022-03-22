@@ -1,7 +1,6 @@
 import { FC } from 'react'
 import Hero from './hero/Hero';
 import MarketsInfo from './markets-info/MarketsInfo';
-import News from './news/News';
 import Privileges from './privileges/Privileges';
 import TradeInfo from './trade-info/TradeInfo';
 
@@ -16,7 +15,6 @@ const MainLanding: FC<MainLandingProps> = () => {
             <MarketsInfo />
             <TradeInfo />
             <Privileges />
-            {/* <News /> */}
         </main>
     )
 }

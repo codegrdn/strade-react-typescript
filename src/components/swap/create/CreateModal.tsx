@@ -59,7 +59,7 @@ const CreateModal: FC<CreateModalProps> = () => {
                             <div className="modal__text">
                                 <p>{ t('swap.modals.create.description') }</p>
                                 <p>
-                                    <a className="modal__link" href="#">{ t('swap.modals.create.terms-of-service') }</a> &amp; <a className="modal__link" href="#">{ t('swap.modals.create.privacy-policy') }</a>
+                                    <a className="modal__link" href="/#">{ t('swap.modals.create.terms-of-service') }</a> &amp; <a className="modal__link" href="/#">{ t('swap.modals.create.privacy-policy') }</a>
                                 </p>
                             </div>
                         </div>

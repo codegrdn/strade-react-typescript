@@ -31,10 +31,6 @@ export const selectLanguage: ISelect[] = [
     },
 ];
 
-interface GetDefaultSelectLanguageParams {
-    language: string
-}
-
-export const getDefaultSelectLanguage: any = (language: string) => {
+export const getDefaultSelectLanguage: any = (language: string): ISelect => {
     return selectLanguage.filter((item) => (item.value === language))[0];
 }

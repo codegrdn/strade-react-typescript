@@ -113,7 +113,7 @@
         },
         "market-info": {
             "subtitle": "Рынки",
-            "title": "Лучшие пары по ликвидности",
+            "title": "Лучшие валютные пары",
             "favourites": "Избранные",
             "view-all": "Смотреть все рынки"
         },
@@ -154,7 +154,8 @@
                     "api-documentation": "API Документация"
                 }
             },
-            "copyright": "© {{year}} Strade.io. Все права защищены"
+            "copyright": "© {{year}} Strade.io. Все права защищены",
+            "footer-text-atfter-logo": "Легальная биржа криптовалют и защищенный кошелек"
         },
         "modals": {
             "create": {

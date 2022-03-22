@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import LogoFooter from '../../shared/logo/footer/LogoFooter';
 import { menu } from './data/menu';
+import parse from 'html-react-parser';
 
 interface FooterLandingProps {
 
@@ -21,7 +22,9 @@ const FooterLanding: FC<FooterLandingProps> = () => {
                             <LogoFooter />
 
                             <div className="footer__text">
-                                <p>Legal cryptocurrency exchange<br />market and safe wallet</p>
+                                <p>
+                                    { parse(t('landing.footer.footer-text-atfter-logo')) }
+                                </p>
                             </div>
                         </div>
                         <div className="footer__social">
@@ -61,10 +64,10 @@ const FooterLanding: FC<FooterLandingProps> = () => {
                                         </a>
                                     </li>
                                     <li className="social__item">
-                                        <a className="social__link" 
-                                            href="https://instagram.com/" 
-                                            target="_blank" 
-                                            rel="noreferrer" 
+                                        <a className="social__link"
+                                            href="https://instagram.com/"
+                                            target="_blank"
+                                            rel="noreferrer"
                                             aria-label="instagram"
                                         >
                                             <svg className="social__icon" width="12" height="12">
@@ -75,31 +78,30 @@ const FooterLanding: FC<FooterLandingProps> = () => {
                                 </ul>
                             </div>
                         </div>
-                        </div>
-                        <div className="footer__content">
-                            {
-                                menu.map((item) => (
-                                    <ul className="footer__list" key={item.id}>
-                                        <li className="footer__list-item">
-                                            <p className="footer__list-title">{ t(item.title) }</p>
-                                        </li>
-                                        {
-                                            item.links.map((link) => (
-                                                <li className="footer__list-item" key={link.id}>
-                                                    <Link className="footer__list-link" to="/">{ t(link.title) }</Link>
-                                                </li>
-                                            ))
-                                        }
-                                    </ul>
-                                ))
-                            }
-                        </div>
                     </div>
-                    <div className="footer__bottom">
-                        <div className="footer__bottom-wrap">
+                    <div className="footer__content">
+                        {
+                            menu.map((item) => (
+                                <ul className="footer__list" key={item.id}>
+                                    <li className="footer__list-item">
+                                        <p className="footer__list-title">{t(item.title)}</p>
+                                    </li>
+                                    {
+                                        item.links.map((link) => (
+                                            <li className="footer__list-item" key={link.id}>
+                                                <Link className="footer__list-link" to="/">{t(link.title)}</Link>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                            ))
+                        }
+                    </div>
+                </div>
+                <div className="footer__bottom">
+                    <div className="footer__bottom-wrap">
                         <div className="footer__date">{ moment().format("YYYY-MM-DD HH:mm") }</div>
                         <div className="footer__volume">
-                        <div className="footer__volume-text">24h Volume <span className="footer__volume-data"> 96,706,860.73 USDT</span></div>
                         </div>
                     </div>
                     <div className="footer__copy">

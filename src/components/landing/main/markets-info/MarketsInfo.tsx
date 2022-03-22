@@ -2,7 +2,6 @@ import { FC } from 'react'
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import bgDots from './images/bg-dots.webp';
-import start from './images/star-icon.svg';
 import Table from './table/Table';
 
 interface MarketsInfoProps {

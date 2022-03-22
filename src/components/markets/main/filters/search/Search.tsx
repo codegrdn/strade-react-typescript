@@ -17,7 +17,7 @@ const Search: FC<SearchProps> = () => {
     }
 
     function handleSearchButtonKeyPass (e: any) {
-        if (e.charCode == 13) {
+        if (e.charCode === 13) {
             filters.addFilter( { search: search } );
         }
     }
