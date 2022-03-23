@@ -44,6 +44,8 @@ const Table: FC<TableProps> = () => {
                 </div>
             ),
             sortable: true,
+            minWidth: '20%',
+            maxWidth: '30%'
         },
         {
             id: 'current_price',
