@@ -29,53 +29,7 @@ const FooterLanding: FC<FooterLandingProps> = () => {
                         </div>
                         <div className="footer__social">
                             <div className="social">
-                                <ul className="social__list">
-                                    <li className="social__item">
-                                        <a className="social__link"
-                                            href="https://twitter.com/"
-                                            target="_blank"
-                                            rel="noreferrer" aria-label="twitter"
-                                        >
-                                            <svg className="social__icon" width="12" height="12">
-                                                <use xlinkHref="#twitter-icon"></use>
-                                            </svg>
-                                        </a>
-                                    </li>
-                                    <li className="social__item">
-                                        <a className="social__link"
-                                            href="https://facebook.com/"
-                                            target="_blank"
-                                            rel="noreferrer" aria-label="facebook"
-                                        >
-                                            <svg className="social__icon" width="12" height="12">
-                                                <use xlinkHref="#facebook-icon"></use>
-                                            </svg>
-                                        </a>
-                                    </li>
-                                    <li className="social__item">
-                                        <a className="social__link"
-                                            href="https://web.telegram.org"
-                                            target="_blank"
-                                            rel="noreferrer" aria-label="telegram"
-                                        >
-                                            <svg className="social__icon" width="12" height="12">
-                                                <use xlinkHref="#telegram-icon"></use>
-                                            </svg>
-                                        </a>
-                                    </li>
-                                    <li className="social__item">
-                                        <a className="social__link"
-                                            href="https://instagram.com/"
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            aria-label="instagram"
-                                        >
-                                            <svg className="social__icon" width="12" height="12">
-                                                <use xlinkHref="#instagram-icon"></use>
-                                            </svg>
-                                        </a>
-                                    </li>
-                                </ul>
+                                
                             </div>
                         </div>
                     </div>
