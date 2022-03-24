@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { getList } from '../../../../../api/rest/CategoryService';
 import useRequest from '../../../../../hooks/useRequest';
 import ISelect from '../../../../../types/ISelect';
+import Loader from '../../../../shared/loader/Loader';
 import SelectCore from '../../../../shared/select/core/SelectCore';
 import { MarketMainContext } from '../../context/MarketMainContext';
 
@@ -20,8 +21,11 @@ const Category: FC<CategoryProps> = () => {
 
     const { response }  = useRequest(getList());
     const [selected, setSelected] = useState(defaultSelecte);
+    const [loading, setLoading] = useState(false);
 
     const valuesSelect = useMemo(() => {
+        setLoading(false);
+
         let selectList = [defaultSelecte];
 
         if (response?.data) {
@@ -33,6 +37,11 @@ const Category: FC<CategoryProps> = () => {
             });
         }
 
+        const timeout = setTimeout(() => {
+            setLoading(true);
+            clearTimeout(timeout);
+        }, 1500);
+
         return selectList;
     }, [response]);
 
@@ -42,7 +51,13 @@ const Category: FC<CategoryProps> = () => {
     }
 
     return (
-        <SelectCore values={valuesSelect} selected={selected} onChange={handlerChangeSelect} />
+        <>
+            {
+                !loading
+                ? <Loader isRevert={true} style={{ height: '24px', width: '24px'}} />
+                : <SelectCore values={valuesSelect} selected={selected} onChange={handlerChangeSelect} />
+            }
+        </>
     )
 }
 

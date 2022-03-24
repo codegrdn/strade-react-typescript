@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import SelectCore from '../../../../shared/select/core/SelectCore';
 import ISelect from '../../../../../types/ISelect';
 import { MarketMainContext } from '../../context/MarketMainContext';
+import Loader from '../../../../shared/loader/Loader';
 
 interface PlatformProps {
 
@@ -16,8 +17,11 @@ const Platform: FC<PlatformProps> = () => {
         value: 0
     }
     const [value, setValue] = useState(defaultOption);
+    const [loading, setLoading] = useState(false);
 
     const values = useMemo(() => {
+        setLoading(false);
+
         if (Object.keys(platforms.list).length < 2) {
             return [defaultOption];
         }
@@ -35,6 +39,11 @@ const Platform: FC<PlatformProps> = () => {
             });
         });
 
+        const timeout = setTimeout(() => {
+            setLoading(true);
+            clearTimeout(timeout);
+        }, 1500);
+
         return [defaultOption, ...array];
     }, [platforms.list])
 
@@ -45,7 +54,11 @@ const Platform: FC<PlatformProps> = () => {
     
     return (
         <>
-            <SelectCore selected={value} values={values} onChange={handlerFilterMarket} />
+            {
+                !loading
+                ? <Loader isRevert={true} style={{ height: '24px', width: '24px'}} />
+                : <SelectCore selected={value} values={values} onChange={handlerFilterMarket} />
+            }
         </>
     )
 }
