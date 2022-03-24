@@ -18,7 +18,7 @@ const HeroContent: FC<HeroContentProps> = () => {
                 <p>{ t('landing.hero.content.description') }</p>
             </div>
             
-            <button className="hero__btn btn btn--green" onClick={createModal.togleModals}>{ t('landing.hero.content.free-account') }</button>
+            <button className="hero__btn btn btn--green" onClick={createModal.toggleModal}>{ t('landing.hero.content.free-account') }</button>
         </div>
     )
 }

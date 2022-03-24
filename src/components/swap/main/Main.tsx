@@ -67,7 +67,7 @@ const Main: FC<MainProps> = () => {
                                 <button 
                                     className="swap__form-submit-btn btn btn-green" 
                                     type="button" 
-                                    onClick={() => {createModal.togleModals()}}
+                                    onClick={() => {createModal.toggleModal()}}
                                 >
                                     { t('swap.swap') }
                                 </button>

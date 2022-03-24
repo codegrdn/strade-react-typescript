@@ -8,6 +8,7 @@ import { coins, coinIds } from './data/coins';
 import { currency } from './data/currency';
 import { roundingValue } from '../../../../../helpers/math';
 import { LandingContext } from '../../../context/LandingContext';
+import Loader from '../../../../shared/loader/Loader';
 
 interface PurchaseProps {
 
@@ -24,6 +25,7 @@ const HeroPurchase: FC<PurchaseProps> = () => {
     const [toCurrency, setToCurrency] = useState(coins[0]);
     const [fromCurrency, setFromCurrency] = useState(currency[0]);
 
+    const [isLoading, setIsLoading] = useState(false);
 
     const config = useMemo(() => {
         return getPrice({ 
@@ -39,6 +41,9 @@ const HeroPurchase: FC<PurchaseProps> = () => {
     }, [config])
 
     const prices = useMemo(() => {
+        setIsLoading(false);
+
+
         let prices: any = {};
         if (response?.data) {
             coinIds.forEach(item => {
@@ -53,6 +58,12 @@ const HeroPurchase: FC<PurchaseProps> = () => {
                 setFrom(String(roundingValue(Number(to) * prices[toCurrency.value])));
             }
         }
+
+
+        const timeout = setTimeout(() => {
+            setIsLoading(true);
+            clearTimeout(timeout);
+        }, 1500);
 
         return prices;
     }, [response]);
@@ -102,74 +113,80 @@ const HeroPurchase: FC<PurchaseProps> = () => {
     return (
         <div className="hero__purchase">
             <div className="purchase">
-                <div className="purchase__converter converter">
-                    <h2 className="converter__title">{ t('landing.hero.purchase.title') }</h2>
-                    <div className="converter__inner">
-                        <div className="converter__item-title">{ t('landing.hero.purchase.buy') }</div>
-                        <div className="converter__item">
-                            <input 
-                                className="converter__input" 
-                                type="number" 
-                                value={to}
-                                placeholder="0,00"
-                                onChange={handleChangeTo}
-                            />
-                            <div className="converter__coin">
-                                <div className="converter__coin-name">
-                                    <SelectCore 
-                                        values={coins}
-                                        selected={toCurrency}
-                                        onChange={handleChangeСurrencyForTo}
+                {
+                    !isLoading
+                    ? <Loader />
+                    : <>
+                        <div className="purchase__converter converter">
+                            <h2 className="converter__title">{ t('landing.hero.purchase.title') }</h2>
+                            <div className="converter__inner">
+                                <div className="converter__item-title">{ t('landing.hero.purchase.buy') }</div>
+                                <div className="converter__item">
+                                    <input 
+                                        className="converter__input" 
+                                        type="number" 
+                                        value={to}
+                                        placeholder="0,00"
+                                        onChange={handleChangeTo}
                                     />
+                                    <div className="converter__coin">
+                                        <div className="converter__coin-name">
+                                            <SelectCore 
+                                                values={coins}
+                                                selected={toCurrency}
+                                                onChange={handleChangeСurrencyForTo}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="converter__item-title">
+                                    { t('landing.hero.purchase.for') }
+                                </div>
+                                <div className="converter__item">
+                                    <input 
+                                        className="converter__input" 
+                                        value={from} 
+                                        type="number" 
+                                        placeholder="0,00"
+                                        onChange={handleChangeFrom}
+                                    />
+                                    <div className="converter__coin">
+                                        <div className="converter__coin-name">
+                                            <SelectCore 
+                                                values={currency}
+                                                selected={fromCurrency}
+                                                onChange={handleChangeСurrencyForFrom}
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="converter__item-title">
-                            { t('landing.hero.purchase.for') }
+                        <div className="purchase__payment-method payment-method">
+                            {
+                                paymentMethods.map((item) => (
+                                    <div 
+                                        className={"payment-method__item" + (item.key === paymentMethod ? ' payment-method__item--active' : '')} 
+                                        onClick={handleChangePaymentMethod}
+                                        data-key={item.key}
+                                        key={item.key}
+                                    >
+                                        <img
+                                            className="filter--gray" 
+                                            src={item.image} 
+                                            width="66" 
+                                            height="25"
+                                            data-key={item.key}
+                                            alt={item.key} />
+                                    </div>
+                                ))
+                            }
                         </div>
-                        <div className="converter__item">
-                            <input 
-                                className="converter__input" 
-                                value={from} 
-                                type="number" 
-                                placeholder="0,00"
-                                onChange={handleChangeFrom}
-                            />
-                            <div className="converter__coin">
-                                <div className="converter__coin-name">
-                                    <SelectCore 
-                                        values={currency}
-                                        selected={fromCurrency}
-                                        onChange={handleChangeСurrencyForFrom}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="purchase__payment-method payment-method">
-                    {
-                        paymentMethods.map((item) => (
-                            <div 
-                                className={"payment-method__item" + (item.key === paymentMethod ? ' payment-method__item--active' : '')} 
-                                onClick={handleChangePaymentMethod}
-                                data-key={item.key}
-                                key={item.key}
-                            >
-                                <img
-                                    className="filter--gray" 
-                                    src={item.image} 
-                                    width="66" 
-                                    height="25"
-                                    data-key={item.key}
-                                    alt={item.key} />
-                            </div>
-                        ))
-                    }
-                </div>
-                <button className="purchase__btn btn btn--blue" onClick={createModal.togleModals}>
-                    { t('landing.hero.purchase.buy-item', { item: toCurrency.label }) }
-                </button>
+                        <button className="purchase__btn btn btn--blue" onClick={createModal.toggleModal}>
+                            { t('landing.hero.purchase.buy-item', { item: toCurrency.label }) }
+                        </button>
+                    </>
+                }
             </div>
         </div>
     )

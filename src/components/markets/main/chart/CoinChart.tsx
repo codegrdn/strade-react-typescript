@@ -4,6 +4,7 @@ import { AreaChart, Area, YAxis } from 'recharts';
 import { getChart } from '../../../../api/rest/CoinService';
 import useRequestChart from './hooks/useRequestChart';
 import { MarketMainContext } from '../context/MarketMainContext';
+import Loader from '../../../shared/loader/Loader';
 
 interface CoinChartProps {
     coinId: string,
@@ -40,15 +41,20 @@ const CoinChart: FC<CoinChartProps> = ({coinId, color, width = 140, height = 70}
             })
         })
 
-        setIsLoading(true);
+        const timeout = setTimeout(() => {
+            setIsLoading(true);
+            clearTimeout(timeout);
+        }, 1500);
+
         return prices;
     }, [response])
 
     return (
         <>
             {
-                isLoading 
-                && <AreaChart
+                !isLoading
+                ? <Loader isRevert={true} style={{ height: '24px', width: '24px'}} />
+                : <AreaChart
                         width={width}
                         height={height}
                         data={chart}

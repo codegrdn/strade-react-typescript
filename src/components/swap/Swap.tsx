@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import HeaderAdmin from '../shared/header/admin/HeaderAdmin';
+import HeaderAdmin from './header/header/HeaderAdmin';
 import Main from './main/Main';
 import '../../assets/css/swap-style.min.css';
 import CreateModal from './create/CreateModal';
@@ -13,15 +13,24 @@ const Swap: FC<PropsSwap> = () => {
         setCreateModal(!createModal);
     }
 
+    const [menuMobile, setMenuMobile] = useState(false);
+    const toggleMenuMobile = () => {
+        setMenuMobile(!menuMobile);
+    }
+
     return (
         <SwapContext.Provider value={{
             createModal: {
                 show: createModal,
-                togleModals: toggleCreateModal
+                toggleModal: toggleCreateModal
+            },
+            menuMobile: {
+                menuMobile: menuMobile,
+                toggleMenuMobile: toggleMenuMobile
             }
         }} >
             <div className="page theme">
-                <div className={"page__body dashboard" + ( createModal ? " no-scroll" : "" )}>
+                <div className={"page__body dashboard" + ( createModal || menuMobile ? " no-scroll" : "" )}>
                     <HeaderAdmin />
                     <Main />
                     <CreateModal />

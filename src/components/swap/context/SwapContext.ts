@@ -2,18 +2,28 @@ import React from "react";
 
 interface IModalCreate {
     show: boolean,
-    togleModals: () => void
+    toggleModal: () => void
+}
+
+interface IMobileMenu {
+    menuMobile: boolean,
+    toggleMenuMobile: () => void
 }
 
 interface ISwapContext {
     createModal: IModalCreate,
+    menuMobile: IMobileMenu,
 }
 
-export const landingState: ISwapContext = {
+export const swapState: ISwapContext = {
     createModal: {
         show: false,
-        togleModals: () => {}
+        toggleModal: () => {}
+    },
+    menuMobile: {
+        menuMobile: false,
+        toggleMenuMobile: () => {}
     }
 }
 
-export const SwapContext = React.createContext<ISwapContext>(landingState);
+export const SwapContext = React.createContext<ISwapContext>(swapState);

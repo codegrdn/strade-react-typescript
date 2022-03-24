@@ -6,6 +6,7 @@ import DataTable, { TableColumn } from 'react-data-table-component';
 import { getColor, getColorClass } from '../../../../../helpers/colors';
 import CoinChart from '../../../../markets/main/chart/CoinChart';
 import RowTable from '../../../../../types/RowTableMarket';
+import Loader from '../../../../shared/loader/Loader';
 
 interface TableProps {
 
@@ -28,7 +29,11 @@ const Table: FC<TableProps> = () => {
 
         let data = response?.data ? [...response.data] : [];
 
-        setIsLoading(false);
+        const timeout = setTimeout(() => {
+            setIsLoading(false);
+            clearTimeout(timeout);
+        }, 1500);
+
         return data;
     }, [response]);
 
@@ -119,6 +124,7 @@ const Table: FC<TableProps> = () => {
             columns={columns}
             data={values}
             progressPending={isLoading}
+            progressComponent={<Loader />}
         />
     )
 }

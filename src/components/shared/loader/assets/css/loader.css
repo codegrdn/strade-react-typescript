@@ -1,0 +1,33 @@
+.wrap-loader {
+    min-width: 50px;
+    width: 33.33%;
+    height: 50px;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 2px solid #FFF;
+    border-bottom-color: #16455c;
+    border-radius: 50%;
+    display: inline-block;
+    animation: rotation 1s linear infinite;
+}
+
+.loader-revert {
+    border: 2px solid #16455c;
+    border-bottom-color: #FFF;
+}
+
+@keyframes rotation {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+}

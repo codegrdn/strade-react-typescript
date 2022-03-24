@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import SelectLanguage from '../../select/language/SelectLanguage';
+import SelectLanguage from '../../../../shared/select/language/SelectLanguage';
 
 interface NavWrapLanguageProps {
 

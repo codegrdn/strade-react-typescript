@@ -19,9 +19,9 @@ const CreateModal: FC<CreateModalProps> = () => {
 
     return (
         <div className={"modal" + (createModal.show ? " modal--active" : " ")}>
-            <div className="modal__inner modal--exit" onClick={createModal.togleModals}></div>
+            <div className="modal__inner modal--exit" onClick={createModal.toggleModal}></div>
             <div className="modal__content">
-                <div className="modal__close-btn modal--exit" onClick={createModal.togleModals}></div>
+                <div className="modal__close-btn modal--exit" onClick={createModal.toggleModal}></div>
                 <div className="modal__title">{ t('swap.modals.create.title').toUpperCase() }</div>
                 <div className="modal__form">
                     <form className="form" method="post" onSubmit={(e) => { e.preventDefault(); }}>

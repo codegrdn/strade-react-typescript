@@ -10,6 +10,7 @@ import { getCoinsMarkets } from '../../../../api/rest/CoinService';
 import { MarketMainContext } from '../context/MarketMainContext';
 import { formatingPrice } from '../../../../helpers/formating';
 import { signCurrency } from '../../../../helpers/currencies';
+import Loader from '../../../shared/loader/Loader';
 
 interface RowTable extends ICoin {
     chart?: string,
@@ -43,7 +44,7 @@ const Table: FC<TableProps> = () => {
                 data = data.filter(coin => (platforms.list[keyPlatform]?.includes(' ' + coin.id.toLowerCase() + ',')));
             }
 
-            if (filters.list?.hasOwnProperty('coins') && filters.list.coins?.length) {
+            if (filters.list?.hasOwnProperty('coins') && filters.list.coins) {
                 data = data.filter((coin) => (filters.list?.coins?.filter((coinFilter) => (coin.name.toLowerCase() === coinFilter.name.toLowerCase())).length));
             }
 
@@ -56,7 +57,11 @@ const Table: FC<TableProps> = () => {
             }
         }
 
-        setIsLoading(false);
+        const timeout = setTimeout(() => {
+            setIsLoading(false);
+            clearTimeout(timeout);
+        }, 1500);
+        
         return data;
     }, [response, filters.list]);
 
@@ -161,6 +166,7 @@ const Table: FC<TableProps> = () => {
             columns={columns}
             data={values}
             progressPending={isLoading}
+            progressComponent={<Loader />}
             pagination
         />
     )

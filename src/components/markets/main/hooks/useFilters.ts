@@ -5,7 +5,7 @@ const useFilters = () => {
         category: '',
         search: '',
         platform: '',
-        coins: [],
+        coins: undefined,
         lastPrice: '',
     });
     const addFiltersMarkets = (filters: any) => {

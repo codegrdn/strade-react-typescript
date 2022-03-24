@@ -23,7 +23,7 @@ const Favorite: FC<FavoriteProps>  = () => {
             filters.addFilter({coins: coins.list});
         } else {
             setClasses(Classes.DEFAULT_CLASS);
-            filters.addFilter({coins: []});
+            filters.addFilter({coins: undefined});
         }
     }
 

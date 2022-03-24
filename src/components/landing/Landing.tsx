@@ -16,15 +16,24 @@ const Landing: FC<LandingProps> = () => {
         setCreateModal(!createModal);
     }
 
+    const [menuMobile, setMenuMobile] = useState(false);
+    const toggleMenuMobile = () => {
+        setMenuMobile(!menuMobile);
+    }
+
     return (
         <LandingContext.Provider value={{
             createModal: {
                 show: createModal,
-                togleModals: toggleCreateModal
+                toggleModal: toggleCreateModal
+            },
+            menuMobile: {
+                menuMobile: menuMobile,
+                toggleMenuMobile: toggleMenuMobile
             }
         }} >
             <div className="page">
-                <div className={"page__body" + ( createModal ? " no-scroll" : "" )}>
+                <div className={"page__body" + ( createModal || menuMobile ? " no-scroll" : "" )}>
                         <HeaderLanding />
                         <MainLanding />
                         <FooterLanding />
