@@ -1546,7 +1546,7 @@ pre code {
     font-size: 34px;
     line-height: 41px;
     color: #fff;
-    text-transform: capitalize
+    /* text-transform: capitalize */
 }
 
 @media screen and (min-width:768px) {
