@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import ICoin from '../../../../types/ICoin';
 
 const useCoins = () => {
-    const [coinsList, setCoinsList] = useState<ICoin[]>([]);
-    const removeCoin = (coin: ICoin) => {
-        setCoinsList(coinsList.filter((item: ICoin) => item.id !== coin.id));
+    const [coinsList, setCoinsList] = useState<string[]>([]);
+
+    const removeCoin = (coinId: string) => {
+        setCoinsList(coinsList.filter((item: string) => item !== coinId));
     }
     
-    const addCoin = (coin: ICoin) => {
+    const addCoin = (coin: string) => {
         setCoinsList([...coinsList, coin]);
     }
 

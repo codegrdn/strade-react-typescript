@@ -23,7 +23,7 @@ interface MarketTableFiltersState {
     category?: string,
     search?: string,
     platform?: string,
-    coins?: ICoin[],
+    coins?: string[],
     lastPrice?: string,
 }
 
@@ -33,9 +33,9 @@ interface IMarketMainFilters {
 }
 
 interface ICoins {
-    list: ICoin[],
-    removeCoin: (coin: ICoin) => void,
-    addCoin: (coin: ICoin) => void
+    list: string[],
+    removeCoin: (coin: string) => void,
+    addCoin: (coin: string) => void
 }
 
 interface ICurrency {

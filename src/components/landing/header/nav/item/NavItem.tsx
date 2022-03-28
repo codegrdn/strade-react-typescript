@@ -23,9 +23,9 @@ const NavItemLanding: FC<NavItemLandingProps> = () => {
                         </li>
                     ))
                 }
-
-                <WrapLanguage />
             </div>
+
+            <WrapLanguage />
         </ul>
     )
 }

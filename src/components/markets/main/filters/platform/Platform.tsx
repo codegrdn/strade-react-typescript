@@ -10,20 +10,22 @@ interface PlatformProps {
 }
 
 const Platform: FC<PlatformProps> = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const { platforms, filters } = useContext(MarketMainContext);
-    const defaultOption: ISelect = {
+    const [value, setValue] = useState<ISelect>({
         label: t('markets.filters.select-platform'),
         value: 0
-    }
-    const [value, setValue] = useState(defaultOption);
+    });
     const [loading, setLoading] = useState(false);
 
     const values = useMemo(() => {
         setLoading(false);
 
         if (Object.keys(platforms.list).length < 2) {
-            return [defaultOption];
+            return [{
+                label: t('markets.filters.select-platform'),
+                value: 0
+            }];
         }
 
         let key = Object.keys(platforms.list);
@@ -39,13 +41,20 @@ const Platform: FC<PlatformProps> = () => {
             });
         });
 
+        const result = [{
+            label: t('markets.filters.select-platform'),
+            value: 0
+        }, ...array];
+
+        setValue(result.filter((item) => (item.value === value.value))[0]);
+
         const timeout = setTimeout(() => {
             setLoading(true);
             clearTimeout(timeout);
         }, 1500);
 
-        return [defaultOption, ...array];
-    }, [platforms.list])
+        return result;
+    }, [platforms.list, i18n.language])
 
     function handlerFilterMarket(e: any): void {
         setValue(e);

@@ -13,7 +13,7 @@ export const getLanguageByWord = (value: string) => {
     switch (value) {
         case 'english':
             return 'en';
-        case 'russian':
+        case 'русский':
             return 'ru';
         default: 
             return 'en';    
@@ -27,7 +27,7 @@ export const selectLanguage: ISelect[] = [
     },
     {
         value: 'ru',
-        label: 'Russian',
+        label: 'Русский',
     },
 ];
 

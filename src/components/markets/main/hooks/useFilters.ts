@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 const useFilters = () => {
     const [filtersMarkets, setFiltersMarkets] = useState({
@@ -8,8 +9,10 @@ const useFilters = () => {
         coins: undefined,
         lastPrice: '',
     });
+
     const addFiltersMarkets = (filters: any) => {
-        setFiltersMarkets({...filtersMarkets, ...filters});
+        const newFilters = {...filtersMarkets, ...filters};
+        setFiltersMarkets(newFilters);
     }
 
     return { filtersMarkets, addFiltersMarkets }

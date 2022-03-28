@@ -45,7 +45,13 @@ const Table: FC<TableProps> = () => {
             }
 
             if (filters.list?.hasOwnProperty('coins') && filters.list.coins) {
-                data = data.filter((coin) => (filters.list?.coins?.filter((coinFilter) => (coin.name.toLowerCase() === coinFilter.name.toLowerCase())).length));
+                data = data.filter(
+                    (coin) => (
+                        filters.list?.coins?.filter((coinFilter) => (
+                            coin.id.toLowerCase() === coinFilter.toLowerCase()
+                        )
+                    ).length)
+                );
             }
 
             if (filters.list.hasOwnProperty('lastPrice') && filters.list?.lastPrice) {

@@ -4,6 +4,10 @@
         "Swap": "Обмен",
         "Markets": "Рынки"
     },
+    "language": {
+        "english": "English",
+        "russian": "Russian"
+    },
     "markets": {
         "title-header": "Рынки",
         "columns": {
@@ -15,11 +19,14 @@
             "market-cap": "Рыночная капитализация",
             "24h-volume": "Объем торгов за 24ч"
         },
+        "card": {
+            "market-cap": "Рыночная капитализация"
+        },
         "filters": {
             "price": {
-                "Select Last Price": "Выберите последнюю цену",
-                "Last Price Down": "Последнее снижение цены",
-                "Last Price Up": "Последнее повышение цены"
+                "select-last-price": "Выберите последнюю цену",
+                "last-price-down": "Последнее снижение цены",
+                "last-price-up": "Последнее повышение цены"
             },
             "favourites": "Избранные",
             "select-platform": "Выберите платформу",

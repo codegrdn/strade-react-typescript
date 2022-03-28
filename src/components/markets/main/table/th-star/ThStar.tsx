@@ -12,15 +12,15 @@ const ACTIVE_CLASS: string = 'col-favourites-icon--active';
 
 const ThStar: FC<ThStarProps> = ({ coin }) => {
     const { coins } = useContext(MarketMainContext);
-    const [classes, setClasses] = useState(coins.list.filter((item) => (item.id === coin.id)).length ? DEFAULT_CLASS + " " +  ACTIVE_CLASS : DEFAULT_CLASS);
+    const [classes, setClasses] = useState(coins.list.filter((item) => (item === coin.id)).length ? DEFAULT_CLASS + " " +  ACTIVE_CLASS : DEFAULT_CLASS);
 
     const handleClasses = () => {
         if (DEFAULT_CLASS === classes) {
             setClasses(DEFAULT_CLASS + " " +  ACTIVE_CLASS);
-            coins.addCoin(coin);
+            coins.addCoin(coin.id);
         } else {
             setClasses(DEFAULT_CLASS);
-            coins.removeCoin(coin);
+            coins.removeCoin(coin.id);
         }
     }
     
