@@ -123,7 +123,7 @@ const Table: FC<TableProps> = () => {
             className="markets__table table"
             noDataComponent={t('landing.market-info.table-have-not-data')}
             columns={columns}
-            data={[]}
+            data={values}
             progressPending={isLoading}
             progressComponent={<Loader />}
         />
