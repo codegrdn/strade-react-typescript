@@ -34,13 +34,16 @@ const CardMarketItem: FC<CardMarketItemProps> = ( { coin } ) => {
                 >
                     {formatingPrice(coin.current_price, signCurrency[currency.currency])}
                 </span> 
-                { coin.price_change_24h < 0 ? (coin.current_price + coin.price_change_24h).toFixed(2) : (coin.current_price - coin.price_change_24h).toFixed(2) }
+                { coin.price_change_24h < 0 
+                    ? formatingPrice((coin.current_price + coin.price_change_24h).toFixed(2), signCurrency[currency.currency]) 
+                    : formatingPrice((coin.current_price - coin.price_change_24h).toFixed(2), signCurrency[currency.currency])
+                }
             </div>
             <div className="markets__card-sum">
                 <span 
                     className={getColorClass(coin.price_change_percentage_24h)}
                 >
-                    {coin.price_change_percentage_24h.toFixed(2)}%
+                    {formatingPrice(coin.price_change_percentage_24h.toFixed(2), '%')}
                 </span> 
                 { t('markets.card.market-cap')}: {formatingPrice(coin.market_cap, signCurrency[currency.currency])}
             </div>

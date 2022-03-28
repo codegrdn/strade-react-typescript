@@ -27,8 +27,6 @@ const CardMarketList: FC<CardMarketListProps> = () => {
         return [...response?.data];
     }, [response]);
 
-    console.log(coinsList)
-
     return (
         <div className="markets__card-list custom-scroll">
             {
