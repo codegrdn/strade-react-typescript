@@ -14,14 +14,14 @@ interface TableProps {
 
 const Table: FC<TableProps> = () => {
     const { t } = useTranslation();
-    const defaultParams = { 
+    const defaultParams = {
         vs_currency: 'usd',
         per_page: 5,
         page: 1,
     };
-    
+
     const config = getCoinsMarkets(defaultParams);
-    const { response }  = useRequest(config);
+    const { response } = useRequest(config);
     const [isLoading, setIsLoading] = useState(true);
 
     const values = useMemo(() => {
@@ -37,14 +37,14 @@ const Table: FC<TableProps> = () => {
         return data;
     }, [response]);
 
-    const columns:  TableColumn<RowTable>[]  = [
+    const columns: TableColumn<RowTable>[] = [
         {
             id: 'name',
             name: t('markets.columns.name'),
             selector: row => row.name,
             cell: (row) => (
                 <div className="col-favourites">
-                        <img src={row.image} style={{marginRight: '10px', width: '40px'}} />
+                    <img src={row.image} style={{ marginRight: '10px', width: '40px' }} />
                     <p className="col-info">{row.name}</p>
                 </div>
             ),

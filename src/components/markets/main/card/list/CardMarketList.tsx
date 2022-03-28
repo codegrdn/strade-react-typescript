@@ -10,7 +10,7 @@ interface CardMarketListProps {
 
 const CardMarketList: FC<CardMarketListProps> = () => {
     const [isLoading, setIsLoading] = useState(true);
-    const { response }  = useListCoins();
+    const { response } = useListCoins();
 
     const coinsList: ICoin[] = useMemo(() => {
         if (!response?.data) {
@@ -28,15 +28,15 @@ const CardMarketList: FC<CardMarketListProps> = () => {
     }, [response]);
 
     return (
-        <div className="markets__card-list custom-scroll">
+        <div className="markets__card-list">
             {
                 coinsList.length
-                ? !isLoading
-                    ? <Loader isRevert={true} style={{ height: '24px', width: '24px'}} />
-                    :  coinsList.map((coin: ICoin, index) => (
-                        <CardMarketItem key={index} coin={coin} />
-                    ))
-                : ''
+                    ? !isLoading
+                        ? <Loader isRevert={true} style={{ height: '24px', width: '24px' }} />
+                        : coinsList.map((coin: ICoin, index) => (
+                            <CardMarketItem key={index} coin={coin} />
+                        ))
+                    : ''
             }
         </div>
     )

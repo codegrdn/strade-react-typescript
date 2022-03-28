@@ -18,7 +18,7 @@ interface DataChart {
     y: number,
 }
 
-const CoinChart: FC<CoinChartProps> = ({coinId, color, width = 140, height = 70}) => {
+const CoinChart: FC<CoinChartProps> = ({ coinId, color, width = 140, height = 70 }) => {
     const { currency } = useContext(MarketMainContext);
     const config = useMemo(() => {
         return getChart(coinId, {
@@ -33,7 +33,7 @@ const CoinChart: FC<CoinChartProps> = ({coinId, color, width = 140, height = 70}
     const chart: DataChart[] = useMemo(() => {
         setIsLoading(false);
         let prices: DataChart[] = [];
-        
+
         response?.data?.prices?.forEach((item: any) => {
             prices.push({
                 x: item[0],
@@ -53,8 +53,8 @@ const CoinChart: FC<CoinChartProps> = ({coinId, color, width = 140, height = 70}
         <>
             {
                 !isLoading
-                ? <Loader isRevert={true} style={{ height: '24px', width: '24px'}} />
-                : <AreaChart
+                    ? <Loader isRevert={true} style={{ height: '24px', width: '24px' }} />
+                    : <AreaChart
                         width={width}
                         height={height}
                         data={chart}
@@ -62,13 +62,13 @@ const CoinChart: FC<CoinChartProps> = ({coinId, color, width = 140, height = 70}
                             top: 10,
                             right: 30,
                             left: 0,
-                            bottom: 0,
+                            bottom: 10,
                         }}>
-                            <YAxis hide={true} type="number" domain={['auto', 'auto']} />
-                            <Area type="monotone" dataKey="y" stroke={color} fill={color} />
+                        <YAxis hide={true} type="number" domain={['auto', 'auto']} />
+                        <Area type="monotone" dataKey="y" stroke={color} fill={color} />
                     </AreaChart>
-                }
-        
+            }
+
         </>
     );
 }
