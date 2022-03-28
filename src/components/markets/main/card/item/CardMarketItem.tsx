@@ -1,19 +1,18 @@
-import { FC, useContext } from 'react';
+import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getColorClass, getColor } from '../../../../../helpers/colors';
 import { signCurrency } from '../../../../../helpers/currencies';
 import { formatingPrice } from '../../../../../helpers/formating';
 import ICoin from '../../../../../types/ICoin';
 import CoinChart from '../../chart/CoinChart';
-import { MarketMainContext } from '../../context/MarketMainContext';
 
 interface CardMarketItemProps {
     coin: ICoin,
+    currency: string,
 }
 
-const CardMarketItem: FC<CardMarketItemProps> = ( { coin } ) => {
+const CardMarketItem: FC<CardMarketItemProps> = ( { coin, currency } ) => {
     const { t } = useTranslation();
-    const { currency } = useContext(MarketMainContext);
 
     return (
         <div className="markets__card">
@@ -32,11 +31,11 @@ const CardMarketItem: FC<CardMarketItemProps> = ( { coin } ) => {
                 <span 
                     className={getColorClass(coin.price_change_24h)}
                 >
-                    {formatingPrice(coin.current_price, signCurrency[currency.currency])}
+                    {formatingPrice(coin.current_price, signCurrency[currency])}
                 </span> 
                 { coin.price_change_24h < 0 
-                    ? formatingPrice((coin.current_price + coin.price_change_24h).toFixed(2), signCurrency[currency.currency]) 
-                    : formatingPrice((coin.current_price - coin.price_change_24h).toFixed(2), signCurrency[currency.currency])
+                    ? formatingPrice((coin.current_price + coin.price_change_24h).toFixed(2), signCurrency[currency]) 
+                    : formatingPrice((coin.current_price - coin.price_change_24h).toFixed(2), signCurrency[currency])
                 }
             </div>
             <div className="markets__card-sum">
@@ -45,7 +44,7 @@ const CardMarketItem: FC<CardMarketItemProps> = ( { coin } ) => {
                 >
                     {formatingPrice(coin.price_change_percentage_24h.toFixed(2), '%')}
                 </span> 
-                { t('markets.card.market-cap')}: {formatingPrice(coin.market_cap, signCurrency[currency.currency])}
+                { t('markets.card.market-cap')}: {formatingPrice(coin.market_cap, signCurrency[currency])}
             </div>
         </div>
     )

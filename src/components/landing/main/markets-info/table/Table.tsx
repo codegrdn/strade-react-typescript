@@ -121,8 +121,9 @@ const Table: FC<TableProps> = () => {
     return (
         <DataTable
             className="markets__table table"
+            noDataComponent={t('landing.market-info.table-have-not-data')}
             columns={columns}
-            data={values}
+            data={[]}
             progressPending={isLoading}
             progressComponent={<Loader />}
         />

@@ -10,7 +10,7 @@ interface CardMarketListProps {
 
 const CardMarketList: FC<CardMarketListProps> = () => {
     const [isLoading, setIsLoading] = useState(true);
-    const { response }  = useListCoins();
+    const { response, currency }  = useListCoins();
 
     const coinsList: ICoin[] = useMemo(() => {
         if (!response?.data) {
@@ -34,7 +34,7 @@ const CardMarketList: FC<CardMarketListProps> = () => {
                 ? !isLoading
                     ? <Loader isRevert={true} style={{ height: '24px', width: '24px'}} />
                     :  coinsList.map((coin: ICoin, index) => (
-                        <CardMarketItem key={index} coin={coin} />
+                        <CardMarketItem key={index} coin={coin} currency={currency} />
                     ))
                 : ''
             }

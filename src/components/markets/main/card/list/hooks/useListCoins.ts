@@ -4,11 +4,16 @@ import IUseRequest from '../../../../../../types/IUseRequest';
 import { MarketMainContext } from '../../../context/MarketMainContext';
 import { getCoinsMarkets } from '../../../../../../api/rest/CoinService';
 
-const useListCoins = () : IUseRequest  => {
+interface IUseListCoins extends IUseRequest {
+    currency: string
+}
+
+const useListCoins = () : IUseListCoins  => {
     const { coins, currency } = useContext(MarketMainContext);
     const [response, setResponse] = useState<AxiosResponse>();
     const [error, setError] = useState<AxiosError>();
     const [loading, setLoading] = useState(true);
+    const [useCurrency, setUseCurrency] = useState(currency.currency)
 
     const fetchData = async (params: AxiosRequestConfig) => {
         try {
@@ -18,6 +23,7 @@ const useListCoins = () : IUseRequest  => {
             setError(err);
         } finally {
             setLoading(false);
+            setUseCurrency(currency.currency);
         }
     };
 
@@ -34,7 +40,13 @@ const useListCoins = () : IUseRequest  => {
         }
     }, [coins.list, currency.currency]);
 
-    return { response: response, error: error, loading: loading, sendData: sendData };
+    return { 
+        response: response,
+        error: error,
+        loading: loading,
+        sendData: sendData,
+        currency: useCurrency
+    };
 }
 
 export default useListCoins;
