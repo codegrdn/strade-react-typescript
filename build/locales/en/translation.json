@@ -34,7 +34,8 @@
             "select-with-item": "Select {{item}}",
             "category": "category",
             "search": "Search..."
-        }
+        },
+        "table-have-not-data": "There are no records to display"
     },
     "landing": {
         "hero": {
@@ -122,7 +123,8 @@
             "subtitle": "MARKETS",
             "title": "Top pairs by Liquidity",
             "favourites": "Favourites",
-            "view-all": "View all Markets"
+            "view-all": "View all Markets",
+            "table-have-not-data": "There are no records to display"
         },
         "footer": {
             "info": {
