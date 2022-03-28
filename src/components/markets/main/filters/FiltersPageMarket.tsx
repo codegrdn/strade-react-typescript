@@ -13,6 +13,23 @@ const FiltersPageMarket: FC<FiltersPageMarketProps> = () => {
             <div className="markets__table-head">
                 <Favorite />
 
+                {/* {
+                    filters.length &&
+                    <ul className="markets__filters-list">
+                        {
+                            filters.map((item) => (
+                                <li className="markets__filters-item" key={item.key}>
+                                    <item.component />
+                                </li>
+                            ))
+                        }
+                    </ul>
+                } */}
+            </div>
+
+            <div className="markets__table-head-row">
+
+
                 {
                     filters.length &&
                     <ul className="markets__filters-list">
@@ -25,9 +42,7 @@ const FiltersPageMarket: FC<FiltersPageMarketProps> = () => {
                         }
                     </ul>
                 }
-            </div>
 
-            <div className="markets__table-head-row">
                 <Search />
             </div>
         </>
