@@ -4,6 +4,10 @@
         "Swap": "Swap",
         "Markets": "Markets"
     },
+    "language": {
+        "english": "English",
+        "russian": "Russian"
+    },
     "markets": {
         "title-header": "Markets",
         "columns": {
@@ -15,11 +19,14 @@
             "market-cap": "Market Cap",
             "24h-volume": "24h Volume"
         },
+        "card": {
+            "market-cap": "Market Cap"
+        },
         "filters": {
             "price": {
-                "Select Last Price": "Select Last Price",
-                "Last Price Down": "Last Price Down",
-                "Last Price Up": "Last Price Up"
+                "select-last-price": "Select Last Price",
+                "last-price-down": "Last Price Down",
+                "last-price-up": "Last Price Up"
             },
             "favourites": "Favourites",
             "select-platform": "Select platform",
