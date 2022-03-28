@@ -1577,20 +1577,8 @@ pre code {
 }
 
 .markets {
-    display: grid;
-    grid-template-rows: -webkit-max-content -webkit-max-content 1fr;
-    grid-template-rows: max-content max-content 1fr;
-    gap: 15px;
-    max-width: 1460px;
+    max-width: 1400px;
     margin: 0 auto;
-    height: calc(100vh - 70px);
-    overflow: hidden
-}
-
-@media screen and (min-width:768px) {
-    .markets {
-        height: calc(100vh - 80px)
-    }
 }
 
 .markets__topbar {
@@ -1829,6 +1817,10 @@ pre code {
     background-color: rgba(var(--select-bg-color), 1);
     cursor: pointer;
     transition: background .3s, color .3s, border .3s
+}
+
+.markets__filters-item>:first-child {
+    width: 100%;
 }
 
 .markets__filters-item .bv_mainselect {
