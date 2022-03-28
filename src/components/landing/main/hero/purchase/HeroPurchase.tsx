@@ -34,15 +34,16 @@ const HeroPurchase: FC<PurchaseProps> = () => {
         })
     }, [fromCurrency]);
 
-    const { response, sendData }  = useRequest(config);
+    const { response, sendData, loading }  = useRequest(config);
 
     useEffect(() => {
-        sendData(config);
+        if (!loading) {
+            sendData(config);
+        }
     }, [config])
 
     const prices = useMemo(() => {
         setIsLoading(false);
-
 
         let prices: any = {};
         if (response?.data) {
@@ -57,13 +58,12 @@ const HeroPurchase: FC<PurchaseProps> = () => {
                 setTo(to);
                 setFrom(String(roundingValue(Number(to) * prices[toCurrency.value])));
             }
+            
+            const timeout = setTimeout(() => {
+                setIsLoading(true);
+                clearTimeout(timeout);
+            }, 1500);
         }
-
-
-        const timeout = setTimeout(() => {
-            setIsLoading(true);
-            clearTimeout(timeout);
-        }, 1500);
 
         return prices;
     }, [response]);
