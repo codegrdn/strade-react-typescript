@@ -23,8 +23,9 @@ interface TableProps {
 const Table: FC<TableProps> = () => {
     const { t } = useTranslation();
     const { currency, filters, platforms } = useContext(MarketMainContext);
-    const defaultParams = { vs_currency: currency.currency };
+    const [useCurrency, setUseCurrency] = useState(currency.currency);
 
+    const defaultParams = { vs_currency: currency.currency };
     const config = getCoinsMarkets(defaultParams);
     const { response, sendData, loading }  = useRequest(config);
 
@@ -63,11 +64,13 @@ const Table: FC<TableProps> = () => {
             }
         }
 
+        setUseCurrency(currency.currency);
+
         const timeout = setTimeout(() => {
             setIsLoading(false);
             clearTimeout(timeout);
         }, 1500);
-        
+
         return data;
     }, [response, filters.list]);
 
@@ -104,7 +107,7 @@ const Table: FC<TableProps> = () => {
             selector: row => row.current_price,
             cell: (row) => (
                 <p className="col-info">
-                    <span className={getColorClass(row.price_change_24h)}>{formatingPrice(row.current_price, signCurrency[currency.currency])}</span>
+                    <span className={getColorClass(row.price_change_24h)}>{formatingPrice(row.current_price, signCurrency[useCurrency])}</span>
                 </p>
             ),
             sortable: true,
@@ -126,7 +129,7 @@ const Table: FC<TableProps> = () => {
             selector: row => row.high_24h,
             cell: (row) => (
                 <p className="col-info">
-                    <span className={getColorClass(row.high_24h)}>{formatingPrice(row.high_24h, signCurrency[currency.currency])}</span>
+                    <span className={getColorClass(row.high_24h)}>{formatingPrice(row.high_24h, signCurrency[useCurrency])}</span>
                 </p>
             ),
             sortable: true,
@@ -137,7 +140,7 @@ const Table: FC<TableProps> = () => {
             selector: row => row.low_24h,
             cell: (row) => (
                 <p className="col-info">
-                    <span className={getColorClass(row.low_24h)}>{formatingPrice(row.low_24h, signCurrency[currency.currency])}</span>
+                    <span className={getColorClass(row.low_24h)}>{formatingPrice(row.low_24h, signCurrency[useCurrency])}</span>
                 </p>
             ),
             sortable: true,
@@ -146,14 +149,14 @@ const Table: FC<TableProps> = () => {
             id: 'market_cap',
             name: t('markets.columns.market-cap'),
             selector: row => row.market_cap,
-            cell: (row) => formatingPrice(row.market_cap, signCurrency[currency.currency]),
+            cell: (row) => formatingPrice(row.market_cap, signCurrency[useCurrency]),
             sortable: true,
         },
         {
             id: 'total_volume',
             name: t('markets.columns.24h-volume'),
             selector: row => row.total_volume,
-            cell: (row) => formatingPrice(row.total_volume, signCurrency[currency.currency]),
+            cell: (row) => formatingPrice(row.total_volume, signCurrency[useCurrency]),
             sortable: true,
         },
         {
