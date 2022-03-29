@@ -10,11 +10,12 @@ interface SelectCoreProps {
     className?: string,
     classNamePrefix?: string,
     styles?: StylesConfig<ISelect, false, GroupBase<ISelect>> | undefined,
-    components?: Partial<SelectComponents<ISelect, false, GroupBase<ISelect>>> | undefined
+    components?: Partial<SelectComponents<ISelect, false, GroupBase<ISelect>>> | undefined,
+    isSearchable?: boolean,
 }
 
-const SelectCore: FC<SelectCoreProps> = ({ values, selected, onChange, className, classNamePrefix, styles, components }) => {
-    return <Select components={components} styles={styles} className={className} classNamePrefix={classNamePrefix} value={selected} options={values} onChange={onChange} />;
+const SelectCore: FC<SelectCoreProps> = ({ values, selected, onChange, className, classNamePrefix, styles, components, isSearchable = true }) => {
+    return <Select isSearchable={isSearchable} components={components} styles={styles} className={className} classNamePrefix={classNamePrefix} value={selected} options={values} onChange={onChange} />;
 }
 
 export default SelectCore;

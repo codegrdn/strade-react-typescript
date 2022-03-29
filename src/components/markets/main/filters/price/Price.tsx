@@ -1,7 +1,7 @@
 import { findByLabelText } from '@testing-library/react';
 import { FC, useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next';
-import { StylesConfig } from 'react-select';
+import { GroupBase, StylesConfig } from 'react-select';
 import ISelect from '../../../../../types/ISelect';
 import Loader from '../../../../shared/loader/Loader';
 import SelectCore from '../../../../shared/select/core/SelectCore';
@@ -52,7 +52,7 @@ const Price: FC<PriceProps> = () => {
         setItems(items);
 
         const timeout = setTimeout(() => {
-            setValue(items.filter((item) => (item.value == value.value))[0]);
+            setValue(items.filter((item) => (item.value === value.value))[0]);
 
             setLoading(true);
             clearTimeout(timeout);
@@ -65,24 +65,40 @@ const Price: FC<PriceProps> = () => {
         filters.addFilter({ lastPrice: e.value });
     }
 
-    const customStyles = {
-        option: (provided: any, state: any) => ({
-            ...provided,
-            padding: 0,
+    //Тестовый конфиг для кастомного Select
+    const customStyles: StylesConfig<ISelect, false, GroupBase<ISelect>> = {
+        option: (provided, state) => ({
+            padding: '5px',
+            borderLeft: '3px solid transparent',
+            textAlign: 'left',
+            transition: 'color .3s, border .3s',
+            width: '100%',
+            ":hover": {
+                borderLeft: '3px solid #24ac80',
+            },
         }),
         control: () => ({
-            // none of react-select's styles are passed to <Control />
-            width: 200,
+            width: '200px',
             display: 'flex',
             padding: '0px 0px 0px 0px',
         }),
         menuList: () => ({
-            padding: '10px',
+            backgroundColor: 'rgba(var(--select-bg-color), 1)',
+            border: '1px solid rgba(var(--primary-color),.05)',
         }),
-        singleValue: (provided: any, state: any) => {
+        valueContainer: (provided, state) => ({
+            ...provided,
+            paddingLeft: '5px',
+            textAlign: 'left',
+        }),
+        dropdownIndicator: (provided, state) => ({
+            transition: 'all .2s',
+            transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : 'none',
+            padding: '5px'
+        }),
+        singleValue: (provided, state) => {
             const opacity = state.isDisabled ? 0.5 : 1;
             const transition = 'opacity 300ms';
-
             return { ...provided, opacity, transition };
         }
     }
@@ -93,6 +109,7 @@ const Price: FC<PriceProps> = () => {
                 !loading
                     ? <Loader isRevert={true} style={{ height: '24px', width: '24px' }} />
                     : <SelectCore
+                        isSearchable={false}
                         selected={value}
                         values={items}
                         onChange={handlerFilterMarket}

@@ -1815,6 +1815,7 @@ pre code {
     cursor: pointer;
     transition: background .3s, color .3s, border .3s, ease-in-out .2s;
     background-color: rgba(var(--select-bg-color), 1);
+    margin-right: 10px;
 
 }
 
