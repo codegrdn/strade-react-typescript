@@ -1769,19 +1769,18 @@ pre code {
 
 .markets__coin-item {
     display: flex;
-    min-height: 5rem;
-    max-width: 7.5rem;
     align-items: center;
     justify-content: center;
     padding: 6px;
     text-transform: uppercase;
+    border-radius: 2px;
     border: 1px solid transparent;
-    border-radius: 50px;
     color: rgba(var(--primary-color), 1);
     text-align: center;
     background-color: rgba(var(--select-bg-color), 1);
     cursor: pointer;
-    transition: background .3s, color .3s, border .3s
+    transition: background .3s, color .3s, border .3s, ease-in-out .2s;
+    margin: 0 5px 0 5px;
 }
 
 .markets__coin-item--active {
@@ -1809,13 +1808,14 @@ pre code {
 
 .markets__filters-item {
     display: flex;
-    margin: 0 5px;
     align-items: center;
     justify-content: center;
     border-radius: 2px;
     background-color: rgba(var(--select-bg-color), 1);
     cursor: pointer;
-    transition: background .3s, color .3s, border .3s
+    transition: background .3s, color .3s, border .3s, ease-in-out .2s;
+    background-color: rgba(var(--select-bg-color), 1);
+
 }
 
 .markets__filters-item>:first-child {
@@ -1871,7 +1871,8 @@ pre code {
 .markets__search {
     display: flex;
     justify-content: space-between;
-    max-width: 250px;
+    min-width: 20rem;
+    margin-left: auto;
 }
 
 .markets__search-input {

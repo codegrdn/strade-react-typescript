@@ -10,10 +10,10 @@ interface FiltersPageMarketProps {
 const FiltersPageMarket: FC<FiltersPageMarketProps> = () => {
     return (
         <>
-            <div className="markets__table-head">
+            {/* <div className="markets__table-head">
                 <Favorite />
 
-                {/* {
+                {
                     filters.length &&
                     <ul className="markets__filters-list">
                         {
@@ -24,8 +24,8 @@ const FiltersPageMarket: FC<FiltersPageMarketProps> = () => {
                             ))
                         }
                     </ul>
-                } */}
-            </div>
+                }
+            </div> */}
 
             <div className="markets__table-head-row">
 
@@ -42,6 +42,7 @@ const FiltersPageMarket: FC<FiltersPageMarketProps> = () => {
                         }
                     </ul>
                 }
+                <Favorite />
 
                 <Search />
             </div>
