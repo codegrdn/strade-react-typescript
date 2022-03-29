@@ -1818,6 +1818,10 @@ pre code {
 
 }
 
+.prices__control {
+    background-color: red;
+}
+
 .markets__filters-item>:first-child {
     width: 100%;
 }

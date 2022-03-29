@@ -34,7 +34,8 @@
             "select-with-item": "Выберите {{item}}",
             "category": "category",
             "search": "Найти..."
-        }
+        },
+        "table-have-not-data": "Нет данных для отображения"
     },
     "landing": {
         "hero": {
@@ -122,7 +123,8 @@
             "subtitle": "Рынки",
             "title": "Лучшие валютные пары",
             "favourites": "Избранные",
-            "view-all": "Смотреть все рынки"
+            "view-all": "Смотреть все рынки",
+            "table-have-not-data": "Нет данных для отображения"
         },
         "footer": {
             "info": {

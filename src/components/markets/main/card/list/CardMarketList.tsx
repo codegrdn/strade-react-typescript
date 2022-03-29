@@ -10,7 +10,11 @@ interface CardMarketListProps {
 
 const CardMarketList: FC<CardMarketListProps> = () => {
     const [isLoading, setIsLoading] = useState(true);
+<<<<<<< HEAD
     const { response } = useListCoins();
+=======
+    const { response, currency }  = useListCoins();
+>>>>>>> 68af7ab9c986560c9693e1a24a9870030186fed8
 
     const coinsList: ICoin[] = useMemo(() => {
         if (!response?.data) {
@@ -31,12 +35,21 @@ const CardMarketList: FC<CardMarketListProps> = () => {
         <div className="markets__card-list">
             {
                 coinsList.length
+<<<<<<< HEAD
                     ? !isLoading
                         ? <Loader isRevert={true} style={{ height: '24px', width: '24px' }} />
                         : coinsList.map((coin: ICoin, index) => (
                             <CardMarketItem key={index} coin={coin} />
                         ))
                     : ''
+=======
+                ? !isLoading
+                    ? <Loader isRevert={true} style={{ height: '24px', width: '24px'}} />
+                    :  coinsList.map((coin: ICoin, index) => (
+                        <CardMarketItem key={index} coin={coin} currency={currency} />
+                    ))
+                : ''
+>>>>>>> 68af7ab9c986560c9693e1a24a9870030186fed8
             }
         </div>
     )
