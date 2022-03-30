@@ -85,6 +85,9 @@ const Price: FC<PriceProps> = () => {
         menuList: () => ({
             backgroundColor: 'rgba(var(--select-bg-color), 1)',
             border: '1px solid rgba(var(--primary-color),.05)',
+            maxHeight: '15rem',
+            overflowY: 'auto',
+            scrollbarWidth: 'thin'
         }),
         valueContainer: (provided, state) => ({
             ...provided,

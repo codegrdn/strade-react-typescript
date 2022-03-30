@@ -1905,7 +1905,8 @@ pre code {
 
 .markets__table-wrap {
     padding: 10px 0;
-    background-color: rgba(var(--theme-bg-secondary-color), 1)
+    background-color: rgba(var(--theme-bg-secondary-color), 1);
+    min-height: 500px;
 }
 
 .markets__table-wrap>:first-child {
