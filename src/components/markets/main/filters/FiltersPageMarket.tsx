@@ -10,7 +10,7 @@ interface FiltersPageMarketProps {
 const FiltersPageMarket: FC<FiltersPageMarketProps> = () => {
     return (
         <>
-            <div className="markets__table-head">
+            {/* <div className="markets__table-head">
                 <Favorite />
 
                 {
@@ -25,9 +25,25 @@ const FiltersPageMarket: FC<FiltersPageMarketProps> = () => {
                         }
                     </ul>
                 }
-            </div>
+            </div> */}
 
             <div className="markets__table-head-row">
+
+
+                {
+                    filters.length &&
+                    <ul className="markets__filters-list">
+                        {
+                            filters.map((item) => (
+                                <li className="markets__filters-item" key={item.key}>
+                                    <item.component />
+                                </li>
+                            ))
+                        }
+                    </ul>
+                }
+                <Favorite />
+
                 <Search />
             </div>
         </>
