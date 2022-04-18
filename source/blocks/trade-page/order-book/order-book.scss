@@ -1,0 +1,141 @@
+.order-book {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    padding: 10px;
+    background-color: rgba($bg-secondary-color, 1);
+
+    @include media-up--S {
+        padding: 20px 10px 10px;
+    }
+}
+
+.order-book__inner + .order-book__inner {
+    margin-top: 20px;
+}
+
+.order-book__wrap {
+    margin-top: 20px;
+}
+
+.order-book__head {
+    padding-right: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order-book__title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.2;
+
+    @include media-up--S {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    @include media-up--XXL {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+
+.order-book__subtitle {
+    margin-left: 8px;
+    font-size: 10px;
+    line-height: 12px;
+    opacity: 0.5;
+
+    @include media-up--S {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    @include media-up--XXL {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
+.order-book__filter {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 4px;
+
+    @include media-up--XXL {
+        gap: 8px;
+    }
+}
+
+.order-book__filter-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background-color: rgba($text-primary-color, 0.1);
+    border-radius: 2px;
+    cursor: pointer;
+
+    &--active {
+        background-color: rgba($text-primary-color, 0.3);
+    }
+
+    @include media-up--XXL {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.order-book__text {
+    font-weight: 500;
+    font-size: 12px;
+
+    @include media-up--S {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    @include media-up--XL {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    img {
+        margin-left: 5px;
+    }
+}
+
+.order-book__table {
+    white-space: nowrap;
+    margin: 0;
+    width: 100%;
+    border-radius: 15px;
+    border-collapse: collapse;
+    border: none;
+
+    tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    th {
+        width: 33%;
+    }
+
+    td:not(:last-child) {
+        width: 33%;
+    }
+
+    td:first-child,
+    th:first-child {
+        padding-left: 0;
+    }
+
+    td:last-child {
+        padding: 0;
+    }
+}
+

@@ -1,0 +1,567 @@
+.orders__content
+    .orders__type
+        .orders__type-item(data-index="1") Open Orders <span>(0)</span>
+        .orders__type-item.orders__type-item--active(data-index="2") Order History
+        .orders__type-item(data-index="3") Trade History
+    .orders__inner.custom-scroll
+        .orders__head
+            .orders__head-title Order History
+            .orders__export
+                a(href="https://bits.media/upload/iblock/848/dzhoel_berch_ya_pokupal_bitkoiny_iz_za_blek_dzheka.jpg" target="_blank" download)
+                    svg.orders__export-icon(width="14" height="14")
+                        use(xlink:href="#export-icon")
+                    span.orders__export-text Export Order History
+
+            .orders__head-wrap
+                .orders__head-pair-wrap
+                    .orders__head-name Date
+                    .search-filter__search
+                        input.search-filter__search-input(type="search" placeholder="YYYY-MM-DD-YYYY-MM-DD")
+                        button.search-filter__search-img(type="button" aria-label="search button")
+                            svg.search-filter__search-icon(width="14" height="14")
+                                use(xlink:href="#calendar-icon")
+
+                .orders__head-pair-wrap
+                    .orders__head-name Pair
+
+                    .orders__head-pair-select-wrap
+                        .orders__head-pair-select
+                            select(id="selectPair-1")
+                                option(value="1" selected) All
+                                option(value="2") All-2
+                                option(value="3") All-3
+                        span.orders__head-pair-select-line —
+                        .orders__head-pair-select
+                            select(id="selectPair-2")
+                                option(value="1" selected) All
+                                option(value="2") All-2
+                                option(value="3") All-3
+
+                .orders__head-btn-wrap
+                    button.orders__head-btn.btn-primary(type="button") Reset
+                    button.orders__head-btn.btn-blue(type="button") Search
+
+                label.orders__checkbox-group
+                    input.orders__checkbox-input.visually-hidden(type="checkbox")
+                    span.orders__checkbox-label Hide all canceled
+
+        .orders__table-wrap.custom-scroll(data-content-index="1")
+            .orders__table-info no open orders
+
+        .orders__table-wrap.orders__table-wrap--show.custom-scroll(data-content-index="2")
+            table.orders__table.table
+                thead
+                    tr
+                        th
+                            p.col-name Date
+                        th
+                            p.col-name Pair
+                        th
+                            p.col-name Type
+                        th
+                            p.col-name Side
+                        th
+                            p.col-name Average
+                        th
+                            p.col-name Price
+                        th
+                            p.col-name Executed
+                        th
+                            p.col-name Amount
+                        th
+                            p.col-name Total
+                        th
+                            p.col-name TriggerConditions
+                        th
+                            p.col-name Status
+                tbody
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-red Sell
+                        td
+                            p.col-info 1.42242
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 142.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-red Sell
+                        td
+                            p.col-info 1.42242
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 142.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-green Buy
+                        td
+                            p.col-info 1.42242
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 142.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-green Buy
+                        td
+                            p.col-info 1.42242
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 142.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-green Buy
+                        td
+                            p.col-info 1.42242
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 142.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-red Sell
+                        td
+                            p.col-info 1.42242
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 142.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+
+        .orders__table-wrap.custom-scroll(data-content-index="3")
+            table.orders__table.table
+                thead
+                    tr
+                        th
+                            p.col-name Date
+                        th
+                            p.col-name Pair
+                        th
+                            p.col-name Type
+                        th
+                            p.col-name Side
+                        th
+                            p.col-name Average
+                        th
+                            p.col-name Price
+                        th
+                            p.col-name Executed
+                        th
+                            p.col-name Amount
+                        th
+                            p.col-name Total
+                        th
+                            p.col-name TriggerConditions
+                        th
+                            p.col-name Status
+                tbody
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-green Buy
+                        td
+                            p.col-info 1.42242
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 142.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-green Buy
+                        td
+                            p.col-info 1.42242
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 142.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-green Buy
+                        td
+                            p.col-info 1.42242
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 142.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-green Buy
+                        td
+                            p.col-info 1.42342
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 730.000
+                        td
+                            p.col-info 700.010
+                        td
+                            p.col-info 242.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-green Buy
+                        td
+                            p.col-info 1.42242
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 100.000
+                        td
+                            p.col-info 120.000
+                        td
+                            p.col-info 12.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-red Sell
+                        td
+                            p.col-info 1.42242
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 240.000
+                        td
+                            p.col-info 457.000
+                        td
+                            p.col-info 12.34572 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-red Sell
+                        td
+                            p.col-info 1.42242
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 142.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-red Sell
+                        td
+                            p.col-info 6.24699
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 700.562
+                        td
+                            p.col-info 256.000
+                        td
+                            p.col-info 345.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-red Sell
+                        td
+                            p.col-info 1.42242
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 142.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-red Sell
+                        td
+                            p.col-info 1.42242
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 142.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-red Sell
+                        td
+                            p.col-info 1.42242
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 142.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-red Sell
+                        td
+                            p.col-info 1.42242
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 142.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-red Sell
+                        td
+                            p.col-info 1.42242
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 142.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed
+                    tr
+                        td
+                            p.col-info 2021.05.24 11:35:12
+                        td
+                            p.col-info.color-yellow  MATIC/USDT
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info.color-red Sell
+                        td
+                            p.col-info 1.42242
+                        td
+                            p.col-info Market
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 700.000
+                        td
+                            p.col-info 142.24111 USDT
+                        td
+                            p.col-info -
+                        td
+                            p.col-info.color-green Failed

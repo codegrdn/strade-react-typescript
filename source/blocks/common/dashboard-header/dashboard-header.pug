@@ -1,0 +1,63 @@
+.dashboard-header__content
+    a.dashboard-header__logo.logo(href="./index.html" aria-label="logo")
+        img.logo__icon(src="./img/icons/logo.svg", alt="" width="32" height="27")
+        img.dashboard-header__logo-text(src="./img/icons/logo-text.svg", alt="" width="52" height="11")
+    .dashboard-header__nav
+        nav.dashboard-header__menu
+            .dashboard-header__menu-list
+                .dashboard-header__menu-item-wrap
+                    .dashboard-header__menu-item
+                        a.dashboard-header__menu-link(href="./wallet.html") WALLET
+                    .dashboard-header__menu-item
+                        a.dashboard-header__menu-link(href="./markets.html") MARKETS
+                    .dashboard-header__menu-item
+                        a.dashboard-header__menu-link.dashboard-header__menu-link--active(href="./trade.html") Trade
+                    .dashboard-header__menu-item
+                        a.dashboard-header__menu-link(href="./swap.html") Swap
+                    .dashboard-header__menu-item
+                        a.dashboard-header__menu-link(href="./buy-crypto.html") BUY CRYPTO
+                .dashboard-header__menu-item-wrap
+                    .dashboard-header__menu-item
+                        .theme__button
+                            .theme__button-text Dark mode
+                            input.theme__button-input#darkmode(type = "checkbox")
+                            label.theme__button-label(for = "darkmode")
+                    .dashboard-header__menu-item
+                        select(id="selectbox")
+                            option(value="1" selected) English / USD
+                            option(value="2") English / GPB
+                            option(value="3") Deutsch / EUR
+
+        .dashboard-header__user-menu-wrap
+            .dashboard-header__notify
+                .dashboard-header__notify-img.dashboard-header__notify-img--active
+                    img.dashboard-header__notify-icon(src="./img/icons/bell-icon.svg", width="20" height="20" alt="")
+                .dashboard-header__notify-content
+                    .dashboard-header__notify-list.custom-scroll
+                        .dashboard-header__notify-item
+                            p Welcome to STRADE!
+                        .dashboard-header__notify-item
+                            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum.
+                        .dashboard-header__notify-item
+                            p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+
+
+            .dashboard-header__user-dropdown.dropdown-menu
+                .dropdown-menu__user-info
+                    img.dropdown-menu__user-icon(src="./img/user-logo.png", width="28" height="28" alt="")
+                    .dropdown-menu__user-name Константинопольский К.
+                        i.arrow.down
+
+                .dropdown-menu__menu
+                    .dropdown-menu__menu-list
+                        a.dropdown-menu__menu-item(href="./orders.html") Orders
+                        a.dropdown-menu__menu-item(href="#!") Transactions
+                        a.dropdown-menu__menu-item(href="#!") Verification
+                        a.dropdown-menu__menu-item(href="./settings.html") Settings
+                        a.dropdown-menu__menu-item(href="#!") Log Out
+
+        button.dashboard-header__menu-toggle(type="button" aria-label="mobile-menu")
+            span.dashboard-header__menu-toggle-line
+                svg.dashboard-header__menu-toggle-icon(width="20" height="20")
+                    use(xlink:href="#menu-icon")
+

@@ -1,0 +1,50 @@
+.trades {
+    padding: 10px;
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    overflow: hidden;
+    background-color: rgba($bg-secondary-color, 1);
+
+    @include media-up--S {
+        padding: 20px 10px 10px;
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    td:first-child,
+    th:first-child {
+        padding-left: 0;
+    }
+}
+
+.trades__head {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.trades__title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.2;
+
+    @include media-up--S {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    @include media-up--XXL {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+
+.trades__text {
+    font-weight: 500;
+    font-size: 12px;
+
+    img {
+        margin-left: 5px;
+    }
+}

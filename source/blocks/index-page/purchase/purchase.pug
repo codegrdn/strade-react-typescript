@@ -1,0 +1,29 @@
+.purchase
+    .purchase__converter.converter
+        h2.converter__title Buy crypto
+        .converter__inner
+            .converter__item-title Buy
+            .converter__item
+                input.converter__input(type="number" placeholder="0,00")
+                .converter__coin
+                    .converter__coin-name
+                        select(id="selectboxcoin-1")
+                            option(data-img="./img/icons/usd-icon.svg" value="1")  <span>USD</span>
+                            option(data-img="./img/icons/btc-icon.svg" value="2" selected) BTC
+            .converter__item-title For
+            .converter__item
+                input.converter__input(type="number" placeholder="0,00")
+                .converter__coin
+                    .converter__coin-name
+                        select(id="selectboxcoin-2")
+                            option(data-img="./img/icons/usd-icon.svg" value="1" selected)  USD
+                            option(data-img="./img/icons/btc-icon.svg" value="2") BTC
+
+    .purchase__payment-method.payment-method
+        .payment-method__item.payment-method__item--active
+            img.filter--gray(src="./img/visa.png", width="66" height="25" alt="")
+        .payment-method__item
+            img.filter--gray(src="./img/paypal.png", width="66" height="25" alt="")
+        .payment-method__item
+            img.filter--gray(src="./img/simplex.png", width="66" height="25" alt="")
+    button.purchase__btn.btn.btn--blue(type="submit") Buy BTC

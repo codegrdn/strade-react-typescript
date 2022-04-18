@@ -1,0 +1,29 @@
+.markets {
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.markets__topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 40px;
+}
+
+.markets__topbar-title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+
+    @include media-up--S {
+        font-size: 24px;
+        line-height: 24px;
+    }
+}
+
+.markets__content {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    gap: 20px;
+    overflow: hidden;
+}

@@ -1,0 +1,30 @@
+section.markets-info
+    .markets-info__bg
+        img.markets-info__bg-img(src="./img/bg-dots.png", alt="")
+    .box
+        .markets-info__inner
+            .markets-info__subtitle.subtitle MARKETS
+            h2.markets-info__title.title Top pairs by Liquidity
+
+            .markets-info__content
+                .markets-info__row
+                    .markets-info__wrap
+                        .markets-info__favourites
+                            img.markets-info__favourites-icon(src="./img/icons/star-icon.svg", alt="")
+                            .markets-info__favourites-text Favourites
+                        .markets-info__search
+                            input.markets-info__search-input(type="search" placeholder="Search Market")
+                            svg.markets-info__search-icon(width="12" height="12")
+                                use(xlink:href="#search-icon")
+
+                    ul.markets-info__coin-list
+                        li.markets-info__coin-item.markets-info__coin-item--active(data-coin-index="1") xlm
+                        li.markets-info__coin-item(data-coin-index="2") btc
+                        li.markets-info__coin-item(data-coin-index="3") eth
+
+                .markets-info__table.custom-scroll
+                    include ../markets-table/markets-table.pug
+            .markets-info__link-wrap
+                a.markets-info__link(href="#!") View all Markets
+                    svg.markets-info__link-icon(width="20" height="12")
+                        use(xlink:href="#arrow-right-icon")

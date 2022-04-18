@@ -1,0 +1,42 @@
+.trade-info {
+    padding: 60px 0;
+
+    @include media-up--S {
+        padding: 120px 0;
+    }
+}
+
+.trade-info__subtitle {
+    margin-bottom: 15px;
+    color: $subtitle-color;
+}
+
+.trade-info__title {
+    margin-bottom: 20px;
+    color: $title-color;
+}
+
+.trade-info__descr {
+    margin: 10px 0 20px;
+    font-size: 12px;
+    line-height: 17px;
+    color: rgba($text-color, 0.7);
+
+
+    @include media-up--S {
+        margin: 20px 0 30px;
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+.trade-info__picture {
+    max-width: 1270px;
+    margin: 0 auto;
+}
+
+.trade-info__image {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+}

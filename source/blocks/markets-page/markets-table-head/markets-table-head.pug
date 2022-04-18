@@ -1,0 +1,28 @@
+.markets__table-head
+    ul.markets__coin-list
+        li.markets__coin-item.markets__coin-item--active(data-coin-index="1") USDT
+        li.markets__coin-item(data-coin-index="2") btc
+        li.markets__coin-item(data-coin-index="3") xlm
+    ul.markets__filters-list
+        li.markets__filters-item
+            select(id="selectfiltersAlts")
+                option(value="1" selected) Alts
+                option(value="2") Alts-2
+                option(value="3") Alts-3
+        li.markets__filters-item
+            select(id="selectfiltersStable")
+                option(value="1" selected) Stable
+                option(value="2") Stable-2
+                option(value="3") Stable-3
+        li.markets__filters-item
+            select(id="selectfiltersZones")
+                option(value="1" selected) Zones
+                option(value="2") Zones-2
+                option(value="3") Zones-3
+    .markets__table-head-row
+        button.markets__filters-favourites(type="button") Favourites
+        .markets__search
+            input.markets__search-input(type="search" placeholder="Search...")
+            button.markets__search-img(type="button" aria-label="search button")
+                svg.markets__search-icon(width="12" height="12")
+                    use(xlink:href="#search-icon")

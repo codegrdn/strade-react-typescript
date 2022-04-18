@@ -1,0 +1,90 @@
+.wallet__balance
+    .wallet__balance-head
+        h2.wallet__balance-title Balances
+        label.search-filter__checkbox
+            input.search-filter__checkbox-input.visually-hidden(type="checkbox", name="onlyPositive" value="11")
+            span.search-filter__checkbox-label Only positive
+        .search-filter__search
+            input.search-filter__search-input(type="search" placeholder="Search...")
+            button.search-filter__search-img(type="button" aria-label="search button")
+                svg.search-filter__search-icon(width="12" height="12")
+                    use(xlink:href="#search-icon")
+
+    .wallet__balance-row-middle.custom-scroll
+        table.wallet__balance-table.table
+            thead
+                tr
+                    th
+                        p.col-name Asset
+                    th
+                        p.col-name Address
+                    th
+                        p.col-name Balance
+                    th
+            tbody
+                tr
+                    td
+                        .col-coin
+                            .col-coin-logo
+                                img(src="./img/icons/btc-icon.svg", alt="" width="26" height="26")
+                            .col-coin-ticker BTC
+                    td
+                        p.col-info 14TopQYd9FTB4sKmmUtXhjNXjfDbG7K8JJ
+                    td
+                        p.col-info 160.7264179
+                    td
+                        a(href="./wallet-coin.html").col-info.col-info-link
+                            span &middot&nbsp;&middot&nbsp;&middot
+                tr
+                    td
+                        .col-coin
+                            .col-coin-logo
+                                img(src="./img/icons/ltc-icon.svg", alt="" width="26" height="26")
+                            .col-coin-ticker ltc
+                    td
+                        p.col-info LgFYiqMsYhX2YxfB3SfUAbTwhLFdHKXZQV
+                    td
+                        p.col-info 10.0747403
+                    td
+                        a(href="./wallet-coin.html").col-info.col-info-link
+                            span &middot&nbsp;&middot&nbsp;&middot
+                tr
+                    td
+                        .col-coin
+                            .col-coin-logo
+                                img(src="./img/icons/doge-icon.svg", alt="" width="26" height="26")
+                            .col-coin-ticker Doge
+                    td
+                        p.col-info DJ8RkY1CWf37ZGihW1NaKhA5LYr1E29Syk
+                    td
+                        p.col-info 278.4720987
+                    td
+                        a(href="./wallet-coin.html").col-info.col-info-link
+                            span &middot&nbsp;&middot&nbsp;&middot
+                tr
+                    td
+                        .col-coin
+                            .col-coin-logo
+                                img(src="./img/icons/eth-icon.svg", alt="" width="26" height="26")
+                            .col-coin-ticker ETH
+                    td
+                        p.col-info 0xDf045648203Ffab1C4CAC7436b5F0462dc61464B
+                    td
+                        p.col-info 147.16500
+                    td
+                        a(href="./wallet-coin.html").col-info.col-info-link
+                            span &middot&nbsp;&middot&nbsp;&middot
+                tr
+                    td
+                        .col-coin
+                            .col-coin-logo
+                                img(src="./img/icons/xlm-icon.svg", alt="" width="26" height="26")
+                            .col-coicol-coin-ticker XLM
+                    td
+                        p.col-info GDKQEANWSPYRUFDM2U66FD2YAPJAGNW2F4MLZSYVVA7PLVFC47QFTYS5
+                    td
+                        p.col-info 147.16500
+                    td
+                        a(href="./wallet-coin.html").col-info.col-info-link
+                            span &middot&nbsp;&middot&nbsp;&middot
+

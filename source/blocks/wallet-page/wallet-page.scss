@@ -1,0 +1,132 @@
+.wallet {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    max-width: 1460px;
+    margin: 0 auto;
+    height: calc(100vh - 70px);
+    overflow: hidden;
+
+    @include media-up--S {
+        height: calc(100vh - 80px);
+    }
+}
+
+.wallet__topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 15px 0;
+}
+
+.wallet__breadcrumbs {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.wallet__breadcrumbs-item {
+    position: relative;
+}
+
+.wallet__breadcrumbs-item + .wallet__breadcrumbs-item::before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    border-top: 1px solid rgba($text-primary-color, 0.5);
+    border-right: 1px solid rgba($text-primary-color, 0.5);
+    width: 8px;
+    height: 8px;
+    top: -1px;
+    right: 2px;
+    margin: 0 8px;
+    transform: rotate(45deg);
+}
+
+.wallet__breadcrumbs-link {
+    color: rgba($text-primary-color, 0.5);
+
+    &:hover {
+        color: $green;
+    }
+}
+
+.wallet__topbar-title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+
+    @include media-up--S {
+        font-size: 24px;
+        line-height: 24px;
+    }
+}
+
+.wallet__counter-title {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: rgba($text-primary-color, 0.5);
+    margin-bottom: 6px;
+
+    @include media-up--S {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
+.wallet__counter-inner {
+    display: flex;
+    align-items: flex-end;
+}
+
+.wallet__counter-currency {
+    font-family: $font-family;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+    color: $green;
+    margin-right: 10px;
+
+    @include media-up--S {
+        font-size: 26px;
+        line-height: 26px;
+    }
+}
+
+.wallet__counter-crypto {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+
+    @include media-up--S {
+        font-size: 16px;
+        line-height: 19px;
+    }
+}
+
+.wallet__inner {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    gap: 10px;
+    overflow: hidden;
+
+    @include media-up--XL {
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+.wallet__sidebar,
+.wallet__balance,
+.wallet__details {
+    background-color: rgba($bg-secondary-color, 1);
+}
+
+.wallet__content {
+    display: grid;
+    gap: 20px;
+    overflow: hidden;
+
+    @include media-up--XL {
+        grid-template-rows: 1fr;
+    }
+}

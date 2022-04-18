@@ -1,0 +1,24 @@
+nav.header__menu.menu
+    ul.menu__list
+        li.menu__title Menu
+        .menu__item-wrap.text-transform-uppercase
+            li.menu__item
+                a.menu__link(href="/wallet.html") WALLET
+            li.menu__item
+                a.menu__link(href="#section-2") EXCHANGE
+            li.menu__item
+                a.menu__link(href="./swap.html") SWAP
+            li.menu__item
+                a.menu__link(href="./buy-crypto.html") BUY CRYPTO
+        .menu__item-wrap
+            li.menu__item
+                select(id="selectbox")
+                    option(value="1" selected) English / USD
+                    option(value="2") English / GPB
+                    option(value="3") Deutsch / EUR
+            li.menu__item
+                a.menu__link(href="#section-6" data-modal="modal-1") Log in
+    a.menu__btn.menu__btn--mobile-only.btn.btn--green.js-modal-open(href="#!" data-modal="modal-2") Create Account
+a.menu__btn.btn.btn--green.js-modal-open(href="#!" data-modal="modal-2") Create Account
+button.menu__toggle(type="button")
+    span.menu__toggle-line

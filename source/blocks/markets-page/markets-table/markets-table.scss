@@ -1,0 +1,18 @@
+.markets__table-wrap {
+    padding: 10px 0;
+    background-color: rgba($bg-secondary-color, 1);
+}
+
+.markets__table {
+    tr:not(:last-child) {
+        border-bottom: 1px solid rgba($text-primary-color, 0.15);
+    }
+
+    td {
+        max-width: 150px;
+
+        &:last-child {
+            width: 100px;
+        }
+    }
+}

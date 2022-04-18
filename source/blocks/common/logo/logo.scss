@@ -1,0 +1,12 @@
+.logo {
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo__icon {
+    margin-right: 10px;
+}
+
+.logo__text {
+    filter: invert(1);
+}

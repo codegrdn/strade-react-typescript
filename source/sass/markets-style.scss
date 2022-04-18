@@ -1,0 +1,15 @@
+//Common
+@import "global/variables.scss";
+@import "global/fonts.scss";
+@import "../blocks/common/page/page.scss";
+@import "../blocks/common/logo/logo.scss";
+@import "../blocks/common/dashboard-header/dashboard-header.scss";
+@import "../blocks/common/table/table.scss";
+@import "../blocks/common/select/select.scss";
+
+
+//Markets
+@import "../blocks/markets-page/markets-page.scss";
+@import "../blocks/markets-page/markets-card-list/markets-card-list.scss";
+@import "../blocks/markets-page/markets-table-head/markets-table-head.scss";
+@import "../blocks/markets-page/markets-table/markets-table.scss";

@@ -1,0 +1,180 @@
+// .markets__table-head {
+//     display: grid;
+//     gap: 5px;
+//     font-size: 14px;
+//     line-height: 17px;
+
+//     @include media-up--S {
+//         grid-template-columns: repeat(2, 1fr);
+//     }
+
+//     @include media-up--XL {
+//         grid-template-columns: repeat(3, 1fr);
+//     }
+// }
+
+.markets__table-head-row {
+    display: flex;
+}
+
+.markets__coin-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 5px;
+
+    @include media-up--S {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+.markets__coin-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    color: rgba($text-primary-color, 1);
+    text-align: center;
+    background-color: rgba($select-bg-color, 1);
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, border 0.3s;
+    margin: 0 5px 0 5px;
+
+    &:hover {
+        border-color: $green;
+    }
+
+    &--active {
+        color: $white;
+        background-color: $green;
+        cursor: initial;
+    }
+}
+
+.markets__filters-list {
+    display: flex;
+    // grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    // gap: 5px;
+
+    // @include media-up--S {
+    //     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    // }
+}
+
+.markets__filters-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    color: rgba($text-primary-color, 1);
+    text-align: center;
+    background-color: rgba($select-bg-color, 1);
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, border 0.3s, ease-in-out .2s;
+    background-color: rgba(var(--select-bg-color), 1);
+    margin-right: 10px;
+
+    &:hover {
+        border-color: $green;
+    }
+
+    .bv_mainselect {
+        padding: 0;
+        width: 100%;
+        color: rgba($text-primary-color, 1);
+    }
+
+    .bv_atual {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 10px;
+    }
+
+    .bv_ul_inner {
+        background-color: rgba($select-bg-color, 1);
+        border: 1px solid rgba($text-primary-color, 0.05);
+        border-radius: 2px;
+        z-index: 2;
+
+        li + li {
+            border-top: 1px solid rgba($text-primary-color, 0.1);
+        }
+    }
+
+    .bv_ul_inner li {
+        padding: 10px;
+        text-align: left;
+        color: rgba($text-primary-color, 1);
+        border-left: 3px solid transparent;
+        transition: color 0.3s, border 0.3s;
+
+        &:hover {
+            color: rgba($text-primary-color, 1);
+            background-color: rgba(var(--primary-color), 0.05);
+            border-left-color: $green;
+        }
+    }
+
+    .arrow {
+        right: 10px;
+        border: solid rgba($text-primary-color, 1);
+        border-width: 0 1px 1px 0;
+    }
+}
+
+.prices__control {
+    background-color: red;
+}
+
+.markets__filters-item>:first-child {
+    width: 100%;
+}
+
+.markets__filters-favourites {
+    padding: 6px 10px;
+    font-weight: 500;
+    color: rgba($text-primary-color, 1);
+    border: 1px solid transparent;
+    text-align: center;
+    background-color: rgba($select-bg-color, 1);
+    transition: background 0.3s, border 0.3s;
+
+    &:hover {
+        border-color: $green;
+    }
+}
+
+.markets__search {
+    display: flex;
+    justify-content: space-between;
+    min-width: 20rem;
+    margin-left: auto;
+}
+
+.markets__search-input {
+    width: 100%;
+    margin-right: auto;
+    padding: 8px 10px;
+    border: none;
+    outline: none;
+    color: rgba($text-primary-color, 1);
+    background-color: rgba($select-bg-color, 1);
+}
+
+.markets__search-img {
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 100%;
+    background-color: rgba($text-primary-color, 0.1);
+}
+
+.markets__search-icon {
+    fill: $white;
+}

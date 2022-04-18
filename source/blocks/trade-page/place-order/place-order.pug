@@ -1,0 +1,132 @@
+section.place-order.custom-scroll
+    .place-order__inner
+        .place-order__row
+            h2.place-order__title Place order
+            .place-order__btn-tab-list
+                .place-order__btn-tab.place-order__btn-tab--left.place-order__btn-tab--active(data-index="1") BUY
+                .place-order__btn-tab.place-order__btn-tab--right(data-index="2") SELL
+
+        .place-order__content.place-order__content--show(data-content="1")
+            .place-order__order-tab-list
+                .place-order__order-tab.place-order__order-tab--active Limit
+                .place-order__order-tab Markets
+                .place-order__order-tab.place-order__tab-select
+                    select(id="select-limit")
+                        option(value="1" selected) Stop-limit
+                        option(value="2") OCO
+                    .tooltip
+                        svg.tooltip__icon(width="12" height="12")
+                            use(xlink:href="#info-icon")
+                        .tooltip__text A limit order is an order to buy or sell at a specific price or better. Limit orders are not guaranteed to execute.
+
+
+            .place-order__tabs-content
+                .place-order__tabs-content-item
+                    svg.place-order__tabs-content-icon(width="14" height="14")
+                        use(xlink:href="#wallet2-icon")
+                    | 728.25650108 USDT
+
+            .place-order__row
+                .place-order__input-wrap
+                    label.place-order__input-label(for="order-price") Price
+                    input.place-order__input(id="order-price" type="text")
+                    label.place-order__input-label.place-order__input-label--coin(for="order-price") USDT
+
+                .place-order__input-wrap
+                    label.place-order__input-label(for="order-amount") Amount
+                    input.place-order__input(id="order-amount" type="text")
+                    label.place-order__input-label.place-order__input-label--coin(for="order-amount") BTC
+
+            .range
+                span.bullet
+                span.bullet-1
+                span.bullet-2
+                span.bullet-3
+                span.range-value(style='width: 25%;')
+                input.range-slide(name='range' type='range' min='1' max='5' value='2' step='1')
+                span.range-circle(style='left: calc(25% - 10px);')
+
+            .place-order__row
+                .place-order__input-wrap
+                    label.place-order__input-label(for="order-total") Total
+                    input.place-order__input(id="order-total" type="text")
+                    label.place-order__input-label.place-order__input-label--coin(for="order-total") USDT
+
+                button.place-order__btn.place-order__buy-btn.btn.btn-green(type="button") Buy BTC
+
+            h2.place-order__title.place-order__title-assets Assets
+            .place-order__assets-btn-wrap
+                button.place-order__btn.btn.btn-primary(type="button") Deposit
+                button.place-order__btn.btn.btn-primary(type="button") Withdraw
+
+            .place-order__coin-assets
+                .place-order__coin-assets-text BTC <span class="text-muted">Availabe</span>
+                span.place-order__dotted
+                .place-order__coin-assets-value 0.00000056
+
+            .place-order__coin-assets
+                .place-order__coin-assets-text USDT <span class="text-muted">Availabe</span>
+                span.place-order__dotted
+                .place-order__coin-assets-value 782.25650108
+
+        .place-order__content(data-content="2")
+            .place-order__order-tab-list
+                .place-order__order-tab.place-order__order-tab--active Limit
+                .place-order__order-tab Markets
+                .place-order__order-tab.place-order__tab-select
+                    select(id="select-limit-sale")
+                        option(value="1" selected) Stop-limit
+                        option(value="2") OCO
+                    .tooltip
+                        svg.tooltip__icon(width="12" height="12")
+                            use(xlink:href="#info-icon")
+                        .tooltip__text A limit order is an order to buy or sell at a specific price or better. Limit orders are not guaranteed to execute.
+
+            .place-order__tabs-content
+                .place-order__tabs-content-item
+                    svg.place-order__tabs-content-icon(width="14" height="14")
+                        use(xlink:href="#wallet2-icon")
+                    | 102.31370385 BTC
+
+            .place-order__row
+                .place-order__input-wrap
+                    label.place-order__input-label(for="order-price") Price
+                    input.place-order__input(id="order-price" type="text")
+                    label.place-order__input-label.place-order__input-label--coin(for="order-price") BTC
+
+                .place-order__input-wrap
+                    label.place-order__input-label(for="order-amount") Amount
+                    input.place-order__input(id="order-amount" type="text")
+                    label.place-order__input-label.place-order__input-label--coin(for="order-amount") USDT
+
+            .range
+                span.bullet
+                span.bullet-1
+                span.bullet-2
+                span.bullet-3
+                span.range-value(style='width: 25%;')
+                input.range-slide(name='range' type='range' min='1' max='5' value='2' step='1')
+                span.range-circle(style='left: calc(25% - 10px);')
+
+            .place-order__row
+                .place-order__input-wrap
+                    label.place-order__input-label(for="order-total") Total
+                    input.place-order__input(id="order-total" type="text")
+                    label.place-order__input-label.place-order__input-label--coin(for="order-total") BTC
+
+                button.place-order__btn.place-order__buy-btn.btn-green(type="button") Buy BTC
+
+            h2.place-order__title.place-order__title-assets Assets
+            .place-order__assets-btn-wrap
+                button.place-order__btn.btn-primary(type="button") Deposit
+                button.place-order__btn.btn-primary(type="button") Withdraw
+
+            .place-order__coin-assets
+                .place-order__coin-assets-text BTC <span class="text-muted">Availabe</span>
+                span.place-order__dotted
+                .place-order__coin-assets-value 0.00000056
+
+            .place-order__coin-assets
+                .place-order__coin-assets-text USDT <span class="text-muted">Availabe</span>
+                span.place-order__dotted
+                .place-order__coin-assets-value 782.25650108

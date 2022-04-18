@@ -1,0 +1,15 @@
+section.trade-info
+    .box
+        .trade-info__subtitle.subtitle TXT
+        h2.trade-info__title.title Trade. Anywhere
+        .trade-info__descr
+            p Compatible with multiple devices, start trading with<br>safety and convenience
+
+    .trade-info__picture
+        picture
+            source(type="image/webp" media="(min-width: 1200px)" srcset="./img/trade-desktop.webp, ./img/trade-desktop@2x.webp 2x")
+            source(type="image/webp" media="(min-width: 768px)" srcset="./img/trade-tablet.webp, ./img/trade-tablet@2x.webp 2x")
+            source(type="image/webp" srcset="./img/trade-mobile.webp, ./img/trade-mobile@2x.webp 2x")
+            source(media="(min-width: 1200px)" srcset="./img/trade-desktop.png, ./img/trade-desktop@2x.png 2x")
+            source(media="(min-width: 768px)" srcset="./img/trade-tablet.png, ./img/trade-tablet@2x.png 2x")
+            img.trade-info__image(src="./img/trade-mobile.png" srcset="./img/trade-mobile@2x.png 2x" alt="trade" width="300" height="144")

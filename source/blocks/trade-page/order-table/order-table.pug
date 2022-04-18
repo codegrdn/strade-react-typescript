@@ -1,0 +1,305 @@
+section.order-table
+    .order-table__head
+        .order-table__type
+            .order-table__type-item Open Orders <span>(0)</span>
+            .order-table__type-item.order-table__type-item--active Order History
+            .order-table__type-item Trade History
+        .order-table__time-range
+            .order-table__time-range-item 1 Day
+            .order-table__time-range-item 1 Week
+            .order-table__time-range-item 1 Month
+            .order-table__time-range-item.order-table__time-range-item--active 3 Month
+        .order-table__search
+            input.order-table__search-input(type="search" placeholder="YYYY-MM-DD-YYYY-MM-DD")
+            .tooltip
+                svg.tooltip__icon(width="12" height="12")
+                    use(xlink:href="#info-icon")
+                .tooltip__text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            
+            button.order-table__search-img(type="button")
+                svg.order-table__search-icon(width="12" height="12")
+                    use(xlink:href="#search-icon")
+        .order-table__checkbox-group
+            input.order-table__checkbox-input.visually-hidden(id="hide-pairs" type="checkbox")
+            label.order-table__checkbox-label(for="hide-pairs") Hide other pairs
+    .order-table__inner.custom-scroll
+        table.order-table__table.table
+            thead
+                tr
+                    th
+                        p.col-name Date
+                    th
+                        p.col-name Pair
+                    th
+                        p.col-name Type
+                    th
+                        p.col-name Side
+                    th
+                        p.col-name Average
+                    th
+                        p.col-name Price
+                    th
+                        p.col-name Executed
+                    th
+                        p.col-name Amount
+                    th
+                        p.col-name Total
+                    th
+                        p.col-name TriggerConditions
+                    th
+                        p.col-name Status
+            tbody
+                tr
+                    td
+                        p.col-info.col-info-date 05-24 11:35:12
+                    td
+                        p.col-info  MATIC/USDT
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info.color-red Sell
+                    td
+                        p.col-info 1.42242
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 142.241111
+                    td
+                        p.col-info -
+                    td
+                        p.col-info Failed
+                tr
+                    td
+                        p.col-info.col-info-date 05-24 11:35:12
+                    td
+                        p.col-info  MATIC/USDT
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info.color-red Sell
+                    td
+                        p.col-info 1.42242
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 142.241111
+                    td
+                        p.col-info -
+                    td
+                        p.col-info Failed
+                tr
+                    td
+                        p.col-info.col-info-date 05-24 11:35:12
+                    td
+                        p.col-info  MATIC/USDT
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info.color-red Sell
+                    td
+                        p.col-info 1.42242
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 142.241111
+                    td
+                        p.col-info -
+                    td
+                        p.col-info Failed
+                tr
+                    td
+                        p.col-info.col-info-date 05-24 11:35:12
+                    td
+                        p.col-info  MATIC/USDT
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info.color-green Buy
+                    td
+                        p.col-info 1.42242
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 142.241111
+                    td
+                        p.col-info -
+                    td
+                        p.col-info Failed
+                tr
+                    td
+                        p.col-info.col-info-date 05-24 11:35:12
+                    td
+                        p.col-info  MATIC/USDT
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info.color-green Buy
+                    td
+                        p.col-info 1.42242
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 142.241111
+                    td
+                        p.col-info -
+                    td
+                        p.col-info Failed
+                tr
+                    td
+                        p.col-info.col-info-date 05-24 11:35:12
+                    td
+                        p.col-info  MATIC/USDT
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info.color-green Buy
+                    td
+                        p.col-info 1.42242
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 142.241111
+                    td
+                        p.col-info -
+                    td
+                        p.col-info Failed
+                tr
+                    td
+                        p.col-info.col-info-date 05-24 11:35:12
+                    td
+                        p.col-info  MATIC/USDT
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info.color-red Sell
+                    td
+                        p.col-info 1.42242
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 142.241111
+                    td
+                        p.col-info -
+                    td
+                        p.col-info Failed
+                tr
+                    td
+                        p.col-info.col-info-date 05-24 11:35:12
+                    td
+                        p.col-info  MATIC/USDT
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info.color-green Buy
+                    td
+                        p.col-info 1.42242
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 142.241111
+                    td
+                        p.col-info -
+                    td
+                        p.col-info Failed
+                tr
+                    td
+                        p.col-info.col-info-date 05-24 11:35:12
+                    td
+                        p.col-info  MATIC/USDT
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info.color-green Buy
+                    td
+                        p.col-info 1.42242
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 142.241111
+                    td
+                        p.col-info -
+                    td
+                        p.col-info Failed
+                tr
+                    td
+                        p.col-info.col-info-date 05-24 11:35:12
+                    td
+                        p.col-info  MATIC/USDT
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info.color-green Buy
+                    td
+                        p.col-info 1.42242
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 142.241111
+                    td
+                        p.col-info -
+                    td
+                        p.col-info Failed
+                tr
+                    td
+                        p.col-info.col-info-date 05-24 11:35:12
+                    td
+                        p.col-info  MATIC/USDT
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info.color-green Buy
+                    td
+                        p.col-info 1.42242
+                    td
+                        p.col-info Market
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 100.0
+                    td
+                        p.col-info 142.241111
+                    td
+                        p.col-info -
+                    td
+                        p.col-info Failed
+

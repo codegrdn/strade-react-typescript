@@ -1,0 +1,18 @@
+//Common
+@import "global/variables.scss";
+@import "global/fonts.scss";
+@import "../blocks/common/page/page.scss";
+@import "../blocks/common/logo/logo.scss";
+@import "../blocks/common/dashboard-header/dashboard-header.scss";
+@import "../blocks/common/table/table.scss";
+@import "../blocks/common/select/select.scss";
+
+
+//Trade
+@import "../blocks/trade-page/trade/trade.scss";
+@import "../blocks/trade-page/trade-chart/trade-chart.scss";
+@import "../blocks/trade-page/trades/trades.scss";
+@import "../blocks/trade-page/order-book/order-book.scss";
+@import "../blocks/trade-page/order-table/order-table.scss";
+@import "../blocks/trade-page/place-order/place-order.scss";
+@import "../blocks/trade-page/price/price.scss";

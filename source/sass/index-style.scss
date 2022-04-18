@@ -1,0 +1,22 @@
+//Common
+@import "global/variables.scss";
+@import "global/fonts.scss";
+@import "../blocks/common/page/page.scss";
+@import "../blocks/common/logo/logo.scss";
+@import "../blocks/common/header/header.scss";
+@import "../blocks/common/menu/menu.scss";
+@import "../blocks/common/footer/footer.scss";
+@import "../blocks/common/modal/modal.scss";
+@import "../blocks/common/select/select.scss";
+@import "../blocks/common/social/social.scss";
+
+//Index
+@import "../blocks/index-page/hero/hero.scss";
+@import "../blocks/index-page/purchase/purchase.scss";
+@import "../blocks/index-page/features/features.scss";
+@import "../blocks/index-page/markets-info/markets-info.scss";
+@import "../blocks/index-page/markets-table/markets-table.scss";
+@import "../blocks/index-page/trade-info/trade-info.scss";
+@import "../blocks/index-page/privileges/privileges.scss";
+@import "../blocks/index-page/news/news.scss";
+@import "../blocks/index-page/article/article.scss";

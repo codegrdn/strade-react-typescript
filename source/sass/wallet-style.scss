@@ -1,0 +1,14 @@
+//Common
+@import "global/variables.scss";
+@import "global/fonts.scss";
+@import "../blocks/common/page/page.scss";
+@import "../blocks/common/logo/logo.scss";
+@import "../blocks/common/dashboard-header/dashboard-header.scss";
+@import "../blocks/common/table/table.scss";
+@import "../blocks/common/select/select.scss";
+
+
+//Wallet
+@import "../blocks/wallet-page/wallet-page.scss";
+@import "../blocks/wallet-page/wallet-sidebar/wallet-sidebar.scss";
+@import "../blocks/wallet-page/wallet-balance/wallet-balance.scss";

@@ -1,0 +1,150 @@
+.wallet__details
+    .wallet__details-head
+        .wallet__details-row
+            .wallet__details-btn-wrap
+                button.wallet__details-btn(type="button" data-index="1") Receive
+                button.wallet__details-btn(type="button" data-index="2") Send
+                button.wallet__details-btn.wallet__details-btn--active(type="button" data-index="3") Trade
+            include ../wallet-counter.pug
+
+    .wallet__details-content.custom-scroll(data-content-index="1")
+        h2.wallet__details-title Receive/Deposit
+        .wallet__details-blockchain-wrap
+            .wallet__details-blockchain-title Select Blockchain
+            ul.wallet__details-blockchain-list
+                li.wallet__details-blockchain-item.wallet__details-blockchain-item--active(data-coin-index="1") ERC20
+                li.wallet__details-blockchain-item(data-index="2") BEP20
+                li.wallet__details-blockchain-item(data-index="3") TRC20
+                li.wallet__details-blockchain-item(data-index="4") OMNI
+
+        .wallet__details-adress
+            .wallet__details-text Send BTC to address
+            .wallet__details-input-wrap
+                input.wallet__details-input(type="text" value="14TopQYd9FTB4sKmmUtXhjNXjfDbG...")
+                button.wallet__details-input-img
+                    svg.wallet__details-input-icon(width="12" height="12")
+                        use(xlink:href="#copy-icon")
+
+        .wallet__details-qr-code
+            .wallet__details-picture
+                img.wallet__details-img(src="./img/qr-code.jpg", width="80" height="80" alt="")
+            .wallet__details-text
+                p <b>IMPORTANT:</b> Send only USDT to this deposit address. Sending any other currency to this address may result in the loss of your deposit.
+                | <b>Notice:</b> Coins will be deposited immediately after 30 network confirmation.
+                | After making a deposit, you can track it's progress on the history page.
+
+    .wallet__details-content.custom-scroll(data-content-index="2")
+        h2.wallet__details-title Receive/Deposit
+        .wallet__details-blockchain-wrap
+            .wallet__details-blockchain-title Select Blockchain
+            ul.wallet__details-blockchain-list
+                li.wallet__details-blockchain-item.wallet__details-blockchain-item--active(data-coin-index="1") ERC20
+                li.wallet__details-blockchain-item(data-index="2") BEP20
+                li.wallet__details-blockchain-item(data-index="3") TRC20
+                li.wallet__details-blockchain-item(data-index="4") OMNI
+
+        .wallet__details-adress
+            .wallet__details-text Enter BTC - address
+            .wallet__details-input-wrap
+                input.wallet__details-input(type="text" placeholder="Example: 14TopQYd9FTB4sKmmUtXhjNXjfDbG7K8JJ")
+                .wallet__details-select
+                    select(id="selectAdress")
+                        option(value="1" selected) Bitcoin-adress
+                        option(value="2") Bitcoin-adress-2
+                        option(value="3") Bitcoin-adress-3
+        .wallet__details-adress
+            .wallet__details-text Enter amount
+            .wallet__details-input-wrap
+                input.wallet__details-input(type="text" placeholder="0")
+            .wallet__details-text
+                p The amount must be greath than 0.0000001 BTC
+        .wallet__details-submit-btn-wrap
+            button.wallet__details-submit-btn.btn-green Send
+    .wallet__details-content.custom-scroll.wallet__details-content--show(data-content-index="3")
+        h2.wallet__details-title Last Transactions
+        .wallet__details-table-wrap.custom-scroll
+            table.wallet__details-table.table
+                thead
+                    tr
+                        th
+                            p.col-name Date
+                        th
+                            p.col-name Address
+                        th
+                            p.col-name Amount
+                        th
+                            p.col-name Status
+                tbody
+                    tr
+                        td
+                            p.col-info 19.06.2021
+                        td
+                            p.col-info GDKQEANWSPYRUFDM2U66FD2YAPJAG...YS5
+                        td
+                            p.col-info 100.0
+                        td
+                            p.col-info Failed
+                    tr
+                        td
+                            p.col-info 19.06.2021
+                        td
+                            p.col-info GDKQEANWSPYRUFDM2U66FD2YAPJAG...YS5
+                        td
+                            p.col-info 100.0
+                        td
+                            p.col-info Failed
+                    tr
+                        td
+                            p.col-info 19.06.2021
+                        td
+                            p.col-info GDKQEANWSPYRUFDM2U66FD2YAPJAG...YS5
+                        td
+                            p.col-info 100.0
+                        td
+                            p.col-info Rejected
+                    tr
+                        td
+                            p.col-info 19.06.2021
+                        td
+                            p.col-info GDKQEANWSPYRUFDM2U66FD2YAPJAG...YS5
+                        td
+                            p.col-info 100.0
+                        td
+                            p.col-info Failed
+                    tr
+                        td
+                            p.col-info 19.06.2021
+                        td
+                            p.col-info GDKQEANWSPYRUFDM2U66FD2YAPJAG...YS5
+                        td
+                            p.col-info 100.0
+                        td
+                            p.col-info Success
+                    tr
+                        td
+                            p.col-info 19.06.2021
+                        td
+                            p.col-info GDKQEANWSPYRUFDM2U66FD2YAPJAG...YS5
+                        td
+                            p.col-info 100.0
+                        td
+                            p.col-info Success
+                    tr
+                        td
+                            p.col-info 19.06.2021
+                        td
+                            p.col-info GDKQEANWSPYRUFDM2U66FD2YAPJAG...YS5
+                        td
+                            p.col-info 100.0
+                        td
+                            p.col-info Failed
+                    tr
+                        td
+                            p.col-info 19.06.2021
+                        td
+                            p.col-info GDKQEANWSPYRUFDM2U66FD2YAPJAG...YS5
+                        td
+                            p.col-info 100.0
+                        td
+                            p.col-info Failed
+

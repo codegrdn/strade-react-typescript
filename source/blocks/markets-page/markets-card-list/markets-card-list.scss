@@ -1,0 +1,98 @@
+.markets__card-list {
+    padding: 5px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 260px);
+    gap: 10px;
+    overflow: auto;
+
+    @include media-up--S {
+        grid-template-columns: repeat(4, 295px);
+        gap: 20px;
+    }
+
+    @include media-up--XL {
+        grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+.markets__card {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 80px;
+    gap: 10px;
+    background-color: rgba($bg-secondary-color, 1);
+}
+
+.markets__card-info {
+    display: grid;
+    gap: 10px;
+}
+
+.markets__card-title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: rgba($text-primary-color, 1);
+
+    @include media-up--S {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
+.markets__card-bet {
+    font-size: 12px;
+    line-height: 15px;
+    color: rgba($text-primary-color, 0.5);
+
+    @include media-up--S {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    span {
+        display: inline-block;
+        margin-right: 5px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 20px;
+
+        @include media-up--S {
+            font-size: 22px;
+            line-height: 22px;
+        }
+    }
+}
+
+.markets__card-sum {
+    grid-column: 1 / -1;
+    font-size: 10px;
+    line-height: 12px;
+    color: rgba($text-primary-color, 0.5);
+
+    span {
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    @include media-up--S {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+.markets__card-picture {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    position: relative;
+}
+
+.markets__card-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: top;
+}

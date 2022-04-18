@@ -1,0 +1,94 @@
+section.order-book
+    .order-book__head
+            h2.order-book__title Order Book
+            .order-book__filter
+                .order-book__filter-item.order-book__filter-item--active
+                    img(src="./img/icons/order-filter-1-icon.svg", width="10" height="10" alt="")
+                .order-book__filter-item
+                    img(src="./img/icons/order-filter-2-icon.svg", width="10" height="10" alt="")
+                .order-book__filter-item
+                    img(src="./img/icons/order-filter-3-icon.svg", width="10" height="10" alt="")
+    .order-book__inner.custom-scroll
+
+        table.order-book__table.table
+            thead
+                tr
+                    th
+                        p.col-name Price(USDT)
+                    th
+                        p.col-name.text-align-center Amount(BTC)
+                    th
+                        p.col-name.text-align-right Total
+            tbody
+                tr
+                    td
+                        p.col-info.color-red 36791.25
+                    td
+                        p.col-info.text-align-center 0.0040000
+                    td
+                        p.col-info.text-align-right 147.16500
+                    td.col-progress-bar.col-progress-bar--down(style="width: 40%;")
+                tr
+                    td
+                        p.col-info.color-red 36791.25
+                    td
+                        p.col-info.text-align-center 0.0040000
+                    td
+                        p.col-info.text-align-right 147.16500
+                    td.col-progress-bar.col-progress-bar--down(style="width: 72%;")
+                tr
+                    td
+                        p.col-info.color-red 36791.25
+                    td
+                        p.col-info.text-align-center 0.0040000
+                    td
+                        p.col-info.text-align-right 147.16500
+                    td.col-progress-bar.col-progress-bar--down(style="width: 8%;")
+
+        .order-book__wrap
+            .order-book__head
+                h2.order-book__title 36,782.02 <span class="order-book__subtitle"> $36,782.02 </span>
+                .order-book__text More
+                    img(src="./img/icons/more-icon.svg", width="10" height="7" alt="")
+            table.order-book__table.table
+                tbody
+                    tr
+                        td
+                            p.col-info.color-green 36791.25
+                        td
+                            p.col-info.text-align-center 0.0040000
+                        td
+                            p.col-info.text-align-right 147.16500
+                        td.col-progress-bar.col-progress-bar--up(style="width: 18%;")
+                    tr
+                        td
+                            p.col-info.color-green 36791.25
+                        td
+                            p.col-info.text-align-center 0.0040000
+                        td
+                            p.col-info.text-align-right 147.16500
+                        td.col-progress-bar.col-progress-bar--up(style="width: 67%;")
+                    tr
+                        td
+                            p.col-info.color-green 36791.25
+                        td
+                            p.col-info.text-align-center 0.0040000
+                        td
+                            p.col-info.text-align-right 147.16500
+                        td.col-progress-bar.col-progress-bar--up(style="width: 78%;")
+                    tr
+                        td
+                            p.col-info.color-green 36691.25
+                        td
+                            p.col-info.text-align-center 0.0040000
+                        td
+                            p.col-info.text-align-right 147.16500
+                        td.col-progress-bar.col-progress-bar--up(style="width:57%;")
+                    tr
+                        td
+                            p.col-info.color-green 36791.25
+                        td
+                            p.col-info.text-align-center 0.0040000
+                        td
+                            p.col-info.text-align-right 147.16500
+                        td.col-progress-bar.col-progress-bar--up(style="width: 84%;")

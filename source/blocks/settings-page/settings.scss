@@ -1,0 +1,133 @@
+.settings {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    gap: 15px;
+    max-width: 1460px;
+    margin: 0 auto;
+    height: calc(100vh - 70px);
+
+    @include media-up--S {
+        height: calc(100vh - 80px);
+    }
+}
+
+.settings__topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 40px;
+}
+
+.settings__topbar-title {
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: uppercase;
+
+    @include media-up--S {
+        font-size: 24px;
+    }
+}
+
+.settings__content {
+    display: grid;
+}
+
+.settings__content-col {
+    padding: 15px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: rgba($bg-secondary-color, 1);
+
+    @include media-up--S {
+        padding: 25px;
+    }
+}
+
+.settings__content-title {
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 10px;
+
+    @include media-up--S {
+        font-size: 20px;
+    }
+}
+
+.settings__content-subtitle {
+    font-size: 12px;
+    line-height: 1.2;
+    color: rgba($text-primary-color, 0.5);
+    margin-bottom: 40px;
+
+    @include media-up--S {
+        font-size: 14px;
+    }
+}
+
+.settings__content-checkbox-inner {
+    display: grid;
+    gap: 30px;
+    max-width: 490px;
+
+    @include media-up--S {
+        column-gap: 70px;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.checkbox-switch__label {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 12px;
+
+    @include media-up--S {
+        font-size: 14px;
+    }
+}
+
+.checkbox-switch__switcher {
+    background-color: rgba($white, 0.9);
+    border: 1px solid rgba($text-primary-color, 0.2);
+    border-radius: 999px;
+    padding: 2px;
+    outline: 0;
+    display: block;
+    margin-left: 20px;
+    width: 35px;
+    min-width: 35px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s, background 0.3s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &::after {
+        position: relative;
+        display: block;
+        content: "";
+        width: 50%;
+        height: 100%;
+        left: 0;
+        border-radius: 50%;
+        background-color: rgba(37, 37, 37, 0.3);
+        transition: all 0.3s;
+    }
+}
+
+.checkbox-switch__input:checked + .checkbox-switch__switcher {
+    background-color: $green;
+}
+
+.checkbox-switch__input:checked + .checkbox-switch__switcher::after {
+    left: 50%;
+    background-color: $white;
+}
+
+

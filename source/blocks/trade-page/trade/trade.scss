@@ -1,0 +1,77 @@
+.trade {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: grid;
+    overflow: hidden;
+
+    @include media-up--S {
+        height: calc(100vh - 80px);
+    }
+}
+
+.trade__inner {
+    padding: 10px 0;
+    display: grid;
+    gap: 10px;
+
+    @include media-up--S {
+        grid-template-columns: minmax(450px, 3fr) minmax(300px, 1fr);
+        grid-template-rows: max-content 300px 460px 300px;
+    }
+
+    @include media-up--XL {
+        grid-template-columns: 1fr 340px 340px;
+        grid-template-rows: max-content minmax(250px, 2.5fr) minmax(250px, 1.5fr);
+    }
+
+    @include media-up--XXL {
+        grid-template-columns: 1fr 450px 340px;
+    }
+}
+
+.trade__tab-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+
+    @include media-up--S {
+        display: none;
+    }
+}
+
+.trade__tab-item {
+    width: 100%;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1;
+    padding: 8px 10px;
+    text-align: center;
+    color: rgba($text-primary-color, 0.5);
+    border: 1px solid rgba($text-primary-color, 0.5);
+    cursor: pointer;
+    transition: color 0.3s, background 0.3s, border 0.3s;
+
+    &:hover {
+        border-color: $green;
+        color: $green;
+    }
+
+    &--active {
+        color: $white;
+        background-color: $green;
+        border-color: $green;
+
+        &:hover {
+            color: $white;
+            cursor: initial;
+        }
+    }
+
+    &--right {
+        border-radius: 0 2px 2px 0;
+    }
+
+    &--left {
+        border-radius: 2px 0 0 2px;
+    }
+}
