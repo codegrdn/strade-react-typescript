@@ -6,8 +6,10 @@ export const defaultLanguage: string = 'en';
 
 export const getLanguageByUrl = (url: string) => {
     const pathsUrl = url.split('/');
-    return supportLanguages.includes(pathsUrl[0]) ? pathsUrl[0] : defaultLanguage;
+    return supportLanguages.includes(pathsUrl[1]) ? pathsUrl[1] : defaultLanguage;
 }
+
+export const useLanguage = getLanguageByUrl(window.location.pathname);
 
 export const getLanguageByWord = (value: string) => {
     switch (value) {

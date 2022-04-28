@@ -4,7 +4,6 @@ interface ISelectCurrency extends ISelect {
     sign: string
 }
 
-
 export const selectCurrency: ISelectCurrency[] = [
     {
         value: 'usd',
@@ -37,4 +36,11 @@ export const signCurrency: ISignCurrency = {
     usd: '$',
     gbp: '£',
     rub: '₽',
+}
+
+export const getCurrency = () : string => {
+    const params = new URLSearchParams(window.location.search);
+    let currency: string = params.get('currency') ?? '';
+
+    return currency ? currency : defaultCurrency;
 }

@@ -2,10 +2,10 @@ import i18n, { InitOptions } from 'i18next'
 import Backend from 'i18next-http-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
-import { defaultLanguage } from './helpers/language';
+import { useLanguage } from './helpers/language';
 
 const i18nConfig: InitOptions  = {
-    fallbackLng: defaultLanguage,
+    fallbackLng: useLanguage,
     debug: true,
     detection: {
         order: ['queryString', 'cookie']
