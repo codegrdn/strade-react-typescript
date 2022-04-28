@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c6f893e9.css",
-    "main.js": "/static/js/main.c16e8cbb.js",
+    "main.js": "/static/js/main.6f097b78.js",
     "static/js/787.3c53a961.chunk.js": "/static/js/787.3c53a961.chunk.js",
     "static/media/trade-desktop@2x.png": "/static/media/trade-desktop@2x.c78ce8f4f42fe1c3bb49.png",
     "static/media/logo.svg": "/static/media/logo.41f29538b4d5e1f98982f15ad44f1885.svg",
@@ -38,11 +38,11 @@
     "static/media/build-icon.svg": "/static/media/build-icon.6ab22a004e4f1ff8195979ecb5f706d2.svg",
     "static/media/getFetch.cjs": "/static/media/getFetch.c780682470504fffbd04.cjs",
     "main.c6f893e9.css.map": "/static/css/main.c6f893e9.css.map",
-    "main.c16e8cbb.js.map": "/static/js/main.c16e8cbb.js.map",
+    "main.6f097b78.js.map": "/static/js/main.6f097b78.js.map",
     "787.3c53a961.chunk.js.map": "/static/js/787.3c53a961.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c6f893e9.css",
-    "static/js/main.c16e8cbb.js"
+    "static/js/main.6f097b78.js"
   ]
 }
