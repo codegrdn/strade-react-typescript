@@ -3,7 +3,7 @@ import { AxiosRequestConfig } from "axios";
 
 const url = `${baseUrlApi}/coins`;
 
-interface ICoinsMarkets {
+export interface ICoinsMarkets {
     vs_currency: string,
     ids?: string,
     category?: string,

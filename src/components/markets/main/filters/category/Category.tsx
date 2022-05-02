@@ -17,7 +17,7 @@ const Category: FC<CategoryProps> = () => {
     const { i18n, t } = useTranslation();
     const { filters } = useContext(MarketMainContext);
     const { response } = useRequest(getList());
-    const [selected, setSelected] = useState({
+    const [selected, setSelected] = useState<ISelect>({
         label: t('markets.filters.select-category'),
         value: 0
     });
@@ -25,7 +25,7 @@ const Category: FC<CategoryProps> = () => {
     const valuesSelect = useMemo(() => {
         setLoading(false);
 
-        let selectList = [{
+        let selectList: ISelect[] = [{
             label: t('markets.filters.select-category'),
             value: 0
         }];
@@ -38,8 +38,7 @@ const Category: FC<CategoryProps> = () => {
                 });
             });
         }
-
-        setSelected(selectList.filter((item) => (item.value === selected.value))[0]);
+        setSelected(filters.list.category ? selectList.filter((item) => (item.value === filters.list.category))[0] : selectList.filter((item) => (item.value === selected.value))[0]);
 
         const timeout = setTimeout(() => {
             setLoading(true);

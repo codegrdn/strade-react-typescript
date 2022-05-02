@@ -14,16 +14,16 @@ interface FavoriteProps {
 
 const Favorite: FC<FavoriteProps>  = () => {
     const {t} = useTranslation();
-    const { filters, coins } = useContext(MarketMainContext);
-    const [classes, setClasses] = useState<string>(Classes.DEFAULT_CLASS);
+    const { filters } = useContext(MarketMainContext);
+    const [classes, setClasses] = useState<string>(filters.list.isFavorite ? Classes.ACTIVE_CLASS : Classes.DEFAULT_CLASS);
 
     const handlerClick = () => {
         if (Classes.DEFAULT_CLASS === classes) {
             setClasses(Classes.DEFAULT_CLASS + " " +  Classes.ACTIVE_CLASS);
-            filters.addFilter({coins: coins.list});
+            filters.addFilter({isFavorite: true});
         } else {
             setClasses(Classes.DEFAULT_CLASS);
-            filters.addFilter({coins: undefined});
+            filters.addFilter({isFavorite: false});
         }
     }
 

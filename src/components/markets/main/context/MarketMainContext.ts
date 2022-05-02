@@ -19,12 +19,15 @@ interface IMarketMainPlatform {
     addPlatform: (platforms: CoinPlatformsState) => void
 }
 
-interface MarketTableFiltersState {
+export interface MarketTableFiltersState {
     category?: string,
     search?: string,
     platform?: string,
     coins?: string[],
     lastPrice?: string,
+    page?: number,
+    perPage?: number,
+    isFavorite?: boolean,
 }
 
 interface IMarketMainFilters {

@@ -6,7 +6,7 @@ import useRequest from '../../../../hooks/useRequest';
 import ICoin from '../../../../types/ICoin';
 import CoinChart from '../chart/CoinChart';
 import ThStar from './th-star/ThStar';
-import { getCoinsMarkets } from '../../../../api/rest/CoinService';
+import { getCoinsMarkets, ICoinsMarkets } from '../../../../api/rest/CoinService';
 import { MarketMainContext } from '../context/MarketMainContext';
 import { formatingPrice } from '../../../../helpers/formating';
 import { signCurrency } from '../../../../helpers/currencies';
@@ -25,7 +25,11 @@ const Table: FC<TableProps> = () => {
     const { currency, filters, platforms } = useContext(MarketMainContext);
     const [useCurrency, setUseCurrency] = useState(currency.currency);
 
-    const defaultParams = { vs_currency: currency.currency };
+    let defaultParams: ICoinsMarkets = { vs_currency: currency.currency };
+    if (filters.list.hasOwnProperty('category') && filters.list.category) {
+        defaultParams = { ...defaultParams, category: filters.list.category };
+    }
+
     const config = getCoinsMarkets(defaultParams);
     const { response, sendData, loading }  = useRequest(config);
 
@@ -45,10 +49,14 @@ const Table: FC<TableProps> = () => {
                 data = data.filter(coin => (platforms.list[keyPlatform]?.includes(' ' + coin.id.toLowerCase() + ',')));
             }
 
-            if (filters.list?.hasOwnProperty('coins') && filters.list.coins) {
+            if (filters.list?.hasOwnProperty('coins') && filters.list.coins && filters.list.isFavorite) {
+                const filtersSruck: string[] = typeof filters.list.coins === 'string' 
+                ? [filters.list.coins] 
+                : filters.list.coins;
+
                 data = data.filter(
                     (coin) => (
-                        filters.list?.coins?.filter((coinFilter) => (
+                        filtersSruck.filter((coinFilter) => (
                             coin.id.toLowerCase() === coinFilter.toLowerCase()
                         )
                     ).length)
@@ -169,6 +177,14 @@ const Table: FC<TableProps> = () => {
         },
     ];
     
+    function handlerChangePage(page: any) {
+        filters.addFilter({...filters.list, page: page})
+    }
+
+    function handlerChangeRowsPerPage(currentRowsPerPage: any) {
+        filters.addFilter({...filters.list, perPage: currentRowsPerPage})
+    }
+
     return (
         <DataTable
             className="markets__table table"
@@ -177,6 +193,10 @@ const Table: FC<TableProps> = () => {
             data={values}
             progressPending={isLoading}
             progressComponent={<Loader />}
+            onChangePage={handlerChangePage}
+            onChangeRowsPerPage={handlerChangeRowsPerPage}
+            paginationPerPage={filters.list.perPage}
+            paginationDefaultPage={filters.list.page}
             pagination
         />
     )

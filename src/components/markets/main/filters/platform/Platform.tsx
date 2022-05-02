@@ -47,7 +47,7 @@ const Platform: FC<PlatformProps> = () => {
             value: 0
         }, ...array];
 
-        setValue(result.filter((item) => (item.value === value.value))[0]);
+        setValue(filters.list.platform ? result.filter((item) => (item.value === filters.list.platform))[0] : result.filter((item) => (item.value === value.value))[0]);
 
         const timeout = setTimeout(() => {
             setLoading(true);

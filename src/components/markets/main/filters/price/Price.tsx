@@ -29,7 +29,7 @@ const Price: FC<PriceProps> = () => {
             label: t('markets.filters.price.last-price-up'),
         }
     ]);
-    const [value, setValue] = useState(items[0]);
+    const [value, setValue] = useState(filters.list.lastPrice ? items.filter((item) => (filters.list.lastPrice === item.value))[0]  : items[0]);
 
     useEffect(() => {
         setLoading(false);
