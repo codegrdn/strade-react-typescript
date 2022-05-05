@@ -1,3 +1,4 @@
+import { currency } from './../../../landing/main/hero/purchase/data/currency';
 import { defaultCurrency } from './../../../../helpers/currencies';
 import React from "react";
 import ICoin from "../../../../types/ICoin";
@@ -28,6 +29,7 @@ export interface MarketTableFiltersState {
     page?: number,
     perPage?: number,
     isFavorite?: boolean,
+    currency?: string,
 }
 
 interface IMarketMainFilters {

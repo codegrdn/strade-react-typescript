@@ -12,9 +12,10 @@ const useFilters = () => {
         platform: '',
         coins: undefined,
         lastPrice: '',
-        page: 1,
-        perPage: 10,
+        page: undefined,
+        perPage: undefined,
         isFavorite: false,
+        currency: '',
         ...allQueryParams
     });
 

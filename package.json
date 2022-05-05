@@ -12,6 +12,7 @@
         "axios": "^0.25.0",
         "browser-sync": "^2.27.4",
         "del": "^6.0.0",
+        "firebase": "^9.7.0",
         "gulp": "4.0.2",
         "gulp-html-bem-validator": "^1.0.5",
         "gulp-htmlmin": "^5.0.1",

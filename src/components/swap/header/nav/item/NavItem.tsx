@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { notShowMenu, routes } from '../../../../../route/routes';
 import { useTranslation } from "react-i18next";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { isActiveURL } from '../../../../../helpers/route';
 
 interface NavItemProps {
 
@@ -9,6 +10,7 @@ interface NavItemProps {
 
 const NavItem: FC<NavItemProps> = () => {
     const { t } = useTranslation();
+    const location = useLocation();
     const routesShowing = routes.filter((item) => !notShowMenu.includes(item.title));
 
     return (
@@ -16,7 +18,12 @@ const NavItem: FC<NavItemProps> = () => {
             {
                 routesShowing.map((route, i) => (
                     <div className="dashboard-header__menu-item" key={route.title}>
-                        <Link className="dashboard-header__menu-link" to={route.path}>{t(`menu.${route.title}`)}</Link>
+                        <Link 
+                            className={`dashboard-header__menu-link ${isActiveURL(route.path, location.pathname) ? 'disable-link' : ''}`}
+                            to={route.path}
+                        >
+                            {t(`menu.${route.title}`)}
+                        </Link>
                     </div>
                 ))
             }

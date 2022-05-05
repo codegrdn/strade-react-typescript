@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { notShowMenu, routes } from '../../../../../route/routes';
 import { useTranslation } from "react-i18next";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { isActiveURL } from '../../../../../helpers/route';
 import WrapLanguage from './wrap-language/WrapLanguage';
 
 interface NavItemLandingProps {
@@ -10,6 +11,7 @@ interface NavItemLandingProps {
 
 const NavItemLanding: FC<NavItemLandingProps> = () => {
     const { t } = useTranslation();
+    const location = useLocation();
     const routesShowing = routes.filter((item) => !notShowMenu.includes(item.title));
 
     return (
@@ -19,7 +21,12 @@ const NavItemLanding: FC<NavItemLandingProps> = () => {
                 {
                     routesShowing.map((route, i) => (
                         <li className="menu__item" key={route.title}>
-                            <Link className="menu__link" to={route.path}>{ t(`menu.${route.title}`) }</Link>
+                            <Link 
+                                className={`menu__link ${isActiveURL(route.path, location.pathname) ? 'disable-link' : ''}`}
+                                to={route.path}
+                            >
+                                { t(`menu.${route.title}`) }
+                            </Link>
                         </li>
                     ))
                 }

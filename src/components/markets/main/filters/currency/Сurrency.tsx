@@ -10,11 +10,12 @@ interface CurrencyProps {
 }
 
 const Currency: FC<CurrencyProps> = () => {
-    const { currency } = useContext(MarketMainContext);
+    const { currency, filters } = useContext(MarketMainContext);
     const [selectedCurrency, setSelectedCurrency] = useState(getSelectedDefaultCurrency(currency.currency));
 
     function handlerChangeCurrency(e: any): void {
         currency.changeCurrency(e.value);
+        filters.addFilter({ currency: e.value })
         setSelectedCurrency(e);
     }
 

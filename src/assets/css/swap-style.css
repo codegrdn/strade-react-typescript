@@ -75,6 +75,10 @@
   font-display: swap;
   src: url("../fonts/ProximaNova-Extrabold.ttf") format("truetype");
 }
+.disable-link {
+  pointer-events: none;
+}
+
 -ms-viewport {
   width: device-width;
 }

@@ -80,7 +80,7 @@ const Table: FC<TableProps> = () => {
         }, 1500);
 
         return data;
-    }, [response, filters.list]);
+    }, [response, filters.list, platforms.list]);
 
     useEffect(() => {
         if (!loading) {

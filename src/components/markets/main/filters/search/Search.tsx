@@ -9,17 +9,16 @@ interface SearchProps {
 const Search: FC<SearchProps> = () => {
     const { filters } = useContext(MarketMainContext);
     const { t } = useTranslation();
-    const [search, setSearch] = useState('');
+    const [search, setSearch] = useState(filters.list.search);
 
     function handleSearchButtonClick (e: any) {
         e.preventDefault();
         filters.addFilter( { search: search } );
     }
 
-    function handleSearchButtonKeyPass (e: any) {
-        if (e.charCode === 13) {
-            filters.addFilter( { search: search } );
-        }
+    function handlerChangeSearch (e: any) {
+        setSearch(e.target.value)
+        filters.addFilter( { search: e.target.value } );
     }
 
     return (
@@ -27,8 +26,7 @@ const Search: FC<SearchProps> = () => {
             <input 
                 className="markets__search-input" 
                 value={search} 
-                onChange={(e) => setSearch(e.target.value)} 
-                onKeyPress={(e) => handleSearchButtonKeyPass(e)} 
+                onChange={handlerChangeSearch} 
                 type="text" 
                 placeholder={t('markets.filters.search')}
             />
