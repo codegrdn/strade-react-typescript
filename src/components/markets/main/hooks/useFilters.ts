@@ -10,7 +10,7 @@ const useFilters = () => {
         category: '',
         search: '',
         platform: '',
-        coins: undefined,
+        coins: '',
         lastPrice: '',
         page: undefined,
         perPage: undefined,
@@ -20,7 +20,8 @@ const useFilters = () => {
     });
 
     const addFiltersMarkets = (filters: any) => {
-        const newFilters = {...getAllQueryParams(), ...filters};
+        const newFilters = {...filtersMarkets, ...getAllQueryParams(), ...filters};
+        setFiltersMarkets({...filtersMarkets, ...getAllQueryParams(), ...filters});
         
         setSearchParams(JSON.parse(JSON.stringify(newFilters, function replaceUndefinedOrNull(key, value) {
             if (!value) {
@@ -28,9 +29,7 @@ const useFilters = () => {
             }
 
             return value;
-        })))
-
-        setFiltersMarkets(newFilters);
+        })));
     }
 
     return { filtersMarkets, addFiltersMarkets }

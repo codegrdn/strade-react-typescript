@@ -79,6 +79,10 @@
   pointer-events: none;
 }
 
+.white-space-text {
+  white-space: nowrap !important;
+}
+
 -ms-viewport {
   width: device-width;
 }

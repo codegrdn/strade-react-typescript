@@ -24,7 +24,7 @@ export interface MarketTableFiltersState {
     category?: string,
     search?: string,
     platform?: string,
-    coins?: string[],
+    coins?: string,
     lastPrice?: string,
     page?: number,
     perPage?: number,

@@ -49,14 +49,10 @@ const Table: FC<TableProps> = () => {
                 data = data.filter(coin => (platforms.list[keyPlatform]?.includes(' ' + coin.id.toLowerCase() + ',')));
             }
 
-            if (filters.list?.hasOwnProperty('coins') && filters.list.coins && filters.list.isFavorite) {
-                const filtersSruck: string[] = typeof filters.list.coins === 'string' 
-                ? [filters.list.coins] 
-                : filters.list.coins;
-
+            if (filters.list.isFavorite) {
                 data = data.filter(
                     (coin) => (
-                        filtersSruck.filter((coinFilter) => (
+                        filters.list.coins?.split(',')?.filter((coinFilter) => (
                             coin.id.toLowerCase() === coinFilter.toLowerCase()
                         )
                     ).length)
@@ -115,7 +111,7 @@ const Table: FC<TableProps> = () => {
             selector: row => row.current_price,
             cell: (row) => (
                 <p className="col-info">
-                    <span className={getColorClass(row.price_change_24h)}>{formatingPrice(row.current_price, signCurrency[useCurrency])}</span>
+                    <span className={`${getColorClass(row.price_change_24h)} white-space-text`}>{formatingPrice(row.current_price, signCurrency[useCurrency])}</span>
                 </p>
             ),
             sortable: true,
@@ -126,7 +122,7 @@ const Table: FC<TableProps> = () => {
             selector: row => row.price_change_percentage_24h,
             cell: (row) => (
                 <p className="col-info">
-                    <span className={getColorClass(row.price_change_percentage_24h)}>{row.price_change_percentage_24h} %</span>
+                    <span className={`${getColorClass(row.price_change_percentage_24h)} white-space-text`}>{row.price_change_percentage_24h} %</span>
                 </p>
             ),
             sortable: true,
@@ -137,7 +133,7 @@ const Table: FC<TableProps> = () => {
             selector: row => row.high_24h,
             cell: (row) => (
                 <p className="col-info">
-                    <span className={getColorClass(row.high_24h)}>{formatingPrice(row.high_24h, signCurrency[useCurrency])}</span>
+                    <span className={`${getColorClass(row.high_24h)} white-space-text`}>{formatingPrice(row.high_24h, signCurrency[useCurrency])}</span>
                 </p>
             ),
             sortable: true,
@@ -148,7 +144,7 @@ const Table: FC<TableProps> = () => {
             selector: row => row.low_24h,
             cell: (row) => (
                 <p className="col-info">
-                    <span className={getColorClass(row.low_24h)}>{formatingPrice(row.low_24h, signCurrency[useCurrency])}</span>
+                    <span className={`${getColorClass(row.low_24h)} white-space-text`}>{formatingPrice(row.low_24h, signCurrency[useCurrency])}</span>
                 </p>
             ),
             sortable: true,
@@ -157,14 +153,14 @@ const Table: FC<TableProps> = () => {
             id: 'market_cap',
             name: t('markets.columns.market-cap'),
             selector: row => row.market_cap,
-            cell: (row) => formatingPrice(row.market_cap, signCurrency[useCurrency]),
+            cell: (row) => (<span className="white-space-text">{formatingPrice(row.market_cap, signCurrency[useCurrency])}</span>),
             sortable: true,
         },
         {
             id: 'total_volume',
             name: t('markets.columns.24h-volume'),
             selector: row => row.total_volume,
-            cell: (row) => formatingPrice(row.total_volume, signCurrency[useCurrency]),
+            cell: (row) => (<span className="white-space-text">{formatingPrice(row.total_volume, signCurrency[useCurrency])}</span>),
             sortable: true,
         },
         {

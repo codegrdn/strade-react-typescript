@@ -16,8 +16,8 @@ interface MarketMainProps {
 
 const MarketMain: FC<MarketMainProps> = () => {
     const { t } = useTranslation();
-    const { coinsList, removeCoin, addCoin } = useCoins();
-    const  { filtersMarkets, addFiltersMarkets } = useFilters();
+    const { filtersMarkets, addFiltersMarkets } = useFilters();
+    const { coinsList, removeCoin, addCoin } = useCoins(addFiltersMarkets);
     const { platforms, addPlatform } = usePlatforms();
     const { currency, changeCurrency } = useCurrency();
     

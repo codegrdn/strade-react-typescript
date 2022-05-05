@@ -1,4 +1,4 @@
-export const getAllQueryParams = () => {
+export const getAllQueryParams = (fieldInArray: string[] = []) => {
     const query = new URLSearchParams(window.location.search);
     const params: any = {};
 
@@ -10,7 +10,11 @@ export const getAllQueryParams = () => {
                 params[key] = [...params[key], value];
             }
         } else {
-            params[key] = value;
+            if (fieldInArray.includes(key)) {
+                params[key] = [value];
+            } else {
+                params[key] = value;
+            }
         }
     })
 
