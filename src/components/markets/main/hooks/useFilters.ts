@@ -20,7 +20,7 @@ const useFilters = () => {
     });
 
     const addFiltersMarkets = (filters: any) => {
-        const newFilters = {...filtersMarkets, ...filters};
+        const newFilters = {...getAllQueryParams(), ...filters};
         
         setSearchParams(JSON.parse(JSON.stringify(newFilters, function replaceUndefinedOrNull(key, value) {
             if (!value) {

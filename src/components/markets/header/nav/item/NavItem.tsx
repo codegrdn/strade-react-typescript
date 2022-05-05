@@ -19,7 +19,7 @@ const NavItem: FC<NavItemProps> = () => {
                 routesShowing.map((route, i) => (
                     <div className="dashboard-header__menu-item" key={route.title}>
                         <Link 
-                            className={`dashboard-header__menu-link ${isActiveURL(route.path, location.pathname) ? 'disable-link' : ''}`}
+                            className={`dashboard-header__menu-link ${isActiveURL(route.path, location.pathname) ? 'dashboard-header__menu-link--active disable-link' : ''}`}
                             to={route.path}
                         >
                             {t(`menu.${route.title}`)}
