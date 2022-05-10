@@ -2,7 +2,9 @@
     "menu": {
         "Home": "Home",
         "Swap": "Swap",
-        "Markets": "Markets"
+        "Markets": "Markets",
+        "Login": "Log in",
+        "CreateAccount": "Create Account"
     },
     "language": {
         "english": "English",
