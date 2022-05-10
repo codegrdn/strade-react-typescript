@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import {Routes, Route} from 'react-router-dom';
-import { getLanguageByUrl } from '../helpers/language';
 import { routes } from './routes';
 
 interface CRoutesProps {
@@ -11,7 +10,7 @@ const CRoutes: FC<CRoutesProps> = () => {
     return (
         <Routes>
             {
-                routes.map((route, i) => {
+                routes.map((route) => {
                     return (
                         <Route
                             path={route.path}

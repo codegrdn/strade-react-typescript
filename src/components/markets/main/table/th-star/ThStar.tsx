@@ -1,5 +1,4 @@
-import { FC, useContext } from 'react';
-import { useState } from 'react';
+import { FC, useContext, useState } from 'react';
 import ICoin from '../../../../../types/ICoin';
 import { MarketMainContext } from '../../context/MarketMainContext';
 

@@ -54,7 +54,7 @@ const Category: FC<CategoryProps> = () => {
     }
 
     const customStyles: StylesConfig<ISelect, false, GroupBase<ISelect>> = {
-        option: (provided, state) => ({
+        option: () => ({
             padding: '5px',
             borderLeft: '3px solid transparent',
             textAlign: 'left',

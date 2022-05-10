@@ -15,6 +15,8 @@ const HeaderLandingNav: FC<HeaderLandingNavProps> = () => {
                 <NavItem />
             </nav>
 
+            <a className="menu__btn btn btn--green js-modal-open" href="#!" data-modal="modal-2">Create Account</a>
+
             <button
                 className={"menu__toggle" + (menuMobile.menuMobile ? " menu__toggle--active" : "")} 
                 type="button" 
