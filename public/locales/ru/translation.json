@@ -2,7 +2,9 @@
     "menu": {
         "Home": "Главная",
         "Swap": "Обмен",
-        "Markets": "Рынки"
+        "Markets": "Рынки",
+        "Login": "Log in",
+        "CreateAccount": "Create Account"
     },
     "language": {
         "english": "English",
@@ -177,6 +179,16 @@
                     "email": "Адрес электронной почты",
                     "password": "Пароль"
                 }
+            },
+            "login": {
+                "title": "log in",
+                "form": {
+                    "email": "Email address",
+                    "password": "Password"
+                },
+                "log-in": "Log in",
+                "have-account": "Don't have an account?",
+                "sign-up": "Sign Up"
             }
         }
     },

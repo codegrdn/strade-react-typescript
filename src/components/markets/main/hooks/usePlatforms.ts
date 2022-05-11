@@ -32,6 +32,10 @@ const usePlatforms = () => {
                 }
 
                 keys.forEach((key:string, i) => {
+                    if (!key) {
+                        return;
+                    }
+
                     const formatKey:string = key.toLowerCase();
 
                     if (platformKeys.includes(formatKey)) {

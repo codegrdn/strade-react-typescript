@@ -16,7 +16,6 @@ const i18nConfig: InitOptions  = {
     }
 }
 
-
 i18n
     .use(Backend) 
     .use(LanguageDetector)

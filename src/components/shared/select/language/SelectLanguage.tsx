@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import { getLanguageByWord, selectLanguage, getDefaultSelectLanguage, useLanguage } from '../../../../helpers/language';
 import SelectCore from '../core/SelectCore';
 import { changeLanguageAction } from "../../../../store/reducers/Language";
-import { useTypedSelector } from '../../../../hooks/useTypedSelector';
 
 interface SelectLanguageProps {
 
@@ -13,7 +12,6 @@ interface SelectLanguageProps {
 const SelectLanguage: FC<SelectLanguageProps> = () => {
     const dispatch = useDispatch();
     const { i18n } = useTranslation();
-    const { language } = useTypedSelector(state => state.language)
     const [selectedLanguage, setSelectedLanguage] = useState(getDefaultSelectLanguage(useLanguage));
 
     function handlerChangeLanguage(e: any): void {

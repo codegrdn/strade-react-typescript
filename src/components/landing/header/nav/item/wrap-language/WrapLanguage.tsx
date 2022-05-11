@@ -9,12 +9,11 @@ interface WrapLanguageProps {
 
 const WrapLanguage: FC<WrapLanguageProps> = () => {
     const { t } = useTranslation();
-    // const {loginModal} = useContext(LandingContext);
+    const {loginModal} = useContext(LandingContext);
     
     function handlerClickLogin(e: React.MouseEvent) {
         e.preventDefault();
-
-        // loginModal.toggleModal();
+        loginModal.toggleModal();
     }
 
     return (
@@ -24,7 +23,7 @@ const WrapLanguage: FC<WrapLanguageProps> = () => {
             </li>
 
             <li className="menu__item">
-                <a className="menu__link" onClick={handlerClickLogin} >{ t('menu.Login') }</a>
+                <a className="menu__link" href='#' onClick={handlerClickLogin} >{ t('menu.Login') }</a>
             </li>
         </div>
     )

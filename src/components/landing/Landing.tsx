@@ -5,16 +5,16 @@ import MainLanding from './main/MainLanding';
 import '../../assets/css/index-style.min.css';
 import { LandingContext } from './context/LandingContext';
 import CreateModal from './modals/create/CreateModal';
+import useModal from './hooks/useModal';
+import LoginModal from './modals/login/LoginModal';
 
 interface LandingProps {
     
 }
 
 const Landing: FC<LandingProps> = () => {
-    const [createModal, setCreateModal] = useState(false);
-    const toggleCreateModal = () => {
-        setCreateModal(!createModal);
-    }
+    const { showModal: loginShowModal, toggleShowModal: toggleLoginShowModal  } = useModal();
+    const { showModal: createShowModal, toggleShowModal: toggleCreateShowModal  } = useModal();
 
     const [menuMobile, setMenuMobile] = useState(false);
     const toggleMenuMobile = () => {
@@ -24,8 +24,12 @@ const Landing: FC<LandingProps> = () => {
     return (
         <LandingContext.Provider value={{
             createModal: {
-                show: createModal,
-                toggleModal: toggleCreateModal
+                show: createShowModal,
+                toggleModal: toggleCreateShowModal
+            },
+            loginModal: {
+                show: loginShowModal,
+                toggleModal: toggleLoginShowModal
             },
             menuMobile: {
                 menuMobile: menuMobile,
@@ -33,11 +37,12 @@ const Landing: FC<LandingProps> = () => {
             }
         }} >
             <div className="page">
-                <div className={"page__body" + ( createModal || menuMobile ? " no-scroll" : "" )}>
-                        <HeaderLanding />
-                        <MainLanding />
-                        <FooterLanding />
-                        <CreateModal />
+                <div className={"page__body" + ( createShowModal || loginShowModal || menuMobile ? " no-scroll" : "" )}>
+                    <HeaderLanding />
+                    <MainLanding />
+                    <FooterLanding />
+                    <CreateModal />
+                    <LoginModal />
                 </div>
             </div>
         </LandingContext.Provider>

@@ -1,6 +1,6 @@
 import React from "react";
 
-interface IModalCreate {
+interface IModal {
     show: boolean,
     toggleModal: () => void
 }
@@ -11,12 +11,17 @@ interface IMobileMenu {
 }
 
 interface ILandingContext {
-    createModal: IModalCreate,
+    createModal: IModal,
+    loginModal: IModal,
     menuMobile: IMobileMenu,
 }
 
 export const landingState: ILandingContext = {
     createModal: {
+        show: false,
+        toggleModal: () => {}
+    },
+    loginModal: {
         show: false,
         toggleModal: () => {}
     },

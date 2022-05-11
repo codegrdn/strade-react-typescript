@@ -5,6 +5,8 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import './i18n';
+import './firebase/firebase'
+
 
 ReactDOM.render(
     <Suspense fallback={<div>Loading...</div>}>

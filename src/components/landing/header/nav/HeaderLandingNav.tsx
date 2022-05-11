@@ -1,4 +1,5 @@
 import { FC, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import { LandingContext } from '../../context/LandingContext';
 import NavItem from './item/NavItem';
 
@@ -7,7 +8,13 @@ interface HeaderLandingNavProps {
 }
 
 const HeaderLandingNav: FC<HeaderLandingNavProps> = () => {
-    const { menuMobile } = useContext(LandingContext);
+    const { t } = useTranslation();
+    const { menuMobile, createModal } = useContext(LandingContext);
+    
+    function handlerCreateAccount(e: any) {
+        e.preventDefault();
+        createModal.toggleModal();
+    }
 
     return (
         <>
@@ -15,7 +22,7 @@ const HeaderLandingNav: FC<HeaderLandingNavProps> = () => {
                 <NavItem />
             </nav>
 
-            <a className="menu__btn btn btn--green js-modal-open" href="#!" data-modal="modal-2">Create Account</a>
+            <a className="menu__btn btn btn--green js-modal-open" href="#!" data-modal="modal-2" onClick={handlerCreateAccount}>{ t('menu.CreateAccount') }</a>
 
             <button
                 className={"menu__toggle" + (menuMobile.menuMobile ? " menu__toggle--active" : "")} 

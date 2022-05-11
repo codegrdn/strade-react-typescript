@@ -24,7 +24,7 @@ const CreateModal: FC<CreateModalProps> = () => {
                 <div className="modal__close-btn modal--exit" onClick={createModal.toggleModal}></div>
                 <div className="modal__title">{ t('landing.modals.create.title').toUpperCase() }</div>
                 <div className="modal__form">
-                    <form className="form" method="post" onSubmit={(e) => { e.preventDefault(); }}>
+                    <form className="form" method="post" onSubmit={(e) => { e.preventDefault() }}>
                         <div className="form__group modal__form-group">
                             <label className="form__label modal__form-label" htmlFor="email">{ t('landing.modals.create.form.email') }</label>
                             <input
