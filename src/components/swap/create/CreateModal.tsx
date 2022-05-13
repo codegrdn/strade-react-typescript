@@ -12,7 +12,7 @@ const CreateModal: FC<CreateModalProps> = () => {
     const [typePasswordIntput, setTypePasswordIntput] = useState('password');
     const [classesEye, setClassesEye] = useState('show-icon show-icon--line')
 
-    function hadlerChangeTypePasswordInput (e: any) {
+    function handleChangeTypePasswordInput (e: any) {
         setClassesEye(typePasswordIntput === 'password' ? "show-icon show-icon--line visually-hidden" : "show-icon show-icon--line");
         setTypePasswordIntput(typePasswordIntput === 'password' ? "text" : "password");
     }
@@ -45,7 +45,7 @@ const CreateModal: FC<CreateModalProps> = () => {
                                     placeholder={ t('swap.modals.create.form.password') }
                                     autoComplete="current-password"
                                 />
-                                    <div className="show-icon-wrap js-show-icon" onClick={hadlerChangeTypePasswordInput}>
+                                    <div className="show-icon-wrap js-show-icon" onClick={handleChangeTypePasswordInput}>
                                         <svg className="show-icon" width="20" height="20">
                                             <use xlinkHref="#eye-icon"></use>
                                         </svg>

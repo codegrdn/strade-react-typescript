@@ -1,5 +1,7 @@
 import { FC, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+import { AuthContext } from '../../../global/auth/context/AuthContext';
+import UserSelectorAdmin from '../../../shared/user-selector/UserSelectorAdmin';
 import { LandingContext } from '../../context/LandingContext';
 import NavItem from './item/NavItem';
 
@@ -8,6 +10,7 @@ interface HeaderLandingNavProps {
 }
 
 const HeaderLandingNav: FC<HeaderLandingNavProps> = () => {
+    const { auth } = useContext(AuthContext);
     const { t } = useTranslation();
     const { menuMobile, createModal } = useContext(LandingContext);
     
@@ -22,7 +25,26 @@ const HeaderLandingNav: FC<HeaderLandingNavProps> = () => {
                 <NavItem />
             </nav>
 
-            <a className="menu__btn btn btn--green js-modal-open" href="#!" data-modal="modal-2" onClick={handlerCreateAccount}>{ t('menu.CreateAccount') }</a>
+            {
+                auth.isAuth() 
+                ?
+                    <div className="dashboard-header__user-menu-wrap">
+                        <div className="dashboard-header__notify"></div>
+                        <UserSelectorAdmin />
+                    </div>
+                : ''
+            }
+
+            {
+                !auth.isAuth() 
+                && <a 
+                    className="menu__btn btn btn--green js-modal-open" 
+                    href="#!" 
+                    data-modal="modal-2" 
+                    onClick={handlerCreateAccount}>
+                        { t('menu.CreateAccount') }
+                    </a>
+            }
 
             <button
                 className={"menu__toggle" + (menuMobile.menuMobile ? " menu__toggle--active" : "")} 

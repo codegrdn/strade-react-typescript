@@ -31,7 +31,7 @@ const usePlatforms = () => {
                     return;
                 }
 
-                keys.forEach((key:string, i) => {
+                keys.forEach((key:string) => {
                     if (!key) {
                         return;
                     }
