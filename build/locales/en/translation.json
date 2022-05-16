@@ -4,7 +4,8 @@
         "Swap": "Swap",
         "Markets": "Markets",
         "Login": "Log in",
-        "CreateAccount": "Create Account"
+        "CreateAccount": "Create Account",
+        "Logout": "Log out"
     },
     "language": {
         "english": "English",
@@ -212,6 +213,21 @@
                     "password": "Password"
                 }
             }
+        }
+    },
+    "error": {
+        "firebase": {
+            "auth-wrong-password": "Incorrect password. Try again",
+            "auth-invalid-email": "Invalid email",
+            "auth-internal-error": "Internal error",
+            "auth-weak-password": "Password should be at least 6 characters",
+            "auth-user-not-found": "User not found",
+            "auth-email-already-in-use": "This email address already exists",
+            "auth-too-many-requests": "Sorry, too many request"
+        },
+        "global": {
+            "empty-password": "Password should not be empty",
+            "not-valid-email": "Email is not validate"
         }
     }
 }

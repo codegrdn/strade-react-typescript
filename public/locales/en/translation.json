@@ -222,7 +222,8 @@
             "auth-internal-error": "Internal error",
             "auth-weak-password": "Password should be at least 6 characters",
             "auth-user-not-found": "User not found",
-            "auth-email-already-in-use": "This email address already exists"
+            "auth-email-already-in-use": "This email address already exists",
+            "auth-too-many-requests": "Sorry, too many request"
         },
         "global": {
             "empty-password": "Password should not be empty",
