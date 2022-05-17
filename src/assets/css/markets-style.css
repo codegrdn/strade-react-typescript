@@ -83,9 +83,13 @@
   white-space: nowrap !important;
 }
 
+.text-center {
+  text-align: center !important;
+}
+
 .error__wrap {
   text-align: center;
-  height: 30px;
+  height: 1.5em;
   margin: 10px 0;
 }
 

@@ -120,11 +120,11 @@ const LoginModal: FC<LoginModalProps> = () => {
                         { isError && <div className="modal__text error__modal__text">{ errorMessage }</div> }
                     </div>
 
-                    <div className="modal__text-wrap">
+                    <button className="form__submit modal__form-submit btn btn--blue" type="submit">{ t('landing.modals.login.log-in') }</button>
+
+                    <div className="modal__text-wrap text-center">
                         <div className="modal__text">{ t('landing.modals.login.have-account') } <a className="modal__link modal--exit" href="#!" data-modal="modal-2" onClick={handleCreateModal}> { t('landing.modals.login.sign-up') }</a></div>
                     </div>
-
-                    <button className="form__submit modal__form-submit btn btn--blue" type="submit">{ t('landing.modals.login.log-in') }</button>
                 </form>
                 </div>
             </div>

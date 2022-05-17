@@ -111,13 +111,14 @@ const CreateModal: FC<CreateModalProps> = () => {
                         </div>
 
                         {
-                            isError
-                            && <div className="modal__text-wrap error__wrap">
-                                <div className="modal__text error__modal__text">{ errorMessage }</div>
+                            <div className="modal__text-wrap error__wrap">
+                                { isError && <div className="modal__text error__modal__text">{ errorMessage }</div> }
                             </div>
                         }
 
-                        <div className="modal__text-wrap">
+                        <button className="form__submit modal__form-submit btn btn--blue" type="submit">{ t('landing.modals.create.sign-up') }</button>
+                    
+                        <div className="modal__text-wrap text-center">
                             <div className="modal__text">
                                 <p>{ t('landing.modals.create.description') }</p>
                                 <p>
@@ -125,8 +126,6 @@ const CreateModal: FC<CreateModalProps> = () => {
                                 </p>
                             </div>
                         </div>
-
-                        <button className="form__submit modal__form-submit btn btn--blue" type="submit">{ t('landing.modals.create.sign-up') }</button>
                     </form>
                 </div>
             </div>
