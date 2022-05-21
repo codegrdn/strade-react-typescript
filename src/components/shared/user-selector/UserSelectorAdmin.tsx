@@ -23,13 +23,13 @@ const UserSelectorAdmin: FC<UserSelectorProps> = () => {
     }
 
     return (
-        <div className={"dashboard-header__user-dropdown dropdown-menu " + (isActive ? 'dropdown-menu--active' : '')}>
+        <div className={"dashboard-header__user-dropdown dropdown-menu landing-header__user-dropdown " + (isActive ? 'dropdown-menu--active' : '')}>
             <div className="dropdown-menu__user-info" onClick={hanleShowMenu}>
                 <img className="dropdown-menu__user-icon" src={account} width="48" height="48" alt="Account" />
-                <div className=  "dropdown-menu__user-name">{ auth.user?.email }<i className="arrow down"></i></div>
+                <div className=  "dropdown-menu__user-name">{ auth.user?.email }<i className="arrow down arrow-landing"></i></div>
             </div>
             <div className="dropdown-menu__menu">
-                <div className="dropdown-menu__menu-list">
+                <div className="dropdown-menu__menu-list landing-menu__menu-list">
                     <a className="dropdown-menu__menu-item" href="#!" onClick={hanleLogOut}>{ t('menu.Logout') }</a>
                 </div>
             </div> 
