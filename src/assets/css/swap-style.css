@@ -87,7 +87,7 @@
   text-align: center !important;
 }
 
-.dashboard-header__user-dropdown.landing-header__user-dropdown, .dropdown-menu__menu-list.landing-menu__menu-list {
+.landing-header__user-dropdown.landing-header__user-dropdown, .dropdown-menu__menu-list.landing-menu__menu-list {
   background-color: white;
 }
 

@@ -1,9 +1,9 @@
 import { FC, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AuthContext } from '../../../global/auth/context/AuthContext';
-import UserSelectorAdmin from '../../../shared/user-selector/UserSelectorAdmin';
 import { LandingContext } from '../../context/LandingContext';
 import NavItem from './item/NavItem';
+import UserSelectorLanding from './user-selector/UserSelectorLanding';
 
 interface HeaderLandingNavProps {
 
@@ -28,9 +28,9 @@ const HeaderLandingNav: FC<HeaderLandingNavProps> = () => {
             {
                 auth.isAuth() 
                 ?
-                    <div className="dashboard-header__user-menu-wrap">
-                        <div className="dashboard-header__notify"></div>
-                        <UserSelectorAdmin />
+                    <div className="landing-header__user-menu-wrap">
+                        <div className="landing-header__notify"></div>
+                        <UserSelectorLanding />
                     </div>
                 : ''
             }

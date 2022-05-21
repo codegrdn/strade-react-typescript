@@ -1,7 +1,7 @@
 import Landing from "../components/landing/Landing";
 import Markets from "../components/markets/Markets";
 import Swap from "../components/swap/Swap";
-import { FC } from "react";
+import React, { FC } from "react";
 import NotFound from "../components/not-found/NotFound";
 
 interface CustomRoute {
@@ -15,25 +15,25 @@ export const routes: CustomRoute[] = [
     {
         path: "/",
         title: "Home",
-        component: Landing,
+        component: React.lazy(() => import('../components/landing/Landing')),
         reload: false,
     },
     {
         path: "/swap",
         title: "Swap",
-        component: Swap,
+        component: React.lazy(() => import('../components/swap/Swap')),
         reload: false,
     },
     {
         path: "/markets",
         title: "Markets",
-        component: Markets,
+        component: React.lazy(() => import('../components/markets/Markets')),
         reload: true,
     },
     {
         path: "*",
         title: "NotFound",
-        component: NotFound,
+        component: React.lazy(() => import('../components/not-found/NotFound')),
         reload: false,
     }
 ];
