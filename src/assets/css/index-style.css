@@ -87,14 +87,6 @@
   text-align: center !important;
 }
 
-.landing-header__user-dropdown.landing-header__user-dropdown, .dropdown-menu__menu-list.landing-menu__menu-list {
-  background-color: white;
-}
-
-.arrow.arrow-landing {
-  border-color: hsl(0deg, 0%, 80%);
-}
-
 .error__wrap {
   text-align: center;
   height: 1.5em;
@@ -2232,6 +2224,18 @@ pre code {
   .landing-trade .dropdown-menu__user-name {
     display: block;
   }
+}
+
+.landing-header__user-dropdown.landing-header__user-dropdown, .dropdown-menu__menu-list.landing-menu__menu-list {
+  background-color: white;
+}
+
+.arrow.arrow-landing {
+  border-color: hsl(0deg, 0%, 60%);
+}
+
+.arrow.arrow-landing:hover {
+  border-color: hsl(0deg, 0%, 60%);
 }
 
 .purchase {
