@@ -15,7 +15,7 @@ const PrivilegesList: FC<PrivilegesListProps> = () => {
                 privileges.map((privilege) => (
                     <li className="privileges-list__item" key={privilege.id}>
                         <div className="privileges-list__picture">
-                            <img className="privileges-list__img" src={privilege.image} alt={privilege.id} />
+                            <img width='190px' height='190px' className="privileges-list__img" src={privilege.image} alt={privilege.id} />
                         </div>
                         <div className="privileges-list__subtitle">{ t(privilege.subtitle).toUpperCase() }</div>
                         <div className="privileges-list__title">{ t(privilege.title) }</div>

@@ -16,7 +16,7 @@ const HeroFeatures: FC<HeroFeaturesProps> = () => {
                 {
                     features.map((feature) => (
                         <li className="features__item" key={ feature.id }>
-                            <img className="features__icon" src={ feature.image } alt="" />
+                            <img width='20px' height='20px' className="features__icon" src={ feature.image } alt="" />
                             <h2 className="features__title">{ parse(t(feature.title)) }</h2>
                             <p className="features__descr">{ t(feature.desciption) }</p>
                         </li>

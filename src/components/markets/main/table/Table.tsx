@@ -97,7 +97,7 @@ const Table: FC<TableProps> = () => {
             cell: (row) => (
                 <div className="col-favourites">
                         <ThStar coin={row} />
-                        <img src={row.image} style={{marginRight: '10px', width: '40px'}} alt={row.id} />
+                        <img src={row.image} width='40px' height='40px' style={{marginRight: '10px'}} alt={row.id} />
                     <p className="col-info">{row.name}</p>
                 </div>
             ),

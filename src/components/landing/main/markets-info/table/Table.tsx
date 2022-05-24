@@ -44,7 +44,7 @@ const Table: FC<TableProps> = () => {
             selector: row => row.name,
             cell: (row) => (
                 <div className="col-favourites">
-                    <img src={row.image} style={{ marginRight: '10px', width: '40px' }} />
+                    <img src={row.image} width='40px' height='40px' style={{ marginRight: '10px' }} />
                     <p className="col-info">{row.name}</p>
                 </div>
             ),
