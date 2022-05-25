@@ -2,12 +2,11 @@ import { FC, useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next';
 import { getCoinsMarkets } from '../../../../../api/rest/CoinService';
 import useRequest from '../../../../../hooks/useRequest';
-import DataTable, { TableColumn } from 'react-data-table-component';
+import DataTable, { TableColumn, TableStyles } from 'react-data-table-component';
 import { getColor, getColorClass } from '../../../../../helpers/colors';
 import CoinChart from '../../../../markets/main/chart/CoinChart';
 import RowTable from '../../../../../types/RowTableMarket';
-import Loader from '../../../../shared/loader/Loader';
-import LazyLoad from 'react-lazyload';
+import defaultCoins from './data/coins';
 
 interface TableProps {
 
@@ -28,7 +27,7 @@ const Table: FC<TableProps> = () => {
     const values = useMemo(() => {
         setIsLoading(true);
 
-        let data = response?.data ? [...response.data] : [];
+        let data = response?.data ? [...response.data] : defaultCoins;
 
         const timeout = setTimeout(() => {
             setIsLoading(false);
@@ -45,7 +44,11 @@ const Table: FC<TableProps> = () => {
             selector: row => row.name,
             cell: (row) => (
                 <div className="col-favourites">
-                    <img src={row.image} width='40px' height='40px' alt={row.name} style={{ marginRight: '10px' }} />
+                    {
+                        row.image 
+                        ? <img src={row.image} width='40px' height='40px' style={{marginRight: '10px', width: '40px', height: '40px'}} alt={row.id} />
+                        : <div style={{width:'40px', height:'40px'}}></div>
+                    }
                     <p className="col-info">{row.name}</p>
                 </div>
             ),
@@ -113,11 +116,28 @@ const Table: FC<TableProps> = () => {
             id: 'chart',
             name: "",
             cell: (row) => (
-                <CoinChart coinId={row.id} color={getColor(row.price_change_percentage_24h)} width={140} height={70} />
+                <>
+                    {
+                        !String((row.id)).includes('default') && <CoinChart coinId={row.id} color={getColor(row.price_change_percentage_24h)} width={140} height={70} />
+                    }
+                </>
             ),
             sortable: false,
         },
     ];
+    
+    const customStyles: TableStyles = {
+        rows: {
+            style: {
+                minHeight: '71px',
+            }
+        },
+        tableWrapper: {
+            style: {
+                minHeight: '406px',
+            }
+        }
+    }
 
     return (
         <DataTable
@@ -125,9 +145,8 @@ const Table: FC<TableProps> = () => {
             noDataComponent={t('landing.market-info.table-have-not-data')}
             columns={columns}
             data={values}
-            // progressPending={isLoading}
-            // progressComponent={<Loader />}
             disabled={isLoading}
+            customStyles={customStyles}
         />
     )
 }

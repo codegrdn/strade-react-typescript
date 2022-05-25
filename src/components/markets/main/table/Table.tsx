@@ -10,11 +10,8 @@ import { getCoinsMarkets, ICoinsMarkets } from '../../../../api/rest/CoinService
 import { MarketMainContext } from '../context/MarketMainContext';
 import { formatingPrice } from '../../../../helpers/formating';
 import { signCurrency } from '../../../../helpers/currencies';
-import Loader from '../../../shared/loader/Loader';
-
-interface RowTable extends ICoin {
-    chart?: string,
-}
+import RowTable from '../../../../types/IRowTable';
+import defaultCoins from './data/coins';
 
 interface TableProps {
 
@@ -38,7 +35,7 @@ const Table: FC<TableProps> = () => {
     const values = useMemo(() => {
         setIsLoading(true);
 
-        let data = response?.data ? [...response.data] : [];
+        let data = response?.data ? [...response.data] : defaultCoins;
         if (Object.keys(filters.list).length) {
             if (filters.list.hasOwnProperty('search') && filters.list.search) {
                 data = data.filter(coin => (coin.name.toLowerCase().includes(filters.list?.search?.toLowerCase())));
@@ -106,11 +103,15 @@ const Table: FC<TableProps> = () => {
             id: 'name',
             name: t('markets.columns.name'),
             selector: row => row.name.toLowerCase(),
-            format: (row, index) => (row.name),
+            format: (row) => (row.name),
             cell: (row) => (
                 <div className="col-favourites">
-                        <ThStar coin={row} />
-                        <img src={row.image} width='40px' height='40px' style={{marginRight: '10px'}} alt={row.id} />
+                    <ThStar coin={row} />
+                    {
+                        row.image 
+                        ? <img src={row.image} width='40px' height='40px' style={{marginRight: '10px'}} alt={row.id} />
+                        : <div style={{width:'40px', height:'40px'}}></div>
+                    }
                     <p className="col-info">{row.name}</p>
                 </div>
             ),
@@ -180,7 +181,11 @@ const Table: FC<TableProps> = () => {
             id: 'chart',
             name: "",
             cell: (row) => (
-                <CoinChart coinId={row.id} color={getColor(row.price_change_percentage_24h)} width={140} height={70} />
+                <>
+                    {
+                        !row.id.toString().includes('default') && <CoinChart coinId={row.id} color={getColor(row.price_change_percentage_24h)} width={140} height={70} />
+                    }
+                </>
             ),
             sortable: false,
         },
@@ -200,8 +205,6 @@ const Table: FC<TableProps> = () => {
             noDataComponent={t('landing.market-info.table-have-not-data')}
             columns={columns}
             data={values}
-            progressPending={isLoading}
-            progressComponent={<Loader />}
             onChangePage={handlerChangePage}
             onChangeRowsPerPage={handlerChangeRowsPerPage}
             paginationPerPage={filters.list.perPage}
