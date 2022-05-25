@@ -125,8 +125,9 @@ const Table: FC<TableProps> = () => {
             noDataComponent={t('landing.market-info.table-have-not-data')}
             columns={columns}
             data={values}
-            progressPending={isLoading}
-            progressComponent={<Loader />}
+            // progressPending={isLoading}
+            // progressComponent={<Loader />}
+            disabled={isLoading}
         />
     )
 }

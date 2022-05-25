@@ -1,5 +1,5 @@
 import { FC, useContext, useEffect, useMemo, useState } from 'react';
-import DataTable, { TableColumn } from 'react-data-table-component';
+import DataTable, { TableColumn, TableStyles } from 'react-data-table-component';
 import { useTranslation } from "react-i18next";
 import { getColor, getColorClass } from '../../../../helpers/colors';
 import useRequest from '../../../../hooks/useRequest';
@@ -88,6 +88,19 @@ const Table: FC<TableProps> = () => {
         }
     }, [currency.currency, filters.list]);
 
+    const customStyles: TableStyles = {
+        rows: {
+            style: {
+                minHeight: '71px',
+            }
+        },
+        tableWrapper: {
+            style: {
+                minHeight: '762px',
+            }
+        }
+    }
+
     const columns:  TableColumn<RowTable>[]  = [
         {
             id: 'name',
@@ -103,7 +116,7 @@ const Table: FC<TableProps> = () => {
             ),
             sortable: true,
             minWidth: '25%',
-            maxWidth: '40%'
+            maxWidth: '40%',
         },
         {
             id: 'current_price',
@@ -194,6 +207,8 @@ const Table: FC<TableProps> = () => {
             paginationPerPage={filters.list.perPage}
             paginationDefaultPage={filters.list.page}
             pagination
+            disabled={isLoading}
+            customStyles={customStyles}
         />
     )
 }
