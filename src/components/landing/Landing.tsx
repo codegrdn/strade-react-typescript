@@ -7,6 +7,7 @@ import { LandingContext } from './context/LandingContext';
 import CreateModal from './modals/create/CreateModal';
 import useModal from './hooks/useModal';
 import LoginModal from './modals/login/LoginModal';
+import LazyLoad from 'react-lazyload';
 
 interface LandingProps {
     
@@ -40,7 +41,11 @@ const Landing: FC<LandingProps> = () => {
                 <div className={"page__body" + ( createShowModal || loginShowModal || menuMobile ? " no-scroll" : "" )}>
                     <HeaderLanding />
                     <MainLanding />
-                    <FooterLanding />
+                    
+                    <LazyLoad height={200}>
+                        <FooterLanding />
+                    </LazyLoad>
+
                     <CreateModal />
                     <LoginModal />
                 </div>

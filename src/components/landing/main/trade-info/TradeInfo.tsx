@@ -15,6 +15,7 @@ import tradeMobilePng from './images/trade-mobile.png';
 import tradeMobile2xPng from './images/trade-mobile@2x.png';
 import tradeMobileWebp from './images/trade-mobile.webp';
 import tradeMobile2xWebp from './images/trade-mobile@2x.webp';
+import LazyLoad from 'react-lazyload';
 
 interface TradeInfoProps {
 
@@ -32,32 +33,35 @@ const TradeInfo: FC<TradeInfoProps> = () => {
                 </div>
             </div>
             <div className="trade-info__picture">
-                <picture>
-                    <source 
-                        type="image/webp" 
-                        media="(min-width: 1200px)" 
-                        srcSet={`${tradeDesktopWebp}, ${tradeDesktop2xWebp} 2x`} />
-                    <source 
-                        type="image/webp" 
-                        media="(min-width: 768px)" 
-                        srcSet={`${tradeTabletWebp}, ${tradeTablet2xWebp} 2x`} />
-                    <source 
-                        type="image/webp" 
-                        srcSet={`${tradeMobileWebp}, ${tradeMobile2xWebp} 2x`} />
-                    <source 
-                        media="(min-width: 1200px)" 
-                        srcSet={`${tradeDesktopPng}, ${tradeDesktop2xPng} 2x`} />
-                    <source 
-                        media="(min-width: 768px)" 
-                        srcSet={`${tradeTabletPng}, ${tradeTablet2xPng} 2x`} />
-                    <img
-                        className="trade-info__image"
-                        src={tradeMobilePng}
-                        srcSet={tradeMobile2xPng}
-                        alt="trade"
-                        width="300"
-                        height="144" />
-                </picture>
+                <LazyLoad height={144} once>
+                    <picture>
+                        <source 
+                            type="image/webp" 
+                            media="(min-width: 1200px)" 
+                            srcSet={`${tradeDesktopWebp}, ${tradeDesktop2xWebp} 2x`} />
+                        <source 
+                            type="image/webp" 
+                            media="(min-width: 768px)" 
+                            srcSet={`${tradeTabletWebp}, ${tradeTablet2xWebp} 2x`} />
+                        <source 
+                            type="image/webp" 
+                            srcSet={`${tradeMobileWebp}, ${tradeMobile2xWebp} 2x`} />
+                        <source 
+                            media="(min-width: 1200px)" 
+                            srcSet={`${tradeDesktopPng}, ${tradeDesktop2xPng} 2x`} />
+                        <source 
+                            media="(min-width: 768px)" 
+                            srcSet={`${tradeTabletPng}, ${tradeTablet2xPng} 2x`} />
+                        <img
+                            className="trade-info__image"
+                            src={tradeMobilePng}
+                            srcSet={tradeMobile2xPng}
+                            alt="trade"
+                            width="300"
+                            height="144" />
+                    </picture>
+                </LazyLoad>
+                
             </div>
         </section>
     )

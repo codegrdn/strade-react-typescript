@@ -14,9 +14,15 @@ const MainLanding: FC<MainLandingProps> = () => {
         <main className="page-main">
             <Hero />
 
-            <LazyLoad>
+            <LazyLoad height={200} once>
                 <MarketsInfo />
+            </LazyLoad>
+
+            <LazyLoad height={200}>
                 <TradeInfo />
+            </LazyLoad>
+            
+            <LazyLoad height={200}>
                 <Privileges />
             </LazyLoad>
         </main>

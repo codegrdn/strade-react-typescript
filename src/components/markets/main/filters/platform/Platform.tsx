@@ -103,21 +103,16 @@ const Platform: FC<PlatformProps> = () => {
     }
 
     return (
-        <>
-            {
-                !loading
-                    ? <Loader isRevert={true} style={{ height: '24px', width: '24px' }} />
-                    : <SelectCore
-                        styles={customStyles}
-                        selected={value}
-                        values={values}
-                        onChange={handlerFilterMarket}
-                        components={{
-                            IndicatorSeparator: () => null
-                        }}
-                    />
-            }
-        </>
+        <SelectCore
+            styles={customStyles}
+            selected={value}
+            values={values}
+            onChange={handlerFilterMarket}
+            components={{
+                IndicatorSeparator: () => null
+            }}
+            isDisabled={!loading}
+        />
     )
 }
 

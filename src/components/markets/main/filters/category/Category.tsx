@@ -94,21 +94,16 @@ const Category: FC<CategoryProps> = () => {
     }
 
     return (
-        <>
-            {
-                !loading
-                    ? <Loader isRevert={true} style={{ height: '24px', width: '24px' }} />
-                    : <SelectCore
-                        styles={customStyles}
-                        values={valuesSelect}
-                        selected={selected}
-                        onChange={handlerChangeSelect}
-                        components={{
-                            IndicatorSeparator: () => null
-                        }}
-                    />
-            }
-        </>
+        <SelectCore
+            styles={customStyles}
+            values={valuesSelect}
+            selected={selected}
+            onChange={handlerChangeSelect}
+            components={{
+                IndicatorSeparator: () => null
+            }}
+            isDisabled={!loading}
+        />
     )
 }
 

@@ -1,9 +1,7 @@
-import { findByLabelText } from '@testing-library/react';
 import { FC, useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import { GroupBase, StylesConfig } from 'react-select';
 import ISelect from '../../../../../types/ISelect';
-import Loader from '../../../../shared/loader/Loader';
 import SelectCore from '../../../../shared/select/core/SelectCore';
 import { MarketMainContext } from '../../context/MarketMainContext';
 
@@ -107,22 +105,17 @@ const Price: FC<PriceProps> = () => {
     }
 
     return (
-        <>
-            {
-                !loading
-                    ? <Loader isRevert={true} style={{ height: '24px', width: '24px' }} />
-                    : <SelectCore
-                        isSearchable={false}
-                        selected={value}
-                        values={items}
-                        onChange={handlerFilterMarket}
-                        styles={customStyles}
-                        components={{
-                            IndicatorSeparator: () => null
-                        }}
-                    />
-            }
-        </>
+        <SelectCore
+            isSearchable={false}
+            selected={value}
+            values={items}
+            onChange={handlerFilterMarket}
+            styles={customStyles}
+            components={{
+                IndicatorSeparator: () => null
+            }}
+            isDisabled={!loading}
+        />
     )
 }
 

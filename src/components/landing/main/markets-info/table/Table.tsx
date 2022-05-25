@@ -7,6 +7,7 @@ import { getColor, getColorClass } from '../../../../../helpers/colors';
 import CoinChart from '../../../../markets/main/chart/CoinChart';
 import RowTable from '../../../../../types/RowTableMarket';
 import Loader from '../../../../shared/loader/Loader';
+import LazyLoad from 'react-lazyload';
 
 interface TableProps {
 
@@ -44,7 +45,7 @@ const Table: FC<TableProps> = () => {
             selector: row => row.name,
             cell: (row) => (
                 <div className="col-favourites">
-                    <img src={row.image} width='40px' height='40px' style={{ marginRight: '10px' }} />
+                    <img src={row.image} width='40px' height='40px' alt={row.name} style={{ marginRight: '10px' }} />
                     <p className="col-info">{row.name}</p>
                 </div>
             ),
