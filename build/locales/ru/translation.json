@@ -12,6 +12,10 @@
         "russian": "Русский"
     },
     "markets": {
+        "meta": {
+            "title": "Рынки - Strade",
+            "description": ""
+        },
         "title-header": "Рынки",
         "columns": {
             "name": "Имя",
@@ -41,6 +45,10 @@
         "table-have-not-data": "Нет данных для отображения"
     },
     "landing": {
+        "meta": {
+            "title": "Strade",
+            "description": ""
+        },
         "hero": {
             "content": {
                 "subTitle": "ОСНОВАНО НА ДАННЫХ STELLAR DEX",
@@ -194,6 +202,10 @@
         }
     },
     "swap": {
+        "meta": {
+            "title": "Обмен - Strade",
+            "description": ""
+        },
         "title": "Обмен",
         "currency-conversion": "Конвертация валюты",
         "convert": "Конвертировать",
@@ -216,6 +228,10 @@
         }
     },
     "error": {
+        "meta": {
+            "title": "Ошибка - Strade",
+            "description": ""
+        },
         "firebase": {
             "auth-wrong-password": "Неправильный пароль. Попробуйте еще раз",
             "auth-invalid-email": "Недействительный адрес электронной почты",

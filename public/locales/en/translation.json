@@ -12,6 +12,10 @@
         "russian": "Russian"
     },
     "markets": {
+        "meta": {
+            "title": "Markets - Strade",
+            "description": ""
+        },
         "title-header": "Markets",
         "columns": {
             "name": "Name",
@@ -41,6 +45,10 @@
         "table-have-not-data": "There are no records to display"
     },
     "landing": {
+        "meta": {
+            "title": "Strade",
+            "description": ""
+        },
         "hero": {
             "content": {
                 "subTitle": "BUILT ON STELLAR DEX",
@@ -194,6 +202,10 @@
         }
     },
     "swap": {
+        "meta": {
+            "title": "Swap - Strade",
+            "description": ""
+        },
         "title": "Swap",
         "currency-conversion": "Currency conversion",
         "convert": "Convert",
@@ -216,6 +228,10 @@
         }
     },
     "error": {
+        "meta": {
+            "title": "Error - Strade",
+            "description": ""
+        },
         "firebase": {
             "auth-wrong-password": "Incorrect password. Try again",
             "auth-invalid-email": "Invalid email",

@@ -8,12 +8,15 @@ import CreateModal from './modals/create/CreateModal';
 import useModal from './hooks/useModal';
 import LoginModal from './modals/login/LoginModal';
 import LazyLoad from 'react-lazyload';
+import { Helmet } from "react-helmet";
+import { useTranslation } from 'react-i18next';
 
 interface LandingProps {
     
 }
 
 const Landing: FC<LandingProps> = () => {
+    const { t } = useTranslation();
     const { showModal: loginShowModal, toggleShowModal: toggleLoginShowModal  } = useModal();
     const { showModal: createShowModal, toggleShowModal: toggleCreateShowModal  } = useModal();
 
@@ -37,6 +40,15 @@ const Landing: FC<LandingProps> = () => {
                 toggleMenuMobile: toggleMenuMobile
             }
         }} >
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>{ t('landing.meta.title') }</title>
+                <meta
+                    name="description"
+                    content={ t('landing.meta.description') }
+                    />
+            </Helmet>
+
             <div className="page">
                 <div className={"page__body" + ( createShowModal || loginShowModal || menuMobile ? " no-scroll" : "" )}>
                     <HeaderLanding />
