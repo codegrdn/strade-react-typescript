@@ -8,9 +8,7 @@ import CoinChart from '../../../../markets/main/chart/CoinChart';
 import RowTable from '../../../../../types/RowTableMarket';
 import defaultCoins from './data/coins';
 
-interface TableProps {
-
-}
+interface TableProps {}
 
 const Table: FC<TableProps> = () => {
     const { t } = useTranslation();

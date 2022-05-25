@@ -35,7 +35,12 @@ const Table: FC<TableProps> = () => {
     const values = useMemo(() => {
         setIsLoading(true);
 
+        if (!Object.keys(platforms.list).length) {
+            return defaultCoins;
+        }
+
         let data = response?.data ? [...response.data] : defaultCoins;
+
         if (Object.keys(filters.list).length) {
             if (filters.list.hasOwnProperty('search') && filters.list.search) {
                 data = data.filter(coin => (coin.name.toLowerCase().includes(filters.list?.search?.toLowerCase())));
