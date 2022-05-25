@@ -1,16 +1,13 @@
 import { FC, useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { useTranslation } from "react-i18next";
 import { getLanguageByWord, selectLanguage, getDefaultSelectLanguage, useLanguage } from '../../../../helpers/language';
 import SelectCore from '../core/SelectCore';
-import { changeLanguageAction } from "../../../../store/reducers/Language";
 
 interface SelectLanguageProps {
 
 }
 
 const SelectLanguage: FC<SelectLanguageProps> = () => {
-    const dispatch = useDispatch();
     const { i18n } = useTranslation();
     const [selectedLanguage, setSelectedLanguage] = useState(getDefaultSelectLanguage(useLanguage));
 
@@ -29,7 +26,6 @@ const SelectLanguage: FC<SelectLanguageProps> = () => {
             i18n.changeLanguage(getLanguageByWord(e.label.toLowerCase().trim()));
         }
 
-        dispatch(changeLanguageAction({language: getLanguageByWord(e.label.toLowerCase().trim()) }))
         setSelectedLanguage(e);
     }
 

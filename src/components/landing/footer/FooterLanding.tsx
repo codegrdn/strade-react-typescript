@@ -1,4 +1,3 @@
-import moment from 'moment';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
@@ -13,6 +12,25 @@ interface FooterLandingProps {
 const FooterLanding: FC<FooterLandingProps> = () => {
     const { t } = useTranslation();
 
+    function padTo2Digits(num: number) {
+        return num.toString().padStart(2, '0');
+    }
+
+    function formatDate(date: any) {
+        return (
+            [
+                date.getFullYear(),
+                padTo2Digits(date.getMonth() + 1),
+                padTo2Digits(date.getDate()),
+            ].join('-') +
+            ' ' +
+            [
+                padTo2Digits(date.getHours()),
+                padTo2Digits(date.getMinutes()),
+            ].join(':')
+        );
+    }
+
     return (
         <footer className="page-footer footer">
             <div className="box">
@@ -23,13 +41,13 @@ const FooterLanding: FC<FooterLandingProps> = () => {
 
                             <div className="footer__text">
                                 <p>
-                                    { parse(t('landing.footer.footer-text-atfter-logo')) }
+                                    {parse(t('landing.footer.footer-text-atfter-logo'))}
                                 </p>
                             </div>
                         </div>
                         <div className="footer__social">
                             <div className="social">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -54,12 +72,12 @@ const FooterLanding: FC<FooterLandingProps> = () => {
                 </div>
                 <div className="footer__bottom">
                     <div className="footer__bottom-wrap">
-                        <div className="footer__date">{ moment().format("YYYY-MM-DD HH:mm") }</div>
+                        <div className="footer__date">{formatDate(new Date())}</div>
                         <div className="footer__volume">
                         </div>
                     </div>
                     <div className="footer__copy">
-                        { t('landing.footer.copyright', { year: moment().format("YYYY") }) }
+                        {t('landing.footer.copyright', { year: (new Date()).getFullYear() })}
                     </div>
                 </div>
             </div>
