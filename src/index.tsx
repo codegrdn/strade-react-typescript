@@ -7,7 +7,7 @@ import './firebase/firebase';
 
 
 ReactDOM.render(
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div></div>}>
         <App />
     </Suspense>,
     document.getElementById('root')

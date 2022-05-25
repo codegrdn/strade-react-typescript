@@ -905,13 +905,13 @@ pre code {
 .dashboard-header__user-menu-wrap {
   padding: 10px;
   display: grid;
-  grid-template-columns: 20px 28px;
+  grid-template-columns: 28px;
   gap: 15px;
   align-items: center;
 }
 @media screen and (min-width: 768px) {
   .dashboard-header__user-menu-wrap {
-    grid-template-columns: 20px 250px;
+    grid-template-columns: 250px;
   }
 }
 

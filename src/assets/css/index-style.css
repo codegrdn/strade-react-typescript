@@ -951,7 +951,7 @@ pre code {
   width: 20px;
   height: 12px;
   margin: 5px;
-  margin-left: 30px;
+  margin-left: 20px;
   background: 0 0;
   border: none;
   z-index: 100;
@@ -2027,13 +2027,13 @@ pre code {
 .landing-header__user-menu-wrap {
   padding: 10px;
   display: grid;
-  grid-template-columns: 20px 28px;
+  grid-template-columns: 28px;
   gap: 15px;
   align-items: center;
 }
 @media screen and (min-width: 768px) {
   .landing-header__user-menu-wrap {
-    grid-template-columns: 20px 250px;
+    grid-template-columns: 250px;
   }
 }
 

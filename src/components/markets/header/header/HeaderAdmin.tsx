@@ -25,7 +25,6 @@ const HeaderAdmin: FC<HeaderAdminProps> = () => {
                         auth.isAuth() 
                         ?
                             <div className="dashboard-header__user-menu-wrap">
-                                <div className="dashboard-header__notify"></div>
                                 <UserSelectorAdmin />
                             </div>
                         : ''

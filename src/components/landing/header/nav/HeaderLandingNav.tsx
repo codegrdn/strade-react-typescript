@@ -29,7 +29,6 @@ const HeaderLandingNav: FC<HeaderLandingNavProps> = () => {
                 auth.isAuth() 
                 ?
                     <div className="landing-header__user-menu-wrap">
-                        <div className="landing-header__notify"></div>
                         <UserSelectorLanding />
                     </div>
                 : ''
