@@ -4,7 +4,6 @@ import { AreaChart, Area, YAxis } from 'recharts';
 import { getChart } from '../../../../api/rest/CoinService';
 import useRequestChart from './hooks/useRequestChart';
 import { MarketMainContext } from '../context/MarketMainContext';
-import Loader from '../../../shared/loader/Loader';
 
 interface CoinChartProps {
     coinId: string,
@@ -50,27 +49,20 @@ const CoinChart: FC<CoinChartProps> = ({ coinId, color, width = 140, height = 70
     }, [response])
 
     return (
-        <>
-            {
-                !isLoading
-                    ? <Loader isRevert={true} style={{ height: '24px', width: '24px' }} />
-                    : <AreaChart
-                        width={width}
-                        height={height}
-                        data={chart}
-                        margin={{
-                            top: 10,
-                            right: 30,
-                            left: 0,
-                            bottom: 10,
-                        }}>
-                        <YAxis hide={true} type="number" domain={['auto', 'auto']} />
-                        <Area type="monotone" dataKey="y" stroke={color} fill={color} />
-                    </AreaChart>
-            }
-
-        </>
-    );
+        <AreaChart
+            width={width}
+            height={height}
+            data={chart}
+            margin={{
+                top: 10,
+                right: 30,
+                left: 0,
+                bottom: 10,
+            }}>
+            <YAxis hide={true} type="number" domain={['auto', 'auto']} />
+            <Area type="monotone" dataKey="y" stroke={color} fill={color} />
+        </AreaChart>
+    )
 }
 
 export default CoinChart;

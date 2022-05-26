@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import SelectCore from '../../../../shared/select/core/SelectCore';
 import ISelect from '../../../../../types/ISelect';
 import { MarketMainContext } from '../../context/MarketMainContext';
-import Loader from '../../../../shared/loader/Loader';
 import { GroupBase, StylesConfig } from 'react-select';
 
 interface PlatformProps {

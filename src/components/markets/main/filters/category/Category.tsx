@@ -4,7 +4,6 @@ import { GroupBase, StylesConfig } from 'react-select';
 import { getList } from '../../../../../api/rest/CategoryService';
 import useRequest from '../../../../../hooks/useRequest';
 import ISelect from '../../../../../types/ISelect';
-import Loader from '../../../../shared/loader/Loader';
 import SelectCore from '../../../../shared/select/core/SelectCore';
 import { MarketMainContext } from '../../context/MarketMainContext';
 

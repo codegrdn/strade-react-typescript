@@ -14,7 +14,7 @@
     "markets": {
         "meta": {
             "title": "Markets - Strade",
-            "description": ""
+            "description": "Always up-to-date data on cryptocurrency markets."
         },
         "title-header": "Markets",
         "columns": {
@@ -47,7 +47,7 @@
     "landing": {
         "meta": {
             "title": "Strade",
-            "description": ""
+            "description": "Cryptocurrency exchange with support for Stellar Blockchain and DEX technology. Safely. Reliably. Fast."
         },
         "hero": {
             "content": {
@@ -204,7 +204,7 @@
     "swap": {
         "meta": {
             "title": "Swap - Strade",
-            "description": ""
+            "description": "Converting cryptocurrency coins at the best quotes."
         },
         "title": "Swap",
         "currency-conversion": "Currency conversion",
@@ -230,7 +230,7 @@
     "error": {
         "meta": {
             "title": "Error - Strade",
-            "description": ""
+            "description": "Welcome to the error page! We didn't find anything for you"
         },
         "firebase": {
             "auth-wrong-password": "Incorrect password. Try again",

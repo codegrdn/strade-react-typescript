@@ -8,6 +8,7 @@ import { coins, coinIds } from './data/coins';
 import { currency } from './data/currency';
 import { roundingValue } from '../../../../../helpers/math';
 import { LandingContext } from '../../../context/LandingContext';
+import { AuthContext } from '../../../../global/auth/context/AuthContext';
 
 interface PurchaseProps {
 
@@ -16,6 +17,7 @@ interface PurchaseProps {
 const HeroPurchase: FC<PurchaseProps> = () => {
     const { t } = useTranslation();
     const { createModal } = useContext(LandingContext);
+    const { auth } = useContext(AuthContext);
 
     const [paymentMethod, setPaymentMethod] = useState('visa');
     const [to, setTo] = useState('');
@@ -109,6 +111,14 @@ const HeroPurchase: FC<PurchaseProps> = () => {
         setFrom(String(roundingValue(Number(e.target.value) * prices[toCurrency.value])));
     }
 
+    function hadlerClickButton(e: any) {
+        if (auth.isAuth()) {
+            
+        } else {
+            createModal.toggleModal();
+        }
+    }
+
     return (
         <div className="hero__purchase">
             <div className="purchase">
@@ -181,7 +191,7 @@ const HeroPurchase: FC<PurchaseProps> = () => {
                         ))
                     }
                 </div>
-                <button className="purchase__btn btn btn--blue" onClick={createModal.toggleModal}>
+                <button className="purchase__btn btn btn--blue" onClick={hadlerClickButton}>
                     {t('landing.hero.purchase.buy-item', { item: toCurrency.label })}
                 </button>
             </div>

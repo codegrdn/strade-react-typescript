@@ -5,7 +5,6 @@ import { getColorClass, getColor } from '../../../../../helpers/colors';
 import { signCurrency } from '../../../../../helpers/currencies';
 import { formatingPrice } from '../../../../../helpers/formating';
 import ICoin from '../../../../../types/ICoin';
-import Loader from '../../../../shared/loader/Loader';
 import CoinChart from '../../chart/CoinChart';
 import useCoin from './hooks/useCoin';
 
@@ -38,45 +37,40 @@ const CardMarketItem: FC<CardMarketItemProps> = ( { coinId } ) => {
 
 
     return (
-        <>
-            {
-                isLoading
-                ? <Loader isRevert={true} style={{ height: '24px', width: '24px' }} />
-                : <div className="markets__card">
-                    <div className="markets__card-title">
-                        {coinCurrent?.name}
-                    </div>
-                    <div className="markets__card-picture">
-                        <CoinChart
-                            coinId={coinCurrent.id} 
-                            color={getColor(coinCurrent.price_change_24h)} 
-                            width={105} 
-                            height={55}
-                        />
-                    </div>
-                    <div className="markets__card-bet">
-                        <span 
-                            className={getColorClass(coinCurrent.price_change_24h)}
-                        >
-                            {formatingPrice(coinCurrent.current_price, signCurrency[currency])}
-                        </span> 
-                        { coinCurrent.price_change_24h < 0 
-                            ? formatingPrice((coinCurrent.current_price + coinCurrent.price_change_24h).toFixed(2), signCurrency[currency]) 
-                            : formatingPrice((coinCurrent.current_price - coinCurrent.price_change_24h).toFixed(2), signCurrency[currency])
-                        }
-                    </div>
-                    <div className="markets__card-sum">
-                        <span 
-                            className={getColorClass(coinCurrent.price_change_percentage_24h)}
-                        >
-                            {formatingPrice(coinCurrent.price_change_percentage_24h.toFixed(2), '%')}
-                        </span> 
-                        { t('markets.card.market-cap')}: {formatingPrice(coinCurrent.market_cap, signCurrency[currency])}
-                    </div>
-                </div>
-            }
-        </>
-        
+        <div className="markets__card">
+            <div className="markets__card-title" style={{height: '18px'}}>
+                {coinCurrent?.name}
+            </div>
+            <div className="markets__card-picture">
+                {
+                    !isLoading && <CoinChart
+                        coinId={coinCurrent.id} 
+                        color={getColor(coinCurrent.price_change_24h)} 
+                        width={95} 
+                        height={50}
+                    />
+                }
+            </div>
+            <div className="markets__card-bet">
+                <span 
+                    className={getColorClass(coinCurrent.price_change_24h)}
+                >
+                    {formatingPrice(coinCurrent.current_price, signCurrency[currency])}
+                </span> 
+                { coinCurrent.price_change_24h < 0 
+                    ? formatingPrice((coinCurrent.current_price + coinCurrent.price_change_24h).toFixed(2), signCurrency[currency]) 
+                    : formatingPrice((coinCurrent.current_price - coinCurrent.price_change_24h).toFixed(2), signCurrency[currency])
+                }
+            </div>
+            <div className="markets__card-sum">
+                <span 
+                    className={getColorClass(coinCurrent.price_change_percentage_24h)}
+                >
+                    {formatingPrice(coinCurrent.price_change_percentage_24h.toFixed(2), '%')}
+                </span> 
+                { t('markets.card.market-cap')}: {formatingPrice(coinCurrent.market_cap, signCurrency[currency])}
+            </div>
+        </div>
     )
 }
 

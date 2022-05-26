@@ -1895,6 +1895,7 @@ pre code {
   font-size: 12px;
   line-height: 15px;
   color: rgba(var(--primary-color), 1);
+  height: 18px;
 }
 @media screen and (min-width: 768px) {
   .markets__card-title {

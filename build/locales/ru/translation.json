@@ -14,7 +14,7 @@
     "markets": {
         "meta": {
             "title": "Рынки - Strade",
-            "description": ""
+            "description": "Всегда актуальные данные по рынкам криптовалюты."
         },
         "title-header": "Рынки",
         "columns": {
@@ -47,7 +47,7 @@
     "landing": {
         "meta": {
             "title": "Strade",
-            "description": ""
+            "description": "Обмен криптовалюты с поддержкой технологии Stellar Blockchain и DEX. Безопасно. Надежно. Быстро."
         },
         "hero": {
             "content": {
@@ -204,7 +204,7 @@
     "swap": {
         "meta": {
             "title": "Обмен - Strade",
-            "description": ""
+            "description": "Конвертация криптовалютных монет по лучшим котировкам."
         },
         "title": "Обмен",
         "currency-conversion": "Конвертация валюты",
@@ -230,7 +230,7 @@
     "error": {
         "meta": {
             "title": "Ошибка - Strade",
-            "description": ""
+            "description": "Добро пожаловать на страницу ошибки! Мы ничего не нашли для вас"
         },
         "firebase": {
             "auth-wrong-password": "Неправильный пароль. Попробуйте еще раз",
